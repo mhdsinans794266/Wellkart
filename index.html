@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>WELLKART</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="WELLKART - Smart Shopping. Better Deals.">
+<title>WELLKART | Smart Shopping</title>
+<style>
+:root{--blue:#075bd6;--yellow:#ffd21f;--ink:#102a43;--muted:#66788a;--bg:#f6f9fd}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none}.top{background:#fff;border-bottom:1px solid #e6edf5;position:sticky;top:0;z-index:10}
+.nav{max-width:1120px;margin:auto;padding:10px 18px;display:flex;align-items:center;gap:18px}
+.logo{height:52px;width:auto;object-fit:contain}.search{flex:1;display:flex;max-width:620px;background:#f4f7fb;border:1px solid #e2e9f2;border-radius:13px;overflow:hidden}
+.search input{width:100%;border:0;outline:0;background:transparent;padding:13px 15px;font-size:15px}.search button{border:0;background:var(--yellow);padding:0 18px;font-size:18px}
+.hero{background:linear-gradient(135deg,#e8f2ff 0%,#fff 58%,#fff6c6 100%);padding:48px 18px}
+.hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center}
+.badge{display:inline-block;background:var(--yellow);padding:7px 12px;border-radius:999px;font-size:12px;font-weight:900}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.02;margin:15px 0}.blue{color:var(--blue)}
+.hero p{font-size:18px;color:var(--muted);line-height:1.6;max-width:560px}.hero-btn{display:inline-block;margin-top:6px;background:var(--blue);color:#fff;padding:14px 22px;border-radius:12px;font-weight:900}
+.hero-logo{width:min(420px,90%);display:block;margin:auto;filter:drop-shadow(0 18px 25px #075bd622)}
+.section{max-width:1120px;margin:auto;padding:38px 18px}.section h2{font-size:29px;margin:0 0 5px}.sub{color:var(--muted);margin:0 0 20px}
+.card{background:#fff;border:1px solid #e5ecf4;border-radius:22px;overflow:hidden;box-shadow:0 10px 32px #102a4314;max-width:430px}
+.product-image{background:#fff;position:relative}.product-image img{display:block;width:100%;height:430px;object-fit:cover;object-position:center}
+.tag{position:absolute;top:14px;left:14px;background:var(--yellow);padding:7px 11px;border-radius:8px;font-size:12px;font-weight:900;z-index:2}
+.info{padding:20px}.info h3{font-size:21px;margin:0 0 8px}.stars{color:#f0b400;font-size:14px}.price{font-size:29px;font-weight:900;margin:12px 0 18px}
+.buy{display:block;text-align:center;background:var(--blue);color:#fff;padding:15px;border-radius:12px;font-weight:900}.buy:active{transform:scale(.99)}
+.note{text-align:center;color:var(--muted);font-size:12px;line-height:1.4;margin-top:10px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.feature{background:#fff;border:1px solid #e5ecf4;border-radius:16px;padding:18px;text-align:center}.feature span{font-size:26px;display:block;margin-bottom:6px}.feature b{display:block}
+.footer{margin-top:20px;background:var(--ink);color:#fff;text-align:center;padding:30px 18px}.footer b{color:var(--yellow)}
+@media(max-width:760px){.nav{flex-wrap:wrap}.logo{height:48px}.search{order:3;flex-basis:100%;max-width:none}.hero-inner{grid-template-columns:1fr;text-align:center}.hero p{margin-left:auto;margin-right:auto}.hero-logo{width:270px}.features{grid-template-columns:1fr}.product-image img{height:390px}}
+</style>
 </head>
 <body>
-<h1>WELLKART</h1>
-<p>Smart Shopping. Better Deals.</p>
-</body>
-</html>
+<header class="top"><nav class="nav">
+<img class="logo" src="wellkart-logo.png" alt="WELLKART logo">
+<div class="search"><input id="q" type="search" placeholder="Search products..."><button onclick="searchProduct()">🔍</button></div>
+</nav></header>
+
+<section class="hero"><div class="hero-inner">
+<div><span class="badge">WELCOME TO WELLKART</span>
+<h1>Smart Shopping.<br><span class="blue">Better Deals.</span></h1>
+<p>Discover trending products, great prices and easy shopping — all in one place.</p>
+<a class="hero-btn" href="#products">Shop Now →</a></div>
+<img class="hero-logo" src="wellkart-logo.png" alt="WELLKART">
+</div></section>
+
+<main class="section" id="products">
+<h2>Featured Product</h2><p class="sub">Our latest pick</p>
+<article class="card" id="productCard">
+<div class="product-image"><div class="tag">FEATURED</div><img src="whisker-baggy-jeans.jpg" alt="Whisker Baggy Jeans for Men"></div>
+<div class="info"><h3>Whisker Baggy Jeans for Men</h3><div class="stars">★★★★★</div>
+<div class="price">₹680</div>
+<a class="buy" href="https://www.meesho.com/af_invite/119465688:instagram_stories:10227282?p_id=1036219135&ext_id=h4xrsv&utm_source=instagram_stories" target="_blank" rel="noopener noreferrer">Buy Now on Meesho →</a>
+<div class="note">You’ll be redirected to Meesho to complete your purchase.</div></div>
+</article>
+
+<div class="features"><div class="feature"><span>💎</span><b>Quality Picks</b><small>Curated products</small></div>
+<div class="feature"><span>💰</span><b>Better Deals</b><small>Great-value finds</small></div>
+<div class="feature"><span>⚡</span><b>Easy Shopping</b><small>Quick checkout</small></div></div>
+</main>
+
+<footer class="footer"><b>WELLKART</b><br>Smart Shopping. Better Deals.<br><small>© 2026 WELLKART</small></footer>
+<script>
+function searchProduct(){
+ const q=document.getElementById('q').value.toLowerCase().trim();
+ const card=document.getElementById('productCard');
+ if(!q || q.includes('jean') || q.includes('whisker') || q.includes('baggy')){
+  card.style.display='block';card.scrollIntoView({behavior:'smooth',block:'center'});
+ }else alert('No matching product found yet.');
+}
+</script>
+</body></html>
