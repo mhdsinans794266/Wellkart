@@ -44,7 +44,6 @@ a{text-decoration:none}
   gap:18px;
 }
 
-/* WELLKART LOGO */
 .logo{
   display:flex;
   align-items:center;
@@ -351,6 +350,31 @@ h1{
   display:none;
 }
 
+/* CLEAN BOTTOM NAV ICONS */
+
+.nav-icon{
+  width:25px;
+  height:25px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 3px;
+}
+
+.nav-icon svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:#fff;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.nav-icon svg .yellow{
+  stroke:#ffd21f;
+}
+
 .theme-btn{
   border:0;
   background:#102a43;
@@ -492,7 +516,6 @@ body{
 
   .bottom-nav span{
     display:block;
-    font-size:19px;
     margin-bottom:2px;
   }
 }
@@ -1448,25 +1471,50 @@ body{
   <small>© 2026 WELLKART</small>
 </footer>
 
+<!-- CLEAN E-COMMERCE BOTTOM NAV -->
+
 <nav class="bottom-nav">
 
   <a href="#products">
-    <span>🏠</span>
+    <span class="nav-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 10.8L12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1z"/>
+        <path class="yellow" d="M9.5 21v-6h5v6"/>
+      </svg>
+    </span>
     Home
   </a>
 
   <a href="#products">
-    <span>🛍️</span>
+    <span class="nav-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 5h2l1.6 10.2a2 2 0 0 0 2 1.7h7.8a2 2 0 0 0 1.9-1.5L21 8H7"/>
+        <circle cx="10" cy="20" r="1.5"/>
+        <circle cx="18" cy="20" r="1.5"/>
+        <path class="yellow" d="M14 4h5"/>
+        <path class="yellow" d="M16.5 1.5v5"/>
+      </svg>
+    </span>
     Shop
   </a>
 
   <a href="#products">
-    <span>❤️</span>
+    <span class="nav-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.8 8.8c0 5.2-8.8 10.2-8.8 10.2S3.2 14 3.2 8.8A5 5 0 0 1 12 6.1a5 5 0 0 1 8.8 2.7z"/>
+        <path class="yellow" d="M17.5 11v5M15 13.5h5"/>
+      </svg>
+    </span>
     Wishlist
   </a>
 
   <a href="#products" onclick="toggleDark()">
-    <span>🌙</span>
+    <span class="nav-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5z"/>
+        <path class="yellow" d="M18.5 4v3M17 5.5h3"/>
+      </svg>
+    </span>
     Theme
   </a>
 
