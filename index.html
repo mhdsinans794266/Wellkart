@@ -24,9 +24,7 @@
 
 *{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -35,24 +33,13 @@ body{
   color:var(--ink);
 }
 
-body.no-scroll{
-  overflow:hidden;
-}
+body.no-scroll{overflow:hidden}
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
+a{text-decoration:none;color:inherit}
 
-button,
-input,
-select{
-  font-family:inherit;
-}
+button,input,select{font-family:inherit}
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 .top{
   background:#fff;
@@ -85,8 +72,6 @@ select{
   height:50px;
   object-fit:contain;
 }
-
-/* HEADER SEARCH */
 
 .header-search{
   position:relative;
@@ -139,9 +124,7 @@ select{
   z-index:1200;
 }
 
-.search-suggestions.show{
-  display:block;
-}
+.search-suggestions.show{display:block}
 
 .suggestion{
   display:flex;
@@ -151,9 +134,7 @@ select{
   cursor:pointer;
 }
 
-.suggestion:hover{
-  background:#f5f7fb;
-}
+.suggestion:hover{background:#f5f7fb}
 
 .suggestion img{
   width:42px;
@@ -178,7 +159,7 @@ select{
 .nav-actions{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:5px;
 }
 
 .nav-action{
@@ -193,9 +174,7 @@ select{
   font-size:12px;
 }
 
-.nav-action:hover{
-  background:#f0f3f8;
-}
+.nav-action:hover{background:#f0f3f8}
 
 .nav-icon{
   display:block;
@@ -222,9 +201,21 @@ select{
   margin-top:-5px;
 }
 
-/* =========================
-   HOME HERO
-========================= */
+/* ACCOUNT BUTTON */
+
+.account-btn{
+  position:relative;
+}
+
+.account-name{
+  display:block;
+  max-width:80px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* ================= HOME ================= */
 
 .hero{
   background:linear-gradient(135deg,#eef0ff 0%,#fff 55%,#fff2dd 100%);
@@ -256,9 +247,7 @@ h1{
   margin:15px 0;
 }
 
-.blue{
-  color:var(--blue);
-}
+.blue{color:var(--blue)}
 
 .hero p{
   color:var(--muted);
@@ -282,6 +271,8 @@ h1{
   padding:13px 20px;
   border-radius:9px;
   font-weight:900;
+  border:0;
+  cursor:pointer;
 }
 
 .hero-btn.secondary{
@@ -298,9 +289,7 @@ h1{
   margin:auto;
 }
 
-/* =========================
-   HOME CATEGORY STRIP
-========================= */
+/* CATEGORIES */
 
 .category-section{
   max-width:1200px;
@@ -325,9 +314,7 @@ h1{
   transition:.2s;
 }
 
-.category-item:last-child{
-  border-right:0;
-}
+.category-item:last-child{border-right:0}
 
 .category-item:hover{
   background:#f7f8ff;
@@ -341,13 +328,9 @@ h1{
   margin-bottom:5px;
 }
 
-.category-item b{
-  font-size:13px;
-}
+.category-item b{font-size:13px}
 
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 
 .section{
   max-width:1200px;
@@ -377,11 +360,11 @@ h1{
   color:var(--blue);
   font-weight:900;
   cursor:pointer;
+  background:none;
+  border:0;
 }
 
-/* =========================
-   DEAL BANNER
-========================= */
+/* DEAL BANNER */
 
 .deal-banner{
   background:linear-gradient(135deg,var(--blue),#4355db);
@@ -417,9 +400,7 @@ h1{
   white-space:nowrap;
 }
 
-/* =========================
-   TOOLBAR
-========================= */
+/* TOOLBAR */
 
 .shop-toolbar{
   background:#fff;
@@ -469,9 +450,7 @@ h1{
   border-color:var(--blue);
 }
 
-/* =========================
-   FILTER PANEL
-========================= */
+/* FILTER */
 
 .filter-panel{
   display:none;
@@ -482,9 +461,7 @@ h1{
   margin-bottom:18px;
 }
 
-.filter-panel.show{
-  display:block;
-}
+.filter-panel.show{display:block}
 
 .filter-grid{
   display:grid;
@@ -509,9 +486,7 @@ h1{
   background:#fff;
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products{
   display:grid;
@@ -547,9 +522,7 @@ h1{
   display:block;
 }
 
-.info{
-  padding:13px;
-}
+.info{padding:13px}
 
 .tag{
   display:inline-block;
@@ -637,15 +610,8 @@ h1{
   color:#b45309;
 }
 
-.buy:hover{
-  background:var(--blue2);
-}
-
-.add-cart:hover{
-  background:#ffe4bb;
-}
-
-/* WISHLIST */
+.buy:hover{background:var(--blue2)}
+.add-cart:hover{background:#ffe4bb}
 
 .wish{
   position:absolute;
@@ -663,9 +629,7 @@ h1{
   cursor:pointer;
 }
 
-.wish.active{
-  color:#ef4444;
-}
+.wish.active{color:#ef4444}
 
 /* EMPTY */
 
@@ -684,17 +648,10 @@ h1{
   margin-bottom:8px;
 }
 
-.empty h3{
-  margin:5px 0;
-}
+.empty h3{margin:5px 0}
+.empty p{color:var(--muted)}
 
-.empty p{
-  color:var(--muted);
-}
-
-/* =========================
-   FEATURES
-========================= */
+/* FEATURES */
 
 .features{
   display:grid;
@@ -717,25 +674,13 @@ h1{
   margin-bottom:6px;
 }
 
-.feature b{
-  display:block;
-}
+.feature b{display:block}
+.feature small{color:var(--muted)}
 
-.feature small{
-  color:var(--muted);
-}
+/* CART */
 
-/* =========================
-   CART
-========================= */
-
-.cart-page{
-  display:none;
-}
-
-.cart-page.show{
-  display:block;
-}
+.cart-page{display:none}
+.cart-page.show{display:block}
 
 .cart-layout{
   display:grid;
@@ -758,9 +703,7 @@ h1{
   border-bottom:1px solid #edf0f5;
 }
 
-.cart-item:last-child{
-  border-bottom:0;
-}
+.cart-item:last-child{border-bottom:0}
 
 .cart-item img{
   width:85px;
@@ -769,18 +712,14 @@ h1{
   border-radius:8px;
 }
 
-.cart-item-info{
-  flex:1;
-}
+.cart-item-info{flex:1}
 
 .cart-item-info h3{
   margin:0 0 6px;
   font-size:15px;
 }
 
-.cart-price{
-  font-weight:900;
-}
+.cart-price{font-weight:900}
 
 .remove-cart{
   border:0;
@@ -799,9 +738,7 @@ h1{
   top:90px;
 }
 
-.cart-summary h3{
-  margin-top:0;
-}
+.cart-summary h3{margin-top:0}
 
 .summary-row{
   display:flex;
@@ -832,9 +769,7 @@ h1{
   cursor:pointer;
 }
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+/* PRODUCT MODAL */
 
 .modal{
   display:none;
@@ -847,9 +782,7 @@ h1{
   padding:15px;
 }
 
-.modal.show{
-  display:flex;
-}
+.modal.show{display:flex}
 
 .modal-box{
   width:min(850px,100%);
@@ -880,9 +813,7 @@ h1{
   grid-template-columns:1fr 1fr;
 }
 
-.modal-image{
-  min-height:420px;
-}
+.modal-image{min-height:420px}
 
 .modal-image img{
   width:100%;
@@ -890,13 +821,9 @@ h1{
   object-fit:cover;
 }
 
-.modal-info{
-  padding:28px;
-}
+.modal-info{padding:28px}
 
-.modal-info h2{
-  margin-top:0;
-}
+.modal-info h2{margin-top:0}
 
 .modal-rating{
   display:inline-block;
@@ -946,9 +873,207 @@ h1{
   color:#b45309;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= ACCOUNT MODAL ================= */
+
+.account-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0008;
+  z-index:4000;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.account-modal.show{display:flex}
+
+.account-box{
+  width:min(430px,100%);
+  background:#fff;
+  border-radius:16px;
+  padding:28px;
+  position:relative;
+  box-shadow:0 20px 60px #0005;
+}
+
+.account-close{
+  position:absolute;
+  right:12px;
+  top:12px;
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:50%;
+  background:#f1f3f7;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.account-logo{
+  width:85px;
+  height:55px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 10px;
+}
+
+.account-title{
+  text-align:center;
+  margin:5px 0;
+  font-size:25px;
+}
+
+.account-subtitle{
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  margin:0 0 20px;
+}
+
+.auth-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#f1f3f8;
+  padding:4px;
+  border-radius:8px;
+  margin-bottom:18px;
+}
+
+.auth-tab{
+  border:0;
+  padding:10px;
+  border-radius:6px;
+  background:transparent;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.auth-tab.active{
+  background:#fff;
+  color:var(--blue);
+  box-shadow:0 2px 8px #0001;
+}
+
+.auth-form{
+  display:none;
+}
+
+.auth-form.active{display:block}
+
+.auth-label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin:12px 0 6px;
+}
+
+.auth-input{
+  width:100%;
+  height:45px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:0 12px;
+  outline:none;
+  font-size:14px;
+}
+
+.auth-input:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px #18258f18;
+}
+
+.auth-submit{
+  width:100%;
+  height:46px;
+  border:0;
+  border-radius:8px;
+  background:var(--blue);
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+  margin-top:18px;
+}
+
+.auth-submit:hover{background:var(--blue2)}
+
+.auth-message{
+  display:none;
+  margin-top:12px;
+  padding:10px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:700;
+  text-align:center;
+}
+
+.auth-message.error{
+  display:block;
+  background:#fee2e2;
+  color:#b91c1c;
+}
+
+.auth-message.success{
+  display:block;
+  background:#dcfce7;
+  color:#15803d;
+}
+
+/* LOGGED IN */
+
+.account-profile{
+  display:none;
+}
+
+.account-profile.show{display:block}
+
+.profile-icon{
+  width:75px;
+  height:75px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:var(--blue);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  font-weight:900;
+}
+
+.profile-email{
+  text-align:center;
+  font-weight:800;
+  word-break:break-word;
+  margin-bottom:20px;
+}
+
+.account-menu{
+  display:grid;
+  gap:8px;
+}
+
+.account-menu button{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:8px;
+  padding:12px;
+  text-align:left;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.account-menu button:hover{
+  background:#f5f7fb;
+}
+
+.logout-btn{
+  background:#fee2e2 !important;
+  color:#dc2626 !important;
+  border-color:#fecaca !important;
+}
+
+/* FOOTER */
 
 .footer{
   margin-top:20px;
@@ -983,9 +1108,7 @@ h1{
   font-size:14px;
 }
 
-.whatsapp-btn{
-  background:#25D366;
-}
+.whatsapp-btn{background:#25D366}
 
 .instagram-btn{
   background:linear-gradient(135deg,#833AB4,#E1306C,#F77737);
@@ -1017,17 +1140,9 @@ h1{
   height:31px;
 }
 
-/* =========================
-   MOBILE NAV
-========================= */
+.mobile-nav{display:none}
 
-.mobile-nav{
-  display:none;
-}
-
-/* =========================
-   DARK MODE
-========================= */
+/* DARK */
 
 .dark{
   --bg:#09112f;
@@ -1038,17 +1153,11 @@ h1{
   --soft:#1b2857;
 }
 
-.dark .top{
-  background:#0d1b4c;
-}
+.dark .top{background:#0d1b4c}
 
-.dark .header-search-box{
-  background:#111d3f;
-}
+.dark .header-search-box{background:#111d3f}
 
-.dark .header-search-box input{
-  color:#fff;
-}
+.dark .header-search-box input{color:#fff}
 
 .dark .search-suggestions,
 .dark .shop-toolbar,
@@ -1059,7 +1168,8 @@ h1{
 .dark .feature,
 .dark .category-strip,
 .dark .category-item,
-.dark .modal-box{
+.dark .modal-box,
+.dark .account-box{
   background:#111d3f;
   color:#fff;
 }
@@ -1073,7 +1183,8 @@ h1{
 .dark .toolbar-select,
 .dark .filter-btn,
 .dark .filter-group select,
-.dark .filter-group input{
+.dark .filter-group input,
+.dark .auth-input{
   background:#17264d;
   color:#fff;
   border-color:#29415d;
@@ -1083,18 +1194,14 @@ h1{
   background:linear-gradient(135deg,#101a4b,#09112f 60%,#241707);
 }
 
-.dark .hero p{
-  color:#b9c2d8;
-}
+.dark .hero p{color:#b9c2d8}
 
 .dark .hero-btn.secondary{
   background:#111d3f;
   color:#fff;
 }
 
-.dark .pic{
-  background:#111d3f;
-}
+.dark .pic{background:#111d3f}
 
 .dark .add-cart{
   background:#3b2b14;
@@ -1106,52 +1213,51 @@ h1{
   color:#fff;
 }
 
-.dark .modal-close{
+.dark .modal-close,
+.dark .account-close{
   background:#17264d;
   color:#fff;
 }
 
-.dark .footer{
-  background:#060b20;
+.dark .auth-tabs{background:#17264d}
+
+.dark .auth-tab.active{
+  background:#111d3f;
+  color:#fff;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.dark .account-menu button{
+  background:#17264d;
+  color:#fff;
+  border-color:#29415d;
+}
+
+.dark .account-menu button:hover{background:#20325f}
+
+.dark .footer{background:#060b20}
+
+/* RESPONSIVE */
 
 @media(max-width:950px){
 
-  .products{
-    grid-template-columns:repeat(3,1fr);
-  }
+  .products{grid-template-columns:repeat(3,1fr)}
 
-  .category-strip{
-    grid-template-columns:repeat(3,1fr);
-  }
+  .category-strip{grid-template-columns:repeat(3,1fr)}
 
-  .category-item:nth-child(3){
-    border-right:0;
-  }
+  .category-item:nth-child(3){border-right:0}
 
-  .filter-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+  .filter-grid{grid-template-columns:repeat(2,1fr)}
 
-  .cart-layout{
-    grid-template-columns:1fr;
-  }
+  .cart-layout{grid-template-columns:1fr}
 
   .cart-summary{
     position:static;
   }
-
 }
 
 @media(max-width:700px){
 
-  body{
-    padding-bottom:62px;
-  }
+  body{padding-bottom:62px}
 
   .nav{
     padding:7px 10px;
@@ -1169,18 +1275,16 @@ h1{
     height:43px;
   }
 
-  .nav-actions{
-    margin-left:auto;
-  }
+  .nav-actions{margin-left:auto}
 
   .nav-action{
-    min-width:40px;
-    font-size:10px;
+    min-width:38px;
+    font-size:9px;
   }
 
-  .nav-icon{
-    font-size:18px;
-  }
+  .nav-icon{font-size:18px}
+
+  .account-name{max-width:50px}
 
   .header-search{
     order:3;
@@ -1188,9 +1292,7 @@ h1{
     max-width:none;
   }
 
-  .hero{
-    padding:30px 15px;
-  }
+  .hero{padding:30px 15px}
 
   .hero-inner{
     grid-template-columns:1fr;
@@ -1203,9 +1305,7 @@ h1{
     font-size:16px;
   }
 
-  .hero-actions{
-    justify-content:center;
-  }
+  .hero-actions{justify-content:center}
 
   .hero-logo{
     width:220px;
@@ -1216,89 +1316,59 @@ h1{
     padding:14px 10px 0;
   }
 
-  .category-strip{
-    grid-template-columns:repeat(3,1fr);
-  }
+  .category-strip{grid-template-columns:repeat(3,1fr)}
 
   .category-item{
     padding:12px 5px;
     border-bottom:1px solid #edf0f5;
   }
 
-  .category-icon{
-    font-size:23px;
-  }
+  .category-icon{font-size:23px}
 
-  .category-item b{
-    font-size:11px;
-  }
+  .category-item b{font-size:11px}
 
   .section{
     padding:25px 10px 35px;
   }
 
-  .section-title-row{
-    align-items:center;
-  }
+  .section-title-row{align-items:center}
 
-  .section h2{
-    font-size:23px;
-  }
+  .section h2{font-size:23px}
 
-  .deal-banner{
-    padding:16px;
-  }
+  .deal-banner{padding:16px}
 
-  .deal-banner h3{
-    font-size:18px;
-  }
+  .deal-banner h3{font-size:18px}
 
   .products{
     grid-template-columns:repeat(2,1fr);
     gap:10px;
   }
 
-  .pic{
-    height:205px;
-  }
+  .pic{height:205px}
 
-  .info{
-    padding:10px;
-  }
+  .info{padding:10px}
 
   .info h3{
     font-size:14px;
     min-height:38px;
   }
 
-  .price{
-    font-size:18px;
-  }
+  .price{font-size:18px}
 
-  .card-buttons{
-    grid-template-columns:1fr;
-  }
+  .card-buttons{grid-template-columns:1fr}
 
-  .features{
-    grid-template-columns:1fr;
-  }
+  .features{grid-template-columns:1fr}
 
-  .filter-grid{
-    grid-template-columns:1fr 1fr;
-  }
+  .filter-grid{grid-template-columns:1fr 1fr}
 
-  .modal-content{
-    grid-template-columns:1fr;
-  }
+  .modal-content{grid-template-columns:1fr}
 
   .modal-image{
     min-height:280px;
     height:280px;
   }
 
-  .modal-info{
-    padding:20px;
-  }
+  .modal-info{padding:20px}
 
   .mobile-nav{
     position:fixed;
@@ -1328,9 +1398,7 @@ h1{
     line-height:23px;
   }
 
-  .dark .mobile-nav{
-    background:#0d1b4c;
-  }
+  .dark .mobile-nav{background:#0d1b4c}
 
   .whatsapp-float{
     right:12px;
@@ -1338,26 +1406,17 @@ h1{
     width:52px;
     height:52px;
   }
-
 }
 
 @media(max-width:400px){
 
-  .products{
-    grid-template-columns:1fr 1fr;
-  }
+  .products{grid-template-columns:1fr 1fr}
 
-  .pic{
-    height:175px;
-  }
+  .pic{height:175px}
 
-  .filter-grid{
-    grid-template-columns:1fr;
-  }
+  .filter-grid{grid-template-columns:1fr}
 
-  .toolbar-select{
-    flex:1;
-  }
+  .toolbar-select{flex:1}
 
 }
 
@@ -1416,6 +1475,11 @@ Wishlist
 <span class="nav-icon">🛒</span>
 Cart
 <span id="cartCount" class="cart-count">0</span>
+</button>
+
+<button class="nav-action account-btn" onclick="openAccount()">
+<span class="nav-icon" id="accountIcon">👤</span>
+<span id="accountLabel" class="account-name">Login</span>
 </button>
 
 <button class="nav-action" onclick="toggleTheme()">
@@ -1480,8 +1544,6 @@ alt="Dealio"
 
 </section>
 
-<!-- CATEGORIES -->
-
 <section class="category-section">
 
 <div class="category-strip">
@@ -1529,9 +1591,7 @@ alt="Dealio"
 <p>Find popular products at great-value prices.</p>
 </div>
 
-<button onclick="showShop()">
-View Deals →
-</button>
+<button onclick="showShop()">View Deals →</button>
 
 </div>
 
@@ -1596,17 +1656,15 @@ id="shopSearch"
 class="toolbar-search"
 type="search"
 placeholder="Search products..."
-oninput="updateShopSearch()"
+oninput="updateShopSearch"
 >
 
 <select id="sortSelect" class="toolbar-select" onchange="renderShop()">
-
 <option value="relevance">Sort: Relevance</option>
 <option value="low">Price: Low to High</option>
 <option value="high">Price: High to Low</option>
 <option value="rating">Rating: High to Low</option>
 <option value="discount">Discount: High to Low</option>
-
 </select>
 
 <button
@@ -1787,13 +1845,8 @@ target="_blank"
 rel="noopener noreferrer"
 >
 
-<svg class="social-icon" viewBox="0 0 32 32" aria-hidden="true">
-
-<path
-fill="currentColor"
-d="M16.01 3.2C8.94 3.2 3.21 8.93 3.21 16c0 2.25.59 4.45 1.72 6.38L3.2 28.8l6.58-1.72A12.78 12.78 0 0 0 16 28.8h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.39h-.01a10.59 10.59 0 0 1-5.4-1.47l-.39-.23-3.91 1.02 1.04-3.81-.25-.39a10.57 10.57 0 1 1 8.92 4.88zm5.8-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.77-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.62-.5-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.64s1.13 3.06 1.29 3.27c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37z"
-/>
-
+<svg class="social-icon" viewBox="0 0 32 32">
+<path fill="currentColor" d="M16.01 3.2C8.94 3.2 3.21 8.93 3.21 16c0 2.25.59 4.45 1.72 6.38L3.2 28.8l6.58-1.72A12.78 12.78 0 0 0 16 28.8h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.39h-.01a10.59 10.59 0 0 1-5.4-1.47l-.39-.23-3.91 1.02 1.04-3.81-.25-.39a10.57 10.57 0 1 1 8.92 4.88zm5.8-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.77-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.62-.5-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.64s1.13 3.06 1.29 3.27c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37z"/>
 </svg>
 
 WhatsApp
@@ -1807,34 +1860,11 @@ target="_blank"
 rel="noopener noreferrer"
 >
 
-<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+<svg class="social-icon" viewBox="0 0 24 24">
 
-<rect
-x="3"
-y="3"
-width="18"
-height="18"
-rx="5"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-/>
-
-<circle
-cx="12"
-cy="12"
-r="4"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-/>
-
-<circle
-cx="17.5"
-cy="6.5"
-r="1.2"
-fill="currentColor"
-/>
+<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+<circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+<circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
 
 </svg>
 
@@ -1846,9 +1876,7 @@ Instagram
 
 <br>
 
-<small>
-© 2026 Dealio. All rights reserved.
-</small>
+<small>© 2026 Dealio. All rights reserved.</small>
 
 </footer>
 
@@ -1863,12 +1891,7 @@ aria-label="Chat with Dealio on WhatsApp"
 >
 
 <svg viewBox="0 0 32 32">
-
-<path
-fill="currentColor"
-d="M16.01 3.2C8.94 3.2 3.21 8.93 3.21 16c0 2.25.59 4.45 1.72 6.38L3.2 28.8l6.58-1.72A12.78 12.78 0 0 0 16 28.8h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.39h-.01a10.59 10.59 0 0 1-5.4-1.47l-.39-.23-3.91 1.02 1.04-3.81-.25-.39a10.57 10.57 0 1 1 8.92 4.88zm5.8-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.77-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.62-.5-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.64s1.13 3.06 1.29 3.27c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37z"
-/>
-
+<path fill="currentColor" d="M16.01 3.2C8.94 3.2 3.21 8.93 3.21 16c0 2.25.59 4.45 1.72 6.38L3.2 28.8l6.58-1.72A12.78 12.78 0 0 0 16 28.8h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.39h-.01a10.59 10.59 0 0 1-5.4-1.47l-.39-.23-3.91 1.02 1.04-3.81-.25-.39a10.57 10.57 0 1 1 8.92 4.88zm5.8-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.77-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.62-.5-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.64s1.13 3.06 1.29 3.27c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37z"/>
 </svg>
 
 </a>
@@ -1897,9 +1920,9 @@ Search
 Wishlist
 </button>
 
-<button onclick="showCart()">
-<span>🛒</span>
-Cart
+<button onclick="openAccount()">
+<span>👤</span>
+Account
 </button>
 
 </nav>
@@ -1920,7 +1943,7 @@ Cart
 
 <div class="modal-info">
 
-<span id="modalTag" class="tag">DEALIO PICK</span>
+<span class="tag">DEALIO PICK</span>
 
 <h2 id="modalName"></h2>
 
@@ -1962,11 +1985,219 @@ onclick="addModalToCart()"
 
 </div>
 
-<script>
+<!-- ================= ACCOUNT MODAL ================= -->
 
-/* =========================
+<div id="accountModal" class="account-modal">
+
+<div class="account-box">
+
+<button class="account-close" onclick="closeAccount()">✕</button>
+
+<img
+class="account-logo"
+src="./dealio-logo.PNG?v=2"
+alt="Dealio"
+>
+
+<div id="authArea">
+
+<h2 class="account-title">Welcome to Dealio</h2>
+
+<p class="account-subtitle">
+Login or create your Dealio account
+</p>
+
+<div class="auth-tabs">
+
+<button
+id="loginTab"
+class="auth-tab active"
+onclick="showLoginForm()"
+>
+Login
+</button>
+
+<button
+id="signupTab"
+class="auth-tab"
+onclick="showSignupForm()"
+>
+Create Account
+</button>
+
+</div>
+
+<!-- LOGIN -->
+
+<form id="loginForm" class="auth-form active">
+
+<label class="auth-label">Email</label>
+
+<input
+id="loginEmail"
+class="auth-input"
+type="email"
+placeholder="Enter your email"
+required
+>
+
+<label class="auth-label">Password</label>
+
+<input
+id="loginPassword"
+class="auth-input"
+type="password"
+placeholder="Enter your password"
+required
+>
+
+<button
+class="auth-submit"
+type="submit"
+>
+Login
+</button>
+
+<div id="loginMessage" class="auth-message"></div>
+
+</form>
+
+<!-- SIGNUP -->
+
+<form id="signupForm" class="auth-form">
+
+<label class="auth-label">Name</label>
+
+<input
+id="signupName"
+class="auth-input"
+type="text"
+placeholder="Enter your name"
+required
+>
+
+<label class="auth-label">Email</label>
+
+<input
+id="signupEmail"
+class="auth-input"
+type="email"
+placeholder="Enter your email"
+required
+>
+
+<label class="auth-label">Password</label>
+
+<input
+id="signupPassword"
+class="auth-input"
+type="password"
+placeholder="Minimum 6 characters"
+minlength="6"
+required
+>
+
+<label class="auth-label">Confirm Password</label>
+
+<input
+id="signupConfirm"
+class="auth-input"
+type="password"
+placeholder="Confirm your password"
+minlength="6"
+required
+>
+
+<button
+class="auth-submit"
+type="submit"
+>
+Create Account
+</button>
+
+<div id="signupMessage" class="auth-message"></div>
+
+</form>
+
+</div>
+
+<!-- LOGGED IN PROFILE -->
+
+<div id="accountProfile" class="account-profile">
+
+<div class="profile-icon">👤</div>
+
+<h2 class="account-title">My Account</h2>
+
+<p id="profileEmail" class="profile-email"></p>
+
+<div class="account-menu">
+
+<button onclick="showWishlist();closeAccount();">
+❤️ My Wishlist
+</button>
+
+<button onclick="showCart();closeAccount();">
+🛒 My Cart
+</button>
+
+<button onclick="showToast('Orders feature coming next 📦');">
+📦 My Orders
+</button>
+
+<button onclick="showToast('Address feature coming next 📍');">
+📍 Saved Addresses
+</button>
+
+<button class="logout-btn" onclick="logoutUser()">
+🚪 Logout
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module">
+
+/* =========================================================
+   FIREBASE
+========================================================= */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  updateProfile
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAtU-84C5rFLq_4uFPq2IgIgS0WAgom_Z0",
+  authDomain: "dealio-8fd36.firebaseapp.com",
+  projectId: "dealio-8fd36",
+  storageBucket: "dealio-8fd36.firebasestorage.app",
+  messagingSenderId: "851595691830",
+  appId: "1:851595691830:web:259dfe159db0b2e8555597"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+/* Make auth available to normal functions */
+window.dealioAuth = auth;
+
+
+/* =========================================================
    PRODUCT DATA
-========================= */
+========================================================= */
 
 const products = [
 
@@ -2291,9 +2522,9 @@ url:"https://www.meesho.com/search?q=artificial%20plants%20home%20decor"
 
 ];
 
-/* =========================
+/* =========================================================
    STORAGE
-========================= */
+========================================================= */
 
 function getWishlist(){
 
@@ -2316,8 +2547,6 @@ updateCounts();
 
 }
 
-/* CART */
-
 function getCart(){
 
 try{
@@ -2339,21 +2568,16 @@ updateCounts();
 
 }
 
-/* =========================
-   CARD HTML
-========================= */
+/* =========================================================
+   CARD
+========================================================= */
 
 function cardHTML(p){
 
-const wish =
-getWishlist().includes(p.id)
-? "♥"
-: "♡";
+const wishlist=getWishlist();
 
-const active =
-getWishlist().includes(p.id)
-? "active"
-: "";
+const wish=wishlist.includes(p.id)?"♥":"♡";
+const active=wishlist.includes(p.id)?"active":"";
 
 return `
 
@@ -2378,36 +2602,28 @@ ${wish}
 
 <div class="info">
 
-<span class="tag">
-DEALIO PICK
-</span>
+<span class="tag">DEALIO PICK</span>
 
 <h3>${p.name}</h3>
 
 <div class="rating-line">
 
-<span class="rating">
-${p.rating} ★
-</span>
+<span class="rating">${p.rating} ★</span>
 
-<span class="rating-text">
-Dealio Rating
-</span>
+<span class="rating-text">Dealio Rating</span>
 
 </div>
 
-<div class="price">
-₹${p.price}
-</div>
+<div class="price">₹${p.price}</div>
 
 <div>
+
 <span class="old-price">
 ₹${Math.round(p.price/(1-p.discount/100))}
 </span>
 
-<span class="discount">
-${p.discount}% off
-</span>
+<span class="discount">${p.discount}% off</span>
+
 </div>
 
 <div class="card-buttons">
@@ -2438,96 +2654,50 @@ onclick="addToCart(${p.id})"
 
 }
 
-/* =========================
-   RENDER HOME
-========================= */
+/* =========================================================
+   HOME
+========================================================= */
 
 function renderHome(){
 
-const box =
-document.getElementById("homeProducts");
+const box=document.getElementById("homeProducts");
 
-const list =
-products.slice(0,8);
-
-box.innerHTML =
-list.map(cardHTML).join("");
+box.innerHTML=
+products.slice(0,8).map(cardHTML).join("");
 
 }
 
-/* =========================
+/* =========================================================
    SHOP
-========================= */
+========================================================= */
 
-let shopSearchText = "";
+let shopSearchText="";
 
 function renderShop(){
 
-const category =
-document.getElementById("categoryFilter").value;
+const category=document.getElementById("categoryFilter").value;
+const price=document.getElementById("priceFilter").value;
+const discount=document.getElementById("discountFilter").value;
+const rating=document.getElementById("ratingFilter").value;
+const sort=document.getElementById("sortSelect").value;
 
-const price =
-document.getElementById("priceFilter").value;
+let list=products.filter(p=>{
 
-const discount =
-document.getElementById("discountFilter").value;
+if(category!=="all" && p.category!==category) return false;
 
-const rating =
-document.getElementById("ratingFilter").value;
+if(price==="under199" && p.price>=199) return false;
 
-const sort =
-document.getElementById("sortSelect").value;
+if(price==="199to399" && (p.price<199 || p.price>399)) return false;
 
-let list =
-products.filter(p => {
+if(price==="above399" && p.price<400) return false;
 
-if(
-category !== "all" &&
-p.category !== category
-){
-return false;
-}
+if(discount!=="all" && p.discount<Number(discount)) return false;
 
-if(
-price === "under199" &&
-p.price >= 199
-){
-return false;
-}
-
-if(
-price === "199to399" &&
-(p.price < 199 || p.price > 399)
-){
-return false;
-}
-
-if(
-price === "above399" &&
-p.price < 400
-){
-return false;
-}
-
-if(
-discount !== "all" &&
-p.discount < Number(discount)
-){
-return false;
-}
-
-if(
-rating !== "all" &&
-p.rating < Number(rating)
-){
-return false;
-}
+if(rating!=="all" && p.rating<Number(rating)) return false;
 
 if(
 shopSearchText &&
-!p.name.toLowerCase().includes(
-shopSearchText.toLowerCase()
-)
+!p.name.toLowerCase().includes(shopSearchText.toLowerCase())
 ){
 return false;
 }
@@ -2536,27 +2706,13 @@ return true;
 
 });
 
-if(sort === "low"){
-list.sort((a,b)=>a.price-b.price);
-}
+if(sort==="low") list.sort((a,b)=>a.price-b.price);
+if(sort==="high") list.sort((a,b)=>b.price-a.price);
+if(sort==="rating") list.sort((a,b)=>b.rating-a.rating);
+if(sort==="discount") list.sort((a,b)=>b.discount-a.discount);
 
-if(sort === "high"){
-list.sort((a,b)=>b.price-a.price);
-}
-
-if(sort === "rating"){
-list.sort((a,b)=>b.rating-a.rating);
-}
-
-if(sort === "discount"){
-list.sort((a,b)=>b.discount-a.discount);
-}
-
-const box =
-document.getElementById("shopProducts");
-
-const empty =
-document.getElementById("shopEmpty");
+const box=document.getElementById("shopProducts");
+const empty=document.getElementById("shopEmpty");
 
 if(!list.length){
 
@@ -2574,16 +2730,15 @@ box.innerHTML=list.map(cardHTML).join("");
 
 function updateShopSearch(){
 
-shopSearchText =
-document.getElementById("shopSearch").value;
+shopSearchText=document.getElementById("shopSearch").value;
 
 renderShop();
 
 }
 
-/* =========================
+/* =========================================================
    NAVIGATION
-========================= */
+========================================================= */
 
 function hideAllPages(){
 
@@ -2600,10 +2755,7 @@ hideAllPages();
 
 document.getElementById("homePage").style.display="block";
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
@@ -2615,10 +2767,7 @@ document.getElementById("shopPage").style.display="block";
 
 renderShop();
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
@@ -2630,10 +2779,7 @@ document.getElementById("wishlistPage").style.display="block";
 
 renderWishlist();
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
@@ -2645,50 +2791,40 @@ document.getElementById("cartPage").classList.add("show");
 
 renderCart();
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
 function showCategories(){
-
 showShop();
-
 }
 
 function setCategory(category){
 
 showShop();
 
-document.getElementById("categoryFilter").value =
-category;
+document.getElementById("categoryFilter").value=category;
 
 renderShop();
 
 }
 
-/* =========================
+/* =========================================================
    SEARCH
-========================= */
+========================================================= */
 
 function runSearch(){
 
-const value =
-document.getElementById("headerSearch").value.trim();
+const value=document.getElementById("headerSearch").value.trim();
 
 if(!value){
-
 showShop();
 return;
-
 }
 
 showShop();
 
-document.getElementById("shopSearch").value =
-value;
+document.getElementById("shopSearch").value=value;
 
 shopSearchText=value;
 
@@ -2702,32 +2838,21 @@ function focusSearch(){
 
 document.getElementById("headerSearch").focus();
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
-document
-.getElementById("headerSearch")
-.addEventListener("keydown",function(e){
+document.getElementById("headerSearch").addEventListener("keydown",function(e){
 
-if(e.key==="Enter"){
-runSearch();
-}
+if(e.key==="Enter") runSearch();
 
 });
 
-document
-.getElementById("headerSearch")
-.addEventListener("input",function(){
+document.getElementById("headerSearch").addEventListener("input",function(){
 
-const value =
-this.value.toLowerCase().trim();
+const value=this.value.toLowerCase().trim();
 
-const box =
-document.getElementById("suggestions");
+const box=document.getElementById("suggestions");
 
 if(!value){
 
@@ -2737,11 +2862,8 @@ return;
 
 }
 
-const matches =
-products
-.filter(p =>
-p.name.toLowerCase().includes(value)
-)
+const matches=products
+.filter(p=>p.name.toLowerCase().includes(value))
 .slice(0,6);
 
 if(!matches.length){
@@ -2752,28 +2874,20 @@ return;
 
 }
 
-box.innerHTML =
-matches.map(p => `
+box.innerHTML=matches.map(p=>`
 
 <div
 class="suggestion"
 onclick="openProduct(${p.id})"
 >
 
-<img
-src="${p.image}"
-alt=""
->
+<img src="${p.image}" alt="">
 
 <div>
 
-<div class="suggestion-name">
-${p.name}
-</div>
+<div class="suggestion-name">${p.name}</div>
 
-<div class="suggestion-price">
-₹${p.price}
-</div>
+<div class="suggestion-price">₹${p.price}</div>
 
 </div>
 
@@ -2785,61 +2899,38 @@ box.classList.add("show");
 
 });
 
-/* =========================
+/* =========================================================
    WISHLIST
-========================= */
+========================================================= */
 
 function toggleWishlist(id,event){
 
-if(event){
-event.stopPropagation();
-}
+if(event) event.stopPropagation();
 
-let list =
-getWishlist();
+let list=getWishlist();
 
 if(list.includes(id)){
-
-list =
-list.filter(x=>x!==id);
-
+list=list.filter(x=>x!==id);
 }else{
-
 list.push(id);
-
 }
 
 saveWishlist(list);
 
 renderHome();
-
-if(
-document.getElementById("shopPage").style.display !== "none"
-){
 renderShop();
-}
-
-if(
-document.getElementById("wishlistPage").style.display !== "none"
-){
 renderWishlist();
-}
 
 }
 
 function renderWishlist(){
 
-const ids =
-getWishlist();
+const ids=getWishlist();
 
-const list =
-products.filter(p=>ids.includes(p.id));
+const list=products.filter(p=>ids.includes(p.id));
 
-const box =
-document.getElementById("wishlistProducts");
-
-const empty =
-document.getElementById("wishlistEmpty");
+const box=document.getElementById("wishlistProducts");
+const empty=document.getElementById("wishlistEmpty");
 
 if(!list.length){
 
@@ -2857,28 +2948,18 @@ box.innerHTML=list.map(cardHTML).join("");
 
 function updateCounts(){
 
-const wish =
-getWishlist();
-
-const cart =
-getCart();
-
-document.getElementById("wishCount").textContent =
-wish.length;
-
-document.getElementById("cartCount").textContent =
-cart.length;
+document.getElementById("wishCount").textContent=getWishlist().length;
+document.getElementById("cartCount").textContent=getCart().length;
 
 }
 
-/* =========================
+/* =========================================================
    CART
-========================= */
+========================================================= */
 
 function addToCart(id){
 
-let cart =
-getCart();
+let cart=getCart();
 
 if(!cart.includes(id)){
 cart.push(id);
@@ -2892,8 +2973,7 @@ showToast("Added to cart 🛒");
 
 function removeFromCart(id){
 
-let cart =
-getCart().filter(x=>x!==id);
+let cart=getCart().filter(x=>x!==id);
 
 saveCart(cart);
 
@@ -2903,18 +2983,15 @@ renderCart();
 
 function renderCart(){
 
-const ids =
-getCart();
+const ids=getCart();
 
-const list =
-products.filter(p=>ids.includes(p.id));
+const list=products.filter(p=>ids.includes(p.id));
 
-const box =
-document.getElementById("cartList");
+const box=document.getElementById("cartList");
 
 if(!list.length){
 
-box.innerHTML = `
+box.innerHTML=`
 
 <div class="empty" style="display:block;border:0">
 
@@ -2924,10 +3001,7 @@ box.innerHTML = `
 
 <p>Add products from the shop.</p>
 
-<button
-class="hero-btn"
-onclick="showShop()"
->
+<button class="hero-btn" onclick="showShop()">
 Shop Products
 </button>
 
@@ -2943,23 +3017,17 @@ return;
 
 }
 
-box.innerHTML =
-list.map(p => `
+box.innerHTML=list.map(p=>`
 
 <div class="cart-item">
 
-<img
-src="${p.image}"
-alt="${p.name}"
->
+<img src="${p.image}" alt="${p.name}">
 
 <div class="cart-item-info">
 
 <h3>${p.name}</h3>
 
-<div class="cart-price">
-₹${p.price}
-</div>
+<div class="cart-price">₹${p.price}</div>
 
 </div>
 
@@ -2974,51 +3042,34 @@ Remove
 
 `).join("");
 
-const total =
-list.reduce(
-(sum,p)=>sum+p.price,
-0
-);
+const total=list.reduce((sum,p)=>sum+p.price,0);
 
-document.getElementById("summaryItems").textContent =
-list.length;
-
-document.getElementById("summaryTotal").textContent =
-"₹"+total;
-
-document.getElementById("summaryGrand").textContent =
-"₹"+total;
+document.getElementById("summaryItems").textContent=list.length;
+document.getElementById("summaryTotal").textContent="₹"+total;
+document.getElementById("summaryGrand").textContent="₹"+total;
 
 }
 
 function orderCart(){
 
-const ids =
-getCart();
+const ids=getCart();
 
-const list =
-products.filter(p=>ids.includes(p.id));
+const list=products.filter(p=>ids.includes(p.id));
 
 if(!list.length){
 
 showToast("Cart is empty");
-
 return;
 
 }
 
-let message =
-"Hi Dealio, I want to order:%0A%0A";
+let message="Hi Dealio, I want to order:%0A%0A";
 
 list.forEach((p,i)=>{
-
-message +=
-`${i+1}. ${p.name} - ₹${p.price}%0A`;
-
+message+=`${i+1}. ${p.name} - ₹${p.price}%0A`;
 });
 
-message +=
-"%0APlease help me with the order.";
+message+="%0APlease help me with the order.";
 
 window.open(
 "https://wa.me/919037284266?text="+message,
@@ -3027,93 +3078,63 @@ window.open(
 
 }
 
-/* =========================
-   PRODUCT DETAILS
-========================= */
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
 
-let currentModalProduct = null;
+let currentModalProduct=null;
 
 function openProduct(id){
 
-const p =
-products.find(x=>x.id===id);
+const p=products.find(x=>x.id===id);
 
-if(!p){
-return;
-}
+if(!p) return;
 
 currentModalProduct=p;
 
-document.getElementById("modalImage").src =
-p.image;
-
-document.getElementById("modalImage").alt =
-p.name;
-
-document.getElementById("modalName").textContent =
-p.name;
-
-document.getElementById("modalRating").textContent =
-p.rating+" ★ Dealio Rating";
-
-document.getElementById("modalPrice").textContent =
-"₹"+p.price;
-
-document.getElementById("modalDeal").innerHTML =
+document.getElementById("modalImage").src=p.image;
+document.getElementById("modalImage").alt=p.name;
+document.getElementById("modalName").textContent=p.name;
+document.getElementById("modalRating").textContent=p.rating+" ★ Dealio Rating";
+document.getElementById("modalPrice").textContent="₹"+p.price;
+document.getElementById("modalDeal").innerHTML=
 `<span class="discount">${p.discount}% Deal</span>`;
+document.getElementById("modalBuy").href=p.url;
 
-document.getElementById("modalBuy").href =
-p.url;
-
-document
-.getElementById("productModal")
-.classList.add("show");
-
+document.getElementById("productModal").classList.add("show");
 document.body.classList.add("no-scroll");
 
 }
 
 function closeModal(){
 
-document
-.getElementById("productModal")
-.classList.remove("show");
-
+document.getElementById("productModal").classList.remove("show");
 document.body.classList.remove("no-scroll");
 
 }
 
 function addModalToCart(){
 
-if(!currentModalProduct){
-return;
-}
+if(!currentModalProduct) return;
 
 addToCart(currentModalProduct.id);
 
 }
 
-document
-.getElementById("productModal")
-.addEventListener("click",function(e){
+document.getElementById("productModal").addEventListener("click",function(e){
 
-if(e.target===this){
-closeModal();
-}
+if(e.target===this) closeModal();
 
 });
 
-/* =========================
-   FILTER PANEL
-========================= */
+/* =========================================================
+   FILTER
+========================================================= */
 
 function toggleFilters(){
 
-const panel =
-document.getElementById("filterPanel");
-
-const button =
-document.getElementById("filterToggle");
+const panel=document.getElementById("filterPanel");
+const button=document.getElementById("filterToggle");
 
 panel.classList.toggle("show");
 
@@ -3124,30 +3145,27 @@ panel.classList.contains("show")
 
 }
 
-/* =========================
+/* =========================================================
    DARK MODE
-========================= */
+========================================================= */
 
 function toggleTheme(){
 
 document.body.classList.toggle("dark");
 
-const dark =
-document.body.classList.contains("dark");
+const dark=document.body.classList.contains("dark");
 
 localStorage.setItem(
 "dealioDark",
 dark ? "true" : "false"
 );
 
-document.getElementById("themeIcon").textContent =
+document.getElementById("themeIcon").textContent=
 dark ? "☀️" : "🌙";
 
 }
 
-if(
-localStorage.getItem("dealioDark")==="true"
-){
+if(localStorage.getItem("dealioDark")==="true"){
 
 document.body.classList.add("dark");
 
@@ -3155,24 +3173,357 @@ document.getElementById("themeIcon").textContent="☀️";
 
 }
 
-/* =========================
+/* =========================================================
+   ACCOUNT UI
+========================================================= */
+
+function openAccount(){
+
+document.getElementById("accountModal").classList.add("show");
+
+document.body.classList.add("no-scroll");
+
+if(window.dealioAuth && window.dealioAuth.currentUser){
+
+showLoggedInAccount(window.dealioAuth.currentUser);
+
+}else{
+
+showLoginForm();
+
+}
+
+}
+
+function closeAccount(){
+
+document.getElementById("accountModal").classList.remove("show");
+
+document.body.classList.remove("no-scroll");
+
+}
+
+function showLoginForm(){
+
+document.getElementById("loginForm").classList.add("active");
+document.getElementById("signupForm").classList.remove("active");
+
+document.getElementById("loginTab").classList.add("active");
+document.getElementById("signupTab").classList.remove("active");
+
+clearAuthMessages();
+
+}
+
+function showSignupForm(){
+
+document.getElementById("signupForm").classList.add("active");
+document.getElementById("loginForm").classList.remove("active");
+
+document.getElementById("signupTab").classList.add("active");
+document.getElementById("loginTab").classList.remove("active");
+
+clearAuthMessages();
+
+}
+
+function clearAuthMessages(){
+
+document.getElementById("loginMessage").className="auth-message";
+document.getElementById("loginMessage").textContent="";
+
+document.getElementById("signupMessage").className="auth-message";
+document.getElementById("signupMessage").textContent="";
+
+}
+
+function showAuthMessage(id,message,type){
+
+const box=document.getElementById(id);
+
+box.textContent=message;
+
+box.className="auth-message "+type;
+
+}
+
+function showLoggedInAccount(user){
+
+document.getElementById("authArea").style.display="none";
+
+document.getElementById("accountProfile").classList.add("show");
+
+document.getElementById("profileEmail").textContent=
+user.email || "Dealio User";
+
+}
+
+function showLoggedOutAccount(){
+
+document.getElementById("authArea").style.display="block";
+
+document.getElementById("accountProfile").classList.remove("show");
+
+showLoginForm();
+
+}
+
+function updateAccountHeader(user){
+
+const label=document.getElementById("accountLabel");
+const icon=document.getElementById("accountIcon");
+
+if(user){
+
+const name=user.displayName || user.email?.split("@")[0] || "Account";
+
+label.textContent=name;
+icon.textContent="👤";
+
+}else{
+
+label.textContent="Login";
+icon.textContent="👤";
+
+}
+
+}
+
+/* =========================================================
+   SIGN UP
+========================================================= */
+
+document.getElementById("signupForm").addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("signupName").value.trim();
+const email=document.getElementById("signupEmail").value.trim();
+const password=document.getElementById("signupPassword").value;
+const confirm=document.getElementById("signupConfirm").value;
+
+if(password!==confirm){
+
+showAuthMessage(
+"signupMessage",
+"Passwords do not match.",
+"error"
+);
+
+return;
+
+}
+
+if(password.length<6){
+
+showAuthMessage(
+"signupMessage",
+"Password must be at least 6 characters.",
+"error"
+);
+
+return;
+
+}
+
+const button=this.querySelector("button[type=submit]");
+
+button.disabled=true;
+button.textContent="Creating account...";
+
+try{
+
+const result=await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+await updateProfile(result.user,{
+displayName:name
+});
+
+showAuthMessage(
+"signupMessage",
+"Account created successfully! 🎉",
+"success"
+);
+
+this.reset();
+
+setTimeout(()=>{
+
+showLoggedInAccount(auth.currentUser);
+updateAccountHeader(auth.currentUser);
+
+},700);
+
+}catch(error){
+
+let message="Unable to create account.";
+
+if(error.code==="auth/email-already-in-use"){
+message="This email is already registered. Please login.";
+}
+
+if(error.code==="auth/invalid-email"){
+message="Please enter a valid email address.";
+}
+
+if(error.code==="auth/weak-password"){
+message="Password is too weak. Use at least 6 characters.";
+}
+
+showAuthMessage(
+"signupMessage",
+message,
+"error"
+);
+
+}finally{
+
+button.disabled=false;
+button.textContent="Create Account";
+
+}
+
+});
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+document.getElementById("loginForm").addEventListener("submit",async function(e){
+
+e.preventDefault();
+
+const email=document.getElementById("loginEmail").value.trim();
+const password=document.getElementById("loginPassword").value;
+
+const button=this.querySelector("button[type=submit]");
+
+button.disabled=true;
+button.textContent="Logging in...";
+
+try{
+
+const result=await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+showAuthMessage(
+"loginMessage",
+"Login successful! 🎉",
+"success"
+);
+
+setTimeout(()=>{
+
+showLoggedInAccount(result.user);
+updateAccountHeader(result.user);
+
+},500);
+
+}catch(error){
+
+let message="Login failed.";
+
+if(
+error.code==="auth/invalid-credential" ||
+error.code==="auth/wrong-password" ||
+error.code==="auth/user-not-found"
+){
+message="Incorrect email or password.";
+}
+
+if(error.code==="auth/invalid-email"){
+message="Please enter a valid email.";
+}
+
+showAuthMessage(
+"loginMessage",
+message,
+"error"
+);
+
+}finally{
+
+button.disabled=false;
+button.textContent="Login";
+
+}
+
+});
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+async function logoutUser(){
+
+try{
+
+await signOut(auth);
+
+closeAccount();
+
+showToast("Logged out successfully 👋");
+
+}catch(error){
+
+showToast("Logout failed.");
+
+}
+
+}
+
+/* =========================================================
+   AUTH STATE
+========================================================= */
+
+onAuthStateChanged(auth,(user)=>{
+
+updateAccountHeader(user);
+
+if(user){
+
+showLoggedInAccount(user);
+
+}else{
+
+showLoggedOutAccount();
+
+}
+
+});
+
+/* =========================================================
+   ACCOUNT MODAL CLICK OUTSIDE
+========================================================= */
+
+document.getElementById("accountModal").addEventListener("click",function(e){
+
+if(e.target===this){
+closeAccount();
+}
+
+});
+
+/* =========================================================
    TOAST
-========================= */
+========================================================= */
 
 function showToast(message){
 
-const old =
-document.getElementById("dealioToast");
+const old=document.getElementById("dealioToast");
 
-if(old){
-old.remove();
-}
+if(old) old.remove();
 
-const toast =
-document.createElement("div");
+const toast=document.createElement("div");
 
 toast.id="dealioToast";
-
 toast.textContent=message;
 
 toast.style.cssText=`
@@ -3189,7 +3540,6 @@ font-weight:800;
 font-size:13px;
 z-index:5000;
 box-shadow:0 5px 20px #0003;
-
 `;
 
 document.body.appendChild(toast);
@@ -3200,9 +3550,9 @@ toast.remove();
 
 }
 
-/* =========================
+/* =========================================================
    INITIAL
-========================= */
+========================================================= */
 
 renderHome();
 renderShop();
