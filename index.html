@@ -1,38 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="WELLKART - Trending products and better deals.">
-<title>WELLKART | Trending Products</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Dealio - Trending products and better deals.">
+
+<title>DEALIO | Trending Products</title>
 
 <style>
 :root{
-  --blue:#075bd6;
-  --yellow:#ffd21f;
-  --ink:#102a43;
-  --muted:#66788a;
-  --bg:#f6f9fd
+  --blue:#18258f;
+  --blue2:#2436c7;
+  --orange:#ff8a00;
+  --orange2:#ffb000;
+  --white:#ffffff;
+  --ink:#101a3a;
+  --muted:#667085;
+  --bg:#f5f7ff;
+  --card:#ffffff;
+  --border:#e4e8f2;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   background:var(--bg);
   color:var(--ink);
+  transition:.25s;
 }
 
-a{text-decoration:none}
+a{
+  text-decoration:none;
+}
+
+/* ================= HEADER ================= */
 
 .top{
-  background:#fff;
-  border-bottom:1px solid #e6edf5;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
-  z-index:50;
-  backdrop-filter:blur(14px);
+  z-index:100;
 }
 
 .nav{
@@ -44,49 +61,92 @@ a{text-decoration:none}
   gap:18px;
 }
 
-.logo{
+/* Dealio Logo */
+
+.logo-wrap{
   display:flex;
   align-items:center;
-  text-decoration:none;
+  gap:9px;
+  min-width:155px;
 }
 
-.logo img{
-  width:145px;
-  height:auto;
-  max-height:48px;
-  object-fit:contain;
-  display:block;
+.logo-icon{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:var(--blue);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:23px;
+  font-weight:1000;
+  box-shadow:0 5px 15px rgba(24,37,143,.25);
 }
+
+.logo-text{
+  font-size:27px;
+  font-weight:1000;
+  letter-spacing:-1px;
+  color:var(--blue);
+}
+
+.logo-text span{
+  color:var(--orange);
+}
+
+/* Search */
 
 .search{
   flex:1;
   display:flex;
-  background:#f4f7fb;
-  border:1px solid #e2e9f2;
-  border-radius:13px;
-  overflow:hidden;
+  gap:8px;
 }
 
 .search input{
+  flex:1;
   width:100%;
-  border:0;
-  outline:0;
-  background:transparent;
+  border:1px solid #d9dfec;
+  outline:none;
+  background:#f7f8fc;
   padding:13px 15px;
+  border-radius:13px;
   font-size:15px;
+  color:var(--ink);
+}
+
+.search input:focus{
+  border-color:var(--blue);
 }
 
 .search button{
   border:0;
-  background:var(--yellow);
+  background:var(--orange);
+  color:#fff;
   padding:0 18px;
+  border-radius:13px;
+  font-size:18px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.theme{
+  border:0;
+  border-radius:13px;
+  background:var(--blue);
+  color:#fff;
+  padding:0 14px;
   font-size:18px;
   cursor:pointer;
 }
 
+/* ================= HERO ================= */
+
 .hero{
-  background:linear-gradient(135deg,#e8f2ff,#fff 58%,#fff6c6);
-  padding:45px 18px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,138,0,.16),transparent 30%),
+    linear-gradient(135deg,#e9edff,#fff 60%,#fff5e5);
+  padding:55px 18px;
 }
 
 .hero-inner{
@@ -100,20 +160,29 @@ a{text-decoration:none}
 
 .badge{
   display:inline-block;
-  background:var(--yellow);
-  padding:7px 12px;
+  background:var(--orange);
+  color:#fff;
+  padding:8px 13px;
   border-radius:999px;
   font-size:12px;
   font-weight:900;
+  box-shadow:0 5px 15px rgba(255,138,0,.2);
 }
 
 h1{
   font-size:clamp(38px,6vw,64px);
   line-height:1.02;
-  margin:15px 0;
+  margin:16px 0;
+  letter-spacing:-2px;
 }
 
-.blue{color:var(--blue)}
+.blue{
+  color:var(--blue);
+}
+
+.orange{
+  color:var(--orange);
+}
 
 .hero p{
   font-size:18px;
@@ -126,10 +195,20 @@ h1{
   display:inline-block;
   background:var(--blue);
   color:#fff;
-  padding:14px 22px;
+  padding:14px 23px;
   border-radius:12px;
   font-weight:900;
+  margin-top:8px;
+  box-shadow:0 8px 20px rgba(24,37,143,.2);
+  transition:.2s;
 }
+
+.hero-btn:hover{
+  background:var(--orange);
+  transform:translateY(-2px);
+}
+
+/* Dealio hero logo */
 
 .hero-logo{
   width:min(360px,90%);
@@ -137,14 +216,60 @@ h1{
   margin:auto;
 }
 
+.dealio-logo-big{
+  width:300px;
+  height:300px;
+  margin:auto;
+  border-radius:70px;
+  background:var(--blue);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:
+    0 25px 60px rgba(24,37,143,.25),
+    inset 0 -15px 30px rgba(0,0,0,.08);
+}
+
+.dealio-logo-big-inner{
+  text-align:center;
+  color:#fff;
+}
+
+.dealio-logo-big .symbol{
+  width:100px;
+  height:100px;
+  margin:auto;
+  background:var(--orange);
+  border-radius:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:58px;
+  font-weight:1000;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.dealio-logo-big .name{
+  font-size:43px;
+  font-weight:1000;
+  margin-top:18px;
+  letter-spacing:-2px;
+}
+
+.dealio-logo-big .name span{
+  color:var(--orange);
+}
+
+/* ================= SECTION ================= */
+
 .section{
   max-width:1120px;
   margin:auto;
-  padding:38px 18px;
+  padding:40px 18px;
 }
 
 .section h2{
-  font-size:29px;
+  font-size:30px;
   margin:0 0 5px;
 }
 
@@ -153,34 +278,38 @@ h1{
   margin:0 0 20px;
 }
 
-.controls{
+/* ================= FILTERS ================= */
+
+.filters{
   display:flex;
   gap:8px;
   overflow:auto;
-  padding:4px 0 12px;
-  scrollbar-width:none;
+  padding:4px 0 18px;
 }
 
-.controls::-webkit-scrollbar{
-  display:none;
-}
-
-.filter{
-  border:1px solid #e5ecf4;
+.filters button{
+  border:1px solid #d7deed;
   background:#fff;
-  color:#102a43;
-  padding:9px 14px;
+  color:var(--ink);
   border-radius:999px;
-  font-weight:800;
+  padding:9px 15px;
+  font-weight:700;
   white-space:nowrap;
   cursor:pointer;
+  transition:.2s;
 }
 
-.filter.active{
-  background:#075bd6;
-  color:#fff;
-  border-color:#075bd6;
+.filters button:hover{
+  border-color:var(--orange);
 }
+
+.filters button.active{
+  background:var(--blue);
+  color:#fff;
+  border-color:var(--blue);
+}
+
+/* ================= PRODUCTS ================= */
 
 .products{
   display:grid;
@@ -189,27 +318,23 @@ h1{
 }
 
 .card{
-  position:relative;
-  background:#fff;
-  border:1px solid #e5ecf4;
+  background:var(--card);
+  border:1px solid var(--border);
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 8px 25px #102a4312;
-  transition:transform .22s,box-shadow .22s;
-  animation:rise .45s ease both;
+  box-shadow:0 8px 25px rgba(16,26,58,.07);
+  position:relative;
+  transition:.2s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 16px 34px rgba(7,91,214,.12);
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(16,26,58,.12);
 }
 
 .pic{
-  height:180px;
-  background:#eef4fb;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  height:220px;
+  background:#fff;
   overflow:hidden;
 }
 
@@ -218,11 +343,6 @@ h1{
   height:100%;
   object-fit:cover;
   display:block;
-  transition:transform .35s;
-}
-
-.card:hover .pic img{
-  transform:scale(1.05);
 }
 
 .info{
@@ -237,9 +357,10 @@ h1{
 }
 
 .price{
-  font-size:22px;
+  font-size:21px;
   font-weight:900;
   margin:8px 0 13px;
+  color:var(--ink);
 }
 
 .buy{
@@ -251,12 +372,17 @@ h1{
   border-radius:10px;
   font-weight:900;
   font-size:14px;
+  transition:.2s;
+}
+
+.buy:hover{
+  background:var(--orange);
 }
 
 .tag{
   display:inline-block;
-  background:#eaf2ff;
-  color:var(--blue);
+  background:#fff0dd;
+  color:#e56f00;
   padding:4px 8px;
   border-radius:7px;
   font-size:10px;
@@ -264,195 +390,171 @@ h1{
   margin-bottom:7px;
 }
 
+/* Wishlist */
+
 .wish{
   position:absolute;
   right:10px;
   top:10px;
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:50%;
-  background:rgba(255,255,255,.94);
-  box-shadow:0 5px 14px rgba(0,0,0,.12);
-  font-size:19px;
-  cursor:pointer;
   z-index:2;
+  border:0;
+  background:#fff;
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  font-size:21px;
+  cursor:pointer;
+  box-shadow:0 3px 10px rgba(0,0,0,.15);
+  color:#555;
 }
 
 .wish.active{
-  background:#ffe8ec;
-  color:#e31b45;
+  color:var(--orange);
 }
 
-.deal{
-  position:absolute;
-  left:10px;
-  top:10px;
-  background:#ffd21f;
-  color:#102a43;
-  padding:5px 8px;
-  border-radius:7px;
-  font-size:10px;
-  font-weight:900;
-  z-index:2;
-}
+/* Empty */
 
-.no-results{
-  text-align:center;
-  padding:45px 15px;
+.empty{
   display:none;
+  text-align:center;
+  padding:40px;
+  font-weight:700;
 }
 
-.no-results b{
-  font-size:20px;
-  display:block;
-  margin-bottom:7px;
-}
+/* ================= FEATURES ================= */
 
 .features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:14px;
-  margin-top:30px;
+  margin-top:32px;
 }
 
 .feature{
-  background:#fff;
-  border:1px solid #e5ecf4;
+  background:var(--card);
+  border:1px solid var(--border);
   border-radius:16px;
-  padding:18px;
+  padding:20px;
   text-align:center;
 }
 
 .feature span{
-  font-size:26px;
+  font-size:28px;
   display:block;
-  margin-bottom:6px;
+  margin-bottom:7px;
 }
 
 .feature b{
   display:block;
+  margin-bottom:4px;
 }
+
+.feature small{
+  color:var(--muted);
+}
+
+/* ================= FOOTER ================= */
 
 .footer{
   margin-top:20px;
-  background:var(--ink);
+  background:var(--blue);
   color:#fff;
   text-align:center;
-  padding:30px 18px;
+  padding:35px 18px;
 }
 
-.footer b{
-  color:var(--yellow);
+.footer .footer-logo{
+  font-size:30px;
+  font-weight:1000;
+  margin-bottom:8px;
 }
 
-.bottom-nav{
-  display:none;
+.footer .footer-logo span{
+  color:var(--orange);
 }
 
-/* CLEAN BOTTOM NAV ICONS */
-
-.nav-icon{
-  width:25px;
-  height:25px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 3px;
+.footer small{
+  opacity:.8;
 }
 
-.nav-icon svg{
-  width:24px;
-  height:24px;
-  fill:none;
-  stroke:#fff;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.nav-icon svg .yellow{
-  stroke:#ffd21f;
-}
-
-.theme-btn{
-  border:0;
-  background:#102a43;
-  color:#fff;
-  border-radius:10px;
-  padding:10px 12px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-body{
-  transition:background .25s,color .25s;
-}
+/* ================= DARK MODE ================= */
 
 .dark{
-  --bg:#0b1220;
-  --card:#121c2d;
-  --ink:#eef5ff;
-  --muted:#9fb0c4;
+  --bg:#091022;
+  --ink:#f3f6ff;
+  --muted:#aab6cf;
+  --card:#111b33;
+  --border:#263354;
 }
 
 .dark .top{
-  background:rgba(11,18,32,.92);
-}
-
-.dark .feature,
-.dark .filter{
-  background:var(--card);
-  color:var(--ink);
-}
-
-.dark .search{
-  background:#162236;
+  background:#0c1428;
+  border-color:#263354;
 }
 
 .dark .search input{
+  background:#111b33;
+  border-color:#263354;
   color:#fff;
 }
 
-.dark .footer{
-  background:#060b13;
+.dark .filters button{
+  background:#111b33;
+  color:#fff;
+  border-color:#263354;
 }
 
-@keyframes rise{
-  from{
-    opacity:0;
-    transform:translateY(12px)
-  }
-  to{
-    opacity:1;
-    transform:none
-  }
+.dark .filters button.active{
+  background:var(--blue2);
+  border-color:var(--blue2);
 }
+
+.dark .pic{
+  background:#111b33;
+}
+
+.dark .wish{
+  background:#18233d;
+  color:#fff;
+}
+
+.dark .hero{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,138,0,.15),transparent 30%),
+    linear-gradient(135deg,#0c1630,#101a32 60%,#24170b);
+}
+
+.dark .logo-text{
+  color:#fff;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
+
   .products{
     grid-template-columns:repeat(3,1fr);
   }
+
 }
 
-@media(max-width:650px){
-
-  body{
-    padding-bottom:70px;
-  }
+@media(max-width:700px){
 
   .nav{
     flex-wrap:wrap;
   }
 
-  .logo img{
-    width:120px;
-    max-height:40px;
+  .logo-wrap{
+    min-width:auto;
   }
 
   .search{
     order:3;
     flex-basis:100%;
+  }
+
+  .hero{
+    padding:42px 18px;
   }
 
   .hero-inner{
@@ -475,7 +577,7 @@ body{
   }
 
   .pic{
-    height:150px;
+    height:190px;
   }
 
   .info{
@@ -491,1196 +593,1791 @@ body{
     grid-template-columns:1fr;
   }
 
-  .bottom-nav{
-    display:flex;
-    position:fixed;
-    left:10px;
-    right:10px;
-    bottom:10px;
-    z-index:100;
-    background:rgba(16,42,67,.96);
-    border-radius:18px;
-    padding:8px;
-    justify-content:space-around;
-    box-shadow:0 12px 35px rgba(0,0,0,.25);
+}
+
+@media(max-width:420px){
+
+  .products{
+    grid-template-columns:1fr 1fr;
   }
 
-  .bottom-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-size:11px;
-    font-weight:800;
-    text-align:center;
-    padding:6px 10px;
+  .pic{
+    height:165px;
   }
 
-  .bottom-nav span{
-    display:block;
-    margin-bottom:2px;
+  .logo-text{
+    font-size:23px;
   }
+
+  .logo-icon{
+    width:38px;
+    height:38px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header class="top">
-  <nav class="nav">
 
-    <a href="#" class="logo">
-      <img src="wellkart-logo.png" alt="WELLKART Logo">
-    </a>
+<nav class="nav">
 
-    <div class="search">
-      <input id="q" type="search" placeholder="Search products..." autocomplete="off">
-      <button onclick="searchProduct()">🔍</button>
-    </div>
+<div class="logo-wrap">
 
-  </nav>
-</header>
+<div class="logo-icon">D</div>
 
-<section class="hero">
+<div class="logo-text">
+Deal<span>io</span>
+</div>
 
-  <div class="hero-inner">
+</div>
 
-    <div>
+<div class="search">
 
-      <span class="badge">
-        WELCOME TO WELLKART
-      </span>
+<input
+id="topSearch"
+type="search"
+placeholder="Search products..."
+oninput="syncSearch('topSearch')"
+>
 
-      <h1>
-        Smart Shopping.<br>
-        <span class="blue">Better Deals.</span>
-      </h1>
+<button onclick="searchProduct()">🔍</button>
 
-      <p>
-        Discover trending products and great-value finds from Meesho —
-        all in one place.
-      </p>
-
-      <a class="hero-btn" href="#products">
-        Shop Now →
-      </a>
-
-    </div>
-
-    <img
-      class="hero-logo"
-      src="wellkart-logo.png"
-      alt="WELLKART"
-    >
-
-  </div>
-
-</section>
-
-<main class="section" id="products">
-
-  <h2>🔥 Trending Products</h2>
-
-  <p class="sub">
-    Hand-picked Meesho finds • Updated for 2026
-  </p>
-
-  <div class="controls">
-
-    <button class="filter active" data-filter="all">
-      All
-    </button>
-
-    <button class="filter" data-filter="fashion">
-      👕 Fashion
-    </button>
-
-    <button class="filter" data-filter="beauty">
-      ✨ Beauty
-    </button>
-
-    <button class="filter" data-filter="electronics">
-      📱 Electronics
-    </button>
-
-    <button class="filter" data-filter="home">
-      🏠 Home
-    </button>
-
-    <button class="filter" data-filter="accessories">
-      🎒 Accessories
-    </button>
-
-  </div>
-
-  <div class="products">
-
-    <!-- 1 -->
-    <article class="card"
-      data-name="whisker baggy jeans for men"
-      data-cat="fashion"
-      data-index="0">
-
-      <button class="wish" data-wish="0">♡</button>
-      <span class="deal">🔥 HOT</span>
-
-      <div class="pic">
-        <img src="01-whisker-baggy-jeans-men.jpg"
-             alt="Whisker Baggy Jeans for Men"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Whisker Baggy Jeans for Men</h3>
-        <div class="price">₹680</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/af_invite/119465688:instagram_stories:10227282?p_id=1036219135&ext_id=h4xrsv&utm_source=instagram_stories"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 2 -->
-    <article class="card"
-      data-name="trending hand bag"
-      data-cat="fashion"
-      data-index="1">
-
-      <button class="wish" data-wish="1">♡</button>
-      <span class="deal">🔥 HOT</span>
-
-      <div class="pic">
-        <img src="02-trending-hand-bag.jpg"
-             alt="Trending Hand Bag"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Trending Hand Bag</h3>
-        <div class="price">₹183</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-hand-bag/p/b12akh"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 3 -->
-    <article class="card"
-      data-name="trending jewellery set"
-      data-cat="beauty"
-      data-index="2">
-
-      <button class="wish" data-wish="2">♡</button>
-      <span class="deal">🔥 HOT</span>
-
-      <div class="pic">
-        <img src="03-trending-jewellery-set.jpg"
-             alt="Trending Jewellery Set"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Trending Jewellery Set</h3>
-        <div class="price">₹262</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-jewellery-set/p/98sbgp"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 4 -->
-    <article class="card"
-      data-name="kundan jewellery set"
-      data-cat="beauty"
-      data-index="3">
-
-      <button class="wish" data-wish="3">♡</button>
-      <span class="deal">🔥 HOT</span>
-
-      <div class="pic">
-        <img src="04-kundan-jewellery-set.jpg"
-             alt="Kundan Jewellery Set"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Kundan Jewellery Set</h3>
-        <div class="price">₹242</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-jewellery-set/p/f79ybg"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 5 -->
-    <article class="card"
-      data-name="oxidised jewellery set"
-      data-cat="beauty"
-      data-index="4">
-
-      <button class="wish" data-wish="4">♡</button>
-      <span class="deal">🔥 HOT</span>
-
-      <div class="pic">
-        <img src="05-oxidised-jewellery-set.jpg"
-             alt="Oxidised Jewellery Set"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Oxidised Jewellery Set</h3>
-        <div class="price">₹140</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-jewellery-set/p/a6uu54"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 6 -->
-    <article class="card"
-      data-name="blue jewellery set"
-      data-cat="beauty"
-      data-index="5">
-
-      <button class="wish" data-wish="5">♡</button>
-      <span class="deal">🔥 HOT</span>
-
-      <div class="pic">
-        <img src="06-blue-jewellery-set.jpg"
-             alt="Blue Jewellery Set"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Blue Jewellery Set</h3>
-        <div class="price">₹144</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-jewelry-set/p/8fbqd2"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 7 -->
-    <article class="card"
-      data-name="trending wall clock"
-      data-cat="home"
-      data-index="6">
-
-      <button class="wish" data-wish="6">♡</button>
-      <span class="deal">🔥 HOT</span>
-
-      <div class="pic">
-        <img src="07-trending-wall-clock.jpg"
-             alt="Trending Wall Clock"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Trending Wall Clock</h3>
-        <div class="price">₹193</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-wall-clock/p/fthk74"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 8 -->
-    <article class="card"
-      data-name="trending wall clock multi"
-      data-cat="home"
-      data-index="7">
-
-      <button class="wish" data-wish="7">♡</button>
-
-      <div class="pic">
-        <img src="08-trending-wall-clock-multi.jpg"
-             alt="Trending Wall Clock Multi"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Trending Wall Clock – Multi</h3>
-        <div class="price">₹199</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-wall-clock/p/g4uarl"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 9 -->
-    <article class="card"
-      data-name="trending women top"
-      data-cat="fashion"
-      data-index="8">
-
-      <button class="wish" data-wish="8">♡</button>
-
-      <div class="pic">
-        <img src="09-trending-women-top.jpg"
-             alt="Trending Women Top"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Trending Women Top</h3>
-        <div class="price">₹220</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/trending-tops/p/ewg1ie"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 10 -->
-    <article class="card"
-      data-name="top trending cotton tee"
-      data-cat="fashion"
-      data-index="9">
-
-      <button class="wish" data-wish="9">♡</button>
-
-      <div class="pic">
-        <img src="10-top-trending-cotton-tee.jpg"
-             alt="Top Trending Cotton Tee"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Top Trending Cotton Tee</h3>
-        <div class="price">₹179</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/top-trending-product/p/c1mc50"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 11 -->
-    <article class="card"
-      data-name="women fashion tops"
-      data-cat="fashion"
-      data-index="10">
-
-      <button class="wish" data-wish="10">♡</button>
-
-      <div class="pic">
-        <img src="11-women-fashion-tops.jpg"
-             alt="Women Fashion Tops"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Women Fashion Tops</h3>
-        <div class="price">From ₹154</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/tops-ladies/pl/3ja"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 12 -->
-    <article class="card"
-      data-name="hottest women tops"
-      data-cat="fashion"
-      data-index="11">
-
-      <button class="wish" data-wish="11">♡</button>
-
-      <div class="pic">
-        <img src="12-hottest-women-tops.jpg"
-             alt="Hottest Women Tops"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Hottest Women Tops</h3>
-        <div class="price">From ₹185</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/tops/pl/1koe"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 13 -->
-    <article class="card"
-      data-name="ladies short tops"
-      data-cat="fashion"
-      data-index="12">
-
-      <button class="wish" data-wish="12">♡</button>
-
-      <div class="pic">
-        <img src="13-ladies-short-tops.jpg"
-             alt="Ladies Short Tops"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Ladies Short Tops</h3>
-        <div class="price">From ₹103</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/ladies-short-top/pl/7y9"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 14 -->
-    <article class="card"
-      data-name="men denim jeans"
-      data-cat="fashion"
-      data-index="13">
-
-      <button class="wish" data-wish="13">♡</button>
-
-      <div class="pic">
-        <img src="14-men-denim-jeans.jpg"
-             alt="Men Denim Jeans"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Men Denim Jeans</h3>
-        <div class="price">From ₹399</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/men-denim-jeans/pl/89r"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 15 -->
-    <article class="card"
-      data-name="black jutti for women"
-      data-cat="fashion"
-      data-index="14">
-
-      <button class="wish" data-wish="14">♡</button>
-
-      <div class="pic">
-        <img src="15-black-jutti-women.jpg"
-             alt="Black Jutti for Women"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Black Jutti for Women</h3>
-        <div class="price">₹434</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/newtrendylatest-design-black-jutie-trending-expansive-jutie-and-every-day-wear-for-womengirl/p/9aidbg"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 16 -->
-    <article class="card"
-      data-name="redmi note 15 5g phone case"
-      data-cat="electronics"
-      data-index="15">
-
-      <button class="wish" data-wish="15">♡</button>
-
-      <div class="pic">
-        <img src="16-redmi-note-15-5g-phone-case.jpg"
-             alt="Redmi Note 15 5G Phone Case"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Redmi Note 15 5G Phone Case</h3>
-        <div class="price">₹126</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/new-trending-back-case-cover-phone-cover-mobile-cover-back-cover-for-redminote-15-5g-transparent-mobile-case-for-r-edmi-note-15-5g-for-girls-boys-phone-cover-for-r-edmi-note-15-5g-transparent-soft-cases-covers-with-camera-protection-not-oem/p/c2f7at"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 17 -->
-    <article class="card"
-      data-name="women jewellery collection"
-      data-cat="beauty"
-      data-index="16">
-
-      <button class="wish" data-wish="16">♡</button>
-
-      <div class="pic">
-        <img src="17-women-jewellery-collection.jpg"
-             alt="Women Jewellery Collection"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Women Jewellery Collection</h3>
-        <div class="price">From ₹141</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/jewellery/pl/9tx"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 18 -->
-    <article class="card"
-      data-name="mini portable blender"
-      data-cat="electronics"
-      data-index="17">
-
-      <button class="wish" data-wish="17">♡</button>
-
-      <div class="pic">
-        <img src="18-mini-portable-blender.jpg"
-             alt="Mini Portable Blender"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Mini Portable Blender</h3>
-        <div class="price">From ₹399</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=mini%20portable%20blender"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 19 -->
-    <article class="card"
-      data-name="wireless tws earbuds"
-      data-cat="electronics"
-      data-index="18">
-
-      <button class="wish" data-wish="18">♡</button>
-
-      <div class="pic">
-        <img src="19-wireless-tws-earbuds.jpg"
-             alt="Wireless TWS Earbuds"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Wireless TWS Earbuds</h3>
-        <div class="price">From ₹308</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=wireless%20tws%20earbuds"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 20 -->
-    <article class="card"
-      data-name="mobile phone stand"
-      data-cat="electronics"
-      data-index="19">
-
-      <button class="wish" data-wish="19">♡</button>
-
-      <div class="pic">
-        <img src="20-mobile-phone-stand.jpg"
-             alt="Mobile Phone Stand"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Mobile Phone Stand</h3>
-        <div class="price">From ₹149</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=mobile%20phone%20stand"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 21 -->
-    <article class="card"
-      data-name="kitchen organizer"
-      data-cat="home"
-      data-index="20">
-
-      <button class="wish" data-wish="20">♡</button>
-
-      <div class="pic">
-        <img src="21-kitchen-organizer.jpg"
-             alt="Kitchen Organizer"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Kitchen Organizer</h3>
-        <div class="price">From ₹199</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=kitchen%20organizer"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 22 -->
-    <article class="card"
-      data-name="women sling bag"
-      data-cat="fashion"
-      data-index="21">
-
-      <button class="wish" data-wish="21">♡</button>
-
-      <div class="pic">
-        <img src="22-women-sling-bag.jpg"
-             alt="Women Sling Bag"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Women Sling Bag</h3>
-        <div class="price">From ₹199</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=women%20sling%20bag"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 23 -->
-    <article class="card"
-      data-name="hair brush"
-      data-cat="beauty"
-      data-index="22">
-
-      <button class="wish" data-wish="22">♡</button>
-
-      <div class="pic">
-        <img src="23-hair-brush.jpg"
-             alt="Hair Brush"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Hair Brush</h3>
-        <div class="price">From ₹111</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=hair%20brush"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 24 -->
-    <article class="card"
-      data-name="portable mini fan"
-      data-cat="electronics"
-      data-index="23">
-
-      <button class="wish" data-wish="23">♡</button>
-
-      <div class="pic">
-        <img src="24-portable-mini-fan.jpg"
-             alt="Portable Mini Fan"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Portable Mini Fan</h3>
-        <div class="price">From ₹169</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=portable%20mini%20fan"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 25 -->
-    <article class="card"
-      data-name="led makeup mirror"
-      data-cat="beauty"
-      data-index="24">
-
-      <button class="wish" data-wish="24">♡</button>
-
-      <div class="pic">
-        <img src="25-led-makeup-mirror.jpg"
-             alt="LED Makeup Mirror"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>LED Makeup Mirror</h3>
-        <div class="price">From ₹199</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=led%20makeup%20mirror"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 26 -->
-    <article class="card"
-      data-name="men wallet"
-      data-cat="fashion"
-      data-index="25">
-
-      <button class="wish" data-wish="25">♡</button>
-
-      <div class="pic">
-        <img src="26-men-wallet.jpg"
-             alt="Men Wallet"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Men Wallet</h3>
-        <div class="price">From ₹149</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=men%20wallet"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 27 -->
-    <article class="card"
-      data-name="trending sunglasses"
-      data-cat="accessories"
-      data-index="26">
-
-      <button class="wish" data-wish="26">♡</button>
-
-      <div class="pic">
-        <img src="27-trending-sunglasses.jpg"
-             alt="Trending Sunglasses"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Trending Sunglasses</h3>
-        <div class="price">From ₹149</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=trending%20sunglasses"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 28 -->
-    <article class="card"
-      data-name="home storage organizer"
-      data-cat="home"
-      data-index="27">
-
-      <button class="wish" data-wish="27">♡</button>
-
-      <div class="pic">
-        <img src="28-home-storage-organizer.jpg"
-             alt="Home Storage Organizer"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Home Storage Organizer</h3>
-        <div class="price">From ₹199</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=home%20storage%20organizer"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-    <!-- 29 -->
-    <article class="card"
-      data-name="artificial plant decor"
-      data-cat="home"
-      data-index="28">
-
-      <button class="wish" data-wish="28">♡</button>
-
-      <div class="pic">
-        <img src="29-artificial-plant-decor.jpg"
-             alt="Artificial Plant Decor"
-             loading="lazy">
-      </div>
-
-      <div class="info">
-        <span class="tag">TRENDING</span>
-        <h3>Artificial Plant Decor</h3>
-        <div class="price">From ₹149</div>
-
-        <a class="buy"
-          href="https://www.meesho.com/search?q=artificial%20plants%20home%20decor"
-          target="_blank"
-          rel="noopener noreferrer">
-          Buy on Meesho →
-        </a>
-      </div>
-    </article>
-
-  </div>
-
-  <div class="no-results" id="noResults">
-    <b>😕 No products found</b>
-    <span>Try another search or category.</span>
-  </div>
-
-  <div class="features">
-
-    <div class="feature">
-      <span>💎</span>
-      <b>Quality Picks</b>
-      <small>Curated products</small>
-    </div>
-
-    <div class="feature">
-      <span>💰</span>
-      <b>Better Deals</b>
-      <small>Great-value finds</small>
-    </div>
-
-    <div class="feature">
-      <span>⚡</span>
-      <b>Easy Shopping</b>
-      <small>Quick access to Meesho</small>
-    </div>
-
-  </div>
-
-</main>
-
-<footer class="footer">
-  <b>WELLKART</b>
-  <br>
-  Smart Shopping. Better Deals.
-  <br>
-  <small>© 2026 WELLKART</small>
-</footer>
-
-<!-- CLEAN E-COMMERCE BOTTOM NAV -->
-
-<nav class="bottom-nav">
-
-  <a href="#products">
-    <span class="nav-icon">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 10.8L12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1z"/>
-        <path class="yellow" d="M9.5 21v-6h5v6"/>
-      </svg>
-    </span>
-    Home
-  </a>
-
-  <a href="#products">
-    <span class="nav-icon">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 5h2l1.6 10.2a2 2 0 0 0 2 1.7h7.8a2 2 0 0 0 1.9-1.5L21 8H7"/>
-        <circle cx="10" cy="20" r="1.5"/>
-        <circle cx="18" cy="20" r="1.5"/>
-        <path class="yellow" d="M14 4h5"/>
-        <path class="yellow" d="M16.5 1.5v5"/>
-      </svg>
-    </span>
-    Shop
-  </a>
-
-  <a href="#products">
-    <span class="nav-icon">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20.8 8.8c0 5.2-8.8 10.2-8.8 10.2S3.2 14 3.2 8.8A5 5 0 0 1 12 6.1a5 5 0 0 1 8.8 2.7z"/>
-        <path class="yellow" d="M17.5 11v5M15 13.5h5"/>
-      </svg>
-    </span>
-    Wishlist
-  </a>
-
-  <a href="#products" onclick="toggleDark()">
-    <span class="nav-icon">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5z"/>
-        <path class="yellow" d="M18.5 4v3M17 5.5h3"/>
-      </svg>
-    </span>
-    Theme
-  </a>
+</div>
 
 </nav>
 
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div>
+
+<span class="badge">
+WELCOME TO DEALIO
+</span>
+
+<h1>
+Smart Shopping.<br>
+<span class="blue">Better </span>
+<span class="orange">Deals.</span>
+</h1>
+
+<p>
+Discover trending products and great-value finds from Meesho — all in one place.
+</p>
+
+<a class="hero-btn" href="#products">
+Shop Now →
+</a>
+
+</div>
+
+
+<div class="dealio-logo-big">
+
+<div class="dealio-logo-big-inner">
+
+<div class="symbol">
+D
+</div>
+
+<div class="name">
+Deal<span>io</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<main class="section" id="products">
+
+<h2>
+🔥 Trending Products
+</h2>
+
+<p class="sub">
+Hand-picked Meesho finds • Updated for 2026
+</p>
+
+
+<div class="search">
+
+<input
+id="productSearch"
+type="search"
+placeholder="Search products..."
+oninput="syncSearch('productSearch')"
+>
+
+<button
+class="theme"
+onclick="toggleTheme()"
+title="Toggle dark mode"
+>
+🌙
+</button>
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button
+class="active"
+onclick="setFilter('all',this)"
+>
+All
+</button>
+
+<button
+onclick="setFilter('fashion',this)"
+>
+Fashion
+</button>
+
+<button
+onclick="setFilter('beauty',this)"
+>
+Beauty
+</button>
+
+<button
+onclick="setFilter('electronics',this)"
+>
+Electronics
+</button>
+
+<button
+onclick="setFilter('home',this)"
+>
+Home
+</button>
+
+<button
+onclick="setFilter('accessories',this)"
+>
+Accessories
+</button>
+
+</div>
+
+
+<div id="empty" class="empty">
+No products found
+</div>
+
+
+<div class="products">
+
+
+<!-- 01 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="whisker baggy jeans for men"
+>
+
+<div class="pic">
+<img
+src="01-whisker-baggy-jeans-men.jpg"
+alt="Whisker Baggy Jeans for Men"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Whisker Baggy Jeans for Men
+</h3>
+
+<div class="price">
+₹680
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/af_invite/119465688:instagram_stories:10227282?p_id=1036219135&ext_id=h4xrsv&utm_source=instagram_stories"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 02 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="trending hand bag"
+>
+
+<div class="pic">
+<img
+src="02-trending-hand-bag.jpg"
+alt="Trending Hand Bag"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Trending Hand Bag
+</h3>
+
+<div class="price">
+₹183
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-hand-bag/p/b12akh"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 03 -->
+
+<article
+class="card"
+data-category="beauty"
+data-name="trending jewellery set"
+>
+
+<div class="pic">
+<img
+src="03-trending-jewellery-set.jpg"
+alt="Trending Jewellery Set"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Trending Jewellery Set
+</h3>
+
+<div class="price">
+₹262
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-jewellery-set/p/98sbgp"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 04 -->
+
+<article
+class="card"
+data-category="beauty"
+data-name="kundan jewellery set"
+>
+
+<div class="pic">
+<img
+src="04-kundan-jewellery-set.jpg"
+alt="Kundan Jewellery Set"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Kundan Jewellery Set
+</h3>
+
+<div class="price">
+₹242
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-jewellery-set/p/f79ybg"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 05 -->
+
+<article
+class="card"
+data-category="beauty"
+data-name="oxidised jewellery set"
+>
+
+<div class="pic">
+<img
+src="05-oxidised-jewellery-set.jpg"
+alt="Oxidised Jewellery Set"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Oxidised Jewellery Set
+</h3>
+
+<div class="price">
+₹140
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-jewellery-set/p/a6uu54"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 06 -->
+
+<article
+class="card"
+data-category="beauty"
+data-name="blue jewellery set"
+>
+
+<div class="pic">
+<img
+src="06-blue-jewellery-set.jpg"
+alt="Blue Jewellery Set"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Blue Jewellery Set
+</h3>
+
+<div class="price">
+₹144
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-jewelry-set/p/8fbqd2"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 07 -->
+
+<article
+class="card"
+data-category="home"
+data-name="trending wall clock"
+>
+
+<div class="pic">
+<img
+src="07-trending-wall-clock.jpg"
+alt="Trending Wall Clock"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Trending Wall Clock
+</h3>
+
+<div class="price">
+₹193
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-wall-clock/p/fthk74"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 08 -->
+
+<article
+class="card"
+data-category="home"
+data-name="trending wall clock multi"
+>
+
+<div class="pic">
+<img
+src="08-trending-wall-clock-multi.jpg"
+alt="Trending Wall Clock Multi"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Trending Wall Clock – Multi
+</h3>
+
+<div class="price">
+₹199
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-wall-clock/p/g4uarl"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 09 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="trending women top"
+>
+
+<div class="pic">
+<img
+src="09-trending-women-top.jpg"
+alt="Trending Women Top"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Trending Women Top
+</h3>
+
+<div class="price">
+₹220
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/trending-tops/p/ewg1ie"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 10 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="top trending cotton tee"
+>
+
+<div class="pic">
+<img
+src="10-top-trending-cotton-tee.jpg"
+alt="Top Trending Cotton Tee"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Top Trending Cotton Tee
+</h3>
+
+<div class="price">
+₹179
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/top-trending-product/p/c1mc50"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 11 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="women fashion tops"
+>
+
+<div class="pic">
+<img
+src="11-women-fashion-tops.jpg"
+alt="Women Fashion Tops"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Women Fashion Tops
+</h3>
+
+<div class="price">
+From ₹154
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/tops-ladies/pl/3ja"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 12 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="hottest women tops"
+>
+
+<div class="pic">
+<img
+src="12-hottest-women-tops.jpg"
+alt="Hottest Women Tops"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Hottest Women Tops
+</h3>
+
+<div class="price">
+From ₹185
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/tops/pl/1koe"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 13 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="ladies short tops"
+>
+
+<div class="pic">
+<img
+src="13-ladies-short-tops.jpg"
+alt="Ladies Short Tops"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Ladies Short Tops
+</h3>
+
+<div class="price">
+From ₹103
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/ladies-short-top/pl/7y9"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 14 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="men denim jeans"
+>
+
+<div class="pic">
+<img
+src="14-men-denim-jeans.jpg"
+alt="Men Denim Jeans"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Men Denim Jeans
+</h3>
+
+<div class="price">
+From ₹399
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/men-denim-jeans/pl/89r"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 15 -->
+
+<article
+class="card"
+data-category="fashion"
+data-name="black jutti for women"
+>
+
+<div class="pic">
+<img
+src="15-black-jutti-women.jpg"
+alt="Black Jutti for Women"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Black Jutti for Women
+</h3>
+
+<div class="price">
+₹434
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/newtrendylatest-design-black-jutie-trending-expansive-jutie-and-every-day-wear-for-womengirl/p/9aidbg"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 16 -->
+
+<article
+class="card"
+data-category="electronics"
+data-name="redmi note 15 5g phone case"
+>
+
+<div class="pic">
+<img
+src="16-redmi-note-15-5g-phone-case.jpg"
+alt="Redmi Note 15 5G Phone Case"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Redmi Note 15 5G Phone Case
+</h3>
+
+<div class="price">
+₹126
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/new-trending-back-case-cover-phone-cover-mobile-cover-back-cover-for-redminote-15-5g-transparent-mobile-case-for-r-edmi-note-15-5g-for-girls-boys-phone-cover-for-r-edmi-note-15-5g-transparent-soft-cases-covers-with-camera-protection-not-oem/p/c2f7at"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 17 -->
+
+<article
+class="card"
+data-category="beauty"
+data-name="women jewellery collection"
+>
+
+<div class="pic">
+<img
+src="17-women-jewellery-collection.jpg"
+alt="Women Jewellery Collection"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Women Jewellery Collection
+</h3>
+
+<div class="price">
+From ₹141
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/jewellery/pl/9tx"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 18 -->
+
+<article
+class="card"
+data-category="electronics"
+data-name="mini portable blender"
+>
+
+<div class="pic">
+<img
+src="18-mini-portable-blender.jpg"
+alt="Mini Portable Blender"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Mini Portable Blender
+</h3>
+
+<div class="price">
+From ₹399
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=mini%20portable%20blender"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 19 -->
+
+<article
+class="card"
+data-category="electronics"
+data-name="wireless tws earbuds"
+>
+
+<div class="pic">
+<img
+src="19-wireless-tws-earbuds.jpg"
+alt="Wireless TWS Earbuds"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Wireless TWS Earbuds
+</h3>
+
+<div class="price">
+From ₹308
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=wireless%20tws%20earbuds"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 20 -->
+
+<article
+class="card"
+data-category="electronics"
+data-name="mobile phone stand"
+>
+
+<div class="pic">
+<img
+src="20-mobile-phone-stand.jpg"
+alt="Mobile Phone Stand"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Mobile Phone Stand
+</h3>
+
+<div class="price">
+From ₹149
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=mobile%20phone%20stand"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 21 -->
+
+<article
+class="card"
+data-category="home"
+data-name="kitchen organizer"
+>
+
+<div class="pic">
+<img
+src="21-kitchen-organizer.jpg"
+alt="Kitchen Organizer"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Kitchen Organizer
+</h3>
+
+<div class="price">
+From ₹199
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=kitchen%20organizer"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 22 -->
+
+<article
+class="card"
+data-category="accessories"
+data-name="women sling bag"
+>
+
+<div class="pic">
+<img
+src="22-women-sling-bag.jpg"
+alt="Women Sling Bag"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Women Sling Bag
+</h3>
+
+<div class="price">
+From ₹199
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=women%20sling%20bag"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 23 -->
+
+<article
+class="card"
+data-category="beauty"
+data-name="hair brush"
+>
+
+<div class="pic">
+<img
+src="23-hair-brush.jpg"
+alt="Hair Brush"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Hair Brush
+</h3>
+
+<div class="price">
+From ₹111
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=hair%20brush"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 24 -->
+
+<article
+class="card"
+data-category="electronics"
+data-name="portable mini fan"
+>
+
+<div class="pic">
+<img
+src="24-portable-mini-fan.jpg"
+alt="Portable Mini Fan"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Portable Mini Fan
+</h3>
+
+<div class="price">
+From ₹169
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=portable%20mini%20fan"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 25 -->
+
+<article
+class="card"
+data-category="beauty"
+data-name="led makeup mirror"
+>
+
+<div class="pic">
+<img
+src="25-led-makeup-mirror.jpg"
+alt="LED Makeup Mirror"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+LED Makeup Mirror
+</h3>
+
+<div class="price">
+From ₹199
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=led%20makeup%20mirror"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 26 -->
+
+<article
+class="card"
+data-category="accessories"
+data-name="men wallet"
+>
+
+<div class="pic">
+<img
+src="26-men-wallet.jpg"
+alt="Men Wallet"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Men Wallet
+</h3>
+
+<div class="price">
+From ₹149
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=men%20wallet"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 27 -->
+
+<article
+class="card"
+data-category="accessories"
+data-name="trending sunglasses"
+>
+
+<div class="pic">
+<img
+src="27-trending-sunglasses.jpg"
+alt="Trending Sunglasses"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Trending Sunglasses
+</h3>
+
+<div class="price">
+From ₹149
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=trending%20sunglasses"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 28 -->
+
+<article
+class="card"
+data-category="home"
+data-name="home storage organizer"
+>
+
+<div class="pic">
+<img
+src="28-home-storage-organizer.jpg"
+alt="Home Storage Organizer"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Home Storage Organizer
+</h3>
+
+<div class="price">
+From ₹199
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=home%20storage%20organizer"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+<!-- 29 -->
+
+<article
+class="card"
+data-category="home"
+data-name="artificial plant decor"
+>
+
+<div class="pic">
+<img
+src="29-artificial-plant-decor.jpg"
+alt="Artificial Plant Decor"
+loading="lazy"
+>
+</div>
+
+<button class="wish">♡</button>
+
+<div class="info">
+
+<span class="tag">TRENDING</span>
+
+<h3>
+Artificial Plant Decor
+</h3>
+
+<div class="price">
+From ₹149
+</div>
+
+<a
+class="buy"
+href="https://www.meesho.com/search?q=artificial%20plants%20home%20decor"
+target="_blank"
+rel="noopener noreferrer"
+>
+Buy on Meesho →
+</a>
+
+</div>
+</article>
+
+
+</div>
+
+
+<!-- FEATURES -->
+
+<div class="features">
+
+<div class="feature">
+
+<span>💎</span>
+
+<b>
+Quality Picks
+</b>
+
+<small>
+Curated products
+</small>
+
+</div>
+
+
+<div class="feature">
+
+<span>💰</span>
+
+<b>
+Better Deals
+</b>
+
+<small>
+Great-value finds
+</small>
+
+</div>
+
+
+<div class="feature">
+
+<span>⚡</span>
+
+<b>
+Easy Shopping
+</b>
+
+<small>
+Quick access to Meesho
+</small>
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="footer-logo">
+Deal<span>io</span>
+</div>
+
+Smart Shopping. Better Deals.
+
+<br><br>
+
+<small>
+© 2026 Dealio. All rights reserved.
+</small>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
+
+/* ================= FILTER ================= */
+
+let activeFilter = "all";
+
+
+/* ================= WISHLIST ================= */
+
+const savedWishlist =
+JSON.parse(
+localStorage.getItem("dealioWishlist") || "[]"
+);
+
+
+document
+.querySelectorAll(".card")
+.forEach((card,index)=>{
+
+const button =
+card.querySelector(".wish");
+
+
+if(savedWishlist.includes(index)){
+
+button.classList.add("active");
+
+button.textContent="♥";
+
+}
+
+
+button.onclick=()=>{
+
+button.classList.toggle("active");
+
+button.textContent =
+button.classList.contains("active")
+? "♥"
+: "♡";
+
+
+let list =
+JSON.parse(
+localStorage.getItem("dealioWishlist") || "[]"
+);
+
+
+if(button.classList.contains("active")){
+
+list=[
+...new Set(
+[
+...list,
+index
+]
+)
+];
+
+}else{
+
+list =
+list.filter(
+item=>item!==index
+);
+
+}
+
+
+localStorage.setItem(
+"dealioWishlist",
+JSON.stringify(list)
+);
+
+};
+
+});
+
+
+/* ================= FILTER BUTTON ================= */
+
+function setFilter(filter,button){
+
+activeFilter=filter;
+
+
+document
+.querySelectorAll(".filters button")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+
+button.classList.add("active");
+
+
+applyFilters();
+
+}
+
+
+/* ================= SEARCH ================= */
 
 function applyFilters(){
 
-  const q =
-    document.getElementById("q")
-    .value
-    .toLowerCase()
-    .trim();
+const topInput =
+document.getElementById("topSearch");
 
-  const active =
-    document.querySelector(".filter.active")
-    ?.dataset.filter || "all";
+const productInput =
+document.getElementById("productSearch");
 
-  let shown = 0;
 
-  document.querySelectorAll(".card").forEach(card => {
+const query =
+productInput.value
+.toLowerCase()
+.trim();
 
-    const matchQ =
-      !q || card.dataset.name.includes(q);
 
-    const matchCat =
-      active === "all" ||
-      card.dataset.cat === active;
+let count=0;
 
-    const show =
-      matchQ && matchCat;
 
-    card.style.display =
-      show ? "block" : "none";
+document
+.querySelectorAll(".card")
+.forEach(card=>{
 
-    if(show) shown++;
+const category =
+card.dataset.category;
 
-  });
+const name =
+card.dataset.name;
 
-  document.getElementById("noResults").style.display =
-    shown ? "none" : "block";
+
+const categoryOK =
+activeFilter==="all" ||
+category===activeFilter;
+
+
+const searchOK =
+!query ||
+name.includes(query);
+
+
+const show =
+categoryOK && searchOK;
+
+
+card.style.display =
+show ? "" : "none";
+
+
+if(show){
+count++;
 }
 
+});
+
+
+document.getElementById("empty").style.display =
+count ? "none" : "block";
+
+}
+
+
+/* ================= SYNC SEARCH BOXES ================= */
+
+function syncSearch(source){
+
+const value =
+document
+.getElementById(source)
+.value;
+
+
+if(source==="topSearch"){
+
+document
+.getElementById("productSearch")
+.value=value;
+
+}else{
+
+document
+.getElementById("topSearch")
+.value=value;
+
+}
+
+
+applyFilters();
+
+}
+
+
+/* ================= SEARCH BUTTON ================= */
 
 function searchProduct(){
 
-  applyFilters();
-
-  document
-    .getElementById("products")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
+document
+.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 
 document
-  .querySelectorAll(".filter")
-  .forEach(btn => {
+.getElementById("productSearch")
+.focus();
 
-    btn.addEventListener("click", () => {
-
-      document
-        .querySelectorAll(".filter")
-        .forEach(b =>
-          b.classList.remove("active")
-        );
-
-      btn.classList.add("active");
-
-      applyFilters();
-
-    });
-
-  });
-
-
-document
-  .getElementById("q")
-  .addEventListener("input", applyFilters);
-
-
-/* WISHLIST */
-
-const saved =
-  JSON.parse(
-    localStorage.getItem("wellkartWishlist") || "[]"
-  );
-
-document
-  .querySelectorAll(".wish")
-  .forEach(btn => {
-
-    const i =
-      Number(btn.dataset.wish);
-
-    if(saved.includes(i)){
-
-      btn.classList.add("active");
-      btn.textContent = "♥";
-
-    }
-
-    btn.addEventListener("click", () => {
-
-      let list =
-        JSON.parse(
-          localStorage.getItem("wellkartWishlist") || "[]"
-        );
-
-      if(list.includes(i)){
-
-        list =
-          list.filter(x => x !== i);
-
-        btn.classList.remove("active");
-        btn.textContent = "♡";
-
-      }else{
-
-        list.push(i);
-
-        btn.classList.add("active");
-        btn.textContent = "♥";
-
-      }
-
-      localStorage.setItem(
-        "wellkartWishlist",
-        JSON.stringify(list)
-      );
-
-    });
-
-  });
-
-
-/* DARK MODE */
-
-function toggleDark(){
-
-  document.body.classList.toggle("dark");
-
-  localStorage.setItem(
-    "wellkartDark",
-    document.body.classList.contains("dark")
-      ? "1"
-      : "0"
-  );
-
-}
-
-if(
-  localStorage.getItem("wellkartDark") === "1"
-){
-
-  document.body.classList.add("dark");
-
-}
-
-
-/* INITIAL FILTER */
 
 applyFilters();
+
+}
+
+
+/* ================= DARK MODE ================= */
+
+function toggleTheme(){
+
+document
+.body
+.classList
+.toggle("dark");
+
+
+localStorage.setItem(
+"dealioDark",
+document.body.classList.contains("dark")
+);
+
+}
+
+
+/* ================= LOAD DARK MODE ================= */
+
+if(
+localStorage.getItem("dealioDark")==="true"
+){
+
+document
+.body
+.classList
+.add("dark");
+
+}
+
+
+/* ================= ENTER KEY SEARCH ================= */
+
+document
+.querySelectorAll(".search input")
+.forEach(input=>{
+
+input.addEventListener(
+"keydown",
+event=>{
+
+if(event.key==="Enter"){
+
+searchProduct();
+
+}
+
+});
+
+});
 
 </script>
 
