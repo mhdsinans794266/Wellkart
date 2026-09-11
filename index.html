@@ -16,7 +16,6 @@
   --ink:#0d1b4c;
   --muted:#667085;
   --bg:#f7f9fc;
-  --white:#ffffff;
 }
 
 *{
@@ -38,9 +37,7 @@ a{
   text-decoration:none;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 .top{
   background:#fff;
@@ -59,12 +56,16 @@ a{
   gap:18px;
 }
 
-/* HEADER LOGO IMAGE */
+/* HEADER LOGO */
 
 .logo{
   display:flex;
   align-items:center;
+  justify-content:center;
   flex-shrink:0;
+  width:145px;
+  height:52px;
+  overflow:hidden;
 }
 
 .logo-img{
@@ -74,9 +75,7 @@ a{
   display:block;
 }
 
-/* =========================
-   SEARCH
-========================= */
+/* ================= SEARCH ================= */
 
 .search{
   flex:1;
@@ -114,9 +113,7 @@ a{
   background:var(--orange2);
 }
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero{
   background:
@@ -180,8 +177,6 @@ h1{
   transform:translateY(-2px);
 }
 
-/* MAIN / HERO LOGO */
-
 .hero-logo{
   width:min(360px,90%);
   max-height:300px;
@@ -190,9 +185,7 @@ h1{
   margin:auto;
 }
 
-/* =========================
-   PRODUCTS SECTION
-========================= */
+/* ================= PRODUCTS ================= */
 
 .section{
   max-width:1120px;
@@ -210,9 +203,7 @@ h1{
   margin:0 0 20px;
 }
 
-/* =========================
-   FILTERS
-========================= */
+/* ================= FILTERS ================= */
 
 .filters{
   display:flex;
@@ -242,9 +233,7 @@ h1{
   color:#fff;
 }
 
-/* =========================
-   PRODUCTS GRID
-========================= */
+/* ================= PRODUCT GRID ================= */
 
 .products{
   display:grid;
@@ -327,9 +316,7 @@ h1{
   background:var(--blue2);
 }
 
-/* =========================
-   WISHLIST
-========================= */
+/* ================= WISHLIST ================= */
 
 .wish{
   position:absolute;
@@ -351,9 +338,7 @@ h1{
   color:var(--orange);
 }
 
-/* =========================
-   EMPTY
-========================= */
+/* ================= EMPTY ================= */
 
 .empty{
   display:none;
@@ -362,9 +347,7 @@ h1{
   font-weight:700;
 }
 
-/* =========================
-   FEATURES
-========================= */
+/* ================= FEATURES ================= */
 
 .features{
   display:grid;
@@ -391,9 +374,7 @@ h1{
   display:block;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 .footer{
   margin-top:20px;
@@ -408,9 +389,7 @@ h1{
   font-size:24px;
 }
 
-/* =========================
-   DARK MODE
-========================= */
+/* ================= DARK MODE ================= */
 
 .dark{
   --bg:#09112f;
@@ -474,9 +453,7 @@ h1{
   background:#060b20;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
 
@@ -490,6 +467,11 @@ h1{
 
   .nav{
     flex-wrap:wrap;
+  }
+
+  .logo{
+    width:125px;
+    height:45px;
   }
 
   .logo-img{
@@ -559,15 +541,17 @@ h1{
     height:180px;
   }
 
+  .logo{
+    width:115px;
+    height:42px;
+  }
+
   .logo-img{
     width:115px;
+    height:42px;
   }
 
 }
-
-/* =========================
-   SMALL UI IMPROVEMENTS
-========================= */
 
 button{
   font-family:inherit;
@@ -582,9 +566,7 @@ button{
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ================= HEADER ================= -->
 
 <header class="top">
 
@@ -594,8 +576,8 @@ button{
 
 <img
   class="logo-img"
-  src="dealio-header-logo.PNG"
-  alt="Dealio Header Logo"
+  src="./dealio-logo.PNG?v=2"
+  alt="Dealio Logo"
 >
 
 </a>
@@ -618,9 +600,7 @@ button{
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -651,12 +631,11 @@ Shop Now →
 
 </div>
 
-
 <div>
 
 <img
   class="hero-logo"
-  src="dealio-logo.PNG"
+  src="./dealio-logo.PNG?v=2"
   alt="Dealio Main Logo"
 >
 
@@ -667,9 +646,7 @@ Shop Now →
 </section>
 
 
-<!-- =========================
-     PRODUCTS
-========================= -->
+<!-- ================= PRODUCTS ================= -->
 
 <main class="section" id="products">
 
@@ -680,7 +657,6 @@ Shop Now →
 <p class="sub">
 Hand-picked Meesho finds • Updated for 2026
 </p>
-
 
 <div class="search">
 
@@ -702,44 +678,29 @@ Hand-picked Meesho finds • Updated for 2026
 </div>
 
 
-<!-- FILTERS -->
-
 <div class="filters">
 
-<button
-  class="active"
-  onclick="setFilter('all',this)"
->
+<button class="active" onclick="setFilter('all',this)">
 All
 </button>
 
-<button
-  onclick="setFilter('fashion',this)"
->
+<button onclick="setFilter('fashion',this)">
 Fashion
 </button>
 
-<button
-  onclick="setFilter('beauty',this)"
->
+<button onclick="setFilter('beauty',this)">
 Beauty
 </button>
 
-<button
-  onclick="setFilter('electronics',this)"
->
+<button onclick="setFilter('electronics',this)">
 Electronics
 </button>
 
-<button
-  onclick="setFilter('home',this)"
->
+<button onclick="setFilter('home',this)">
 Home
 </button>
 
-<button
-  onclick="setFilter('accessories',this)"
->
+<button onclick="setFilter('accessories',this)">
 Accessories
 </button>
 
@@ -751,14 +712,8 @@ No products found
 </div>
 
 
-<!-- =========================
-     PRODUCT CARDS
-========================= -->
-
 <div class="products">
 
-
-<!-- 01 -->
 <article class="card" data-category="fashion" data-name="whisker baggy jeans for men">
 <div class="pic">
 <img src="01-whisker-baggy-jeans-men.jpg" alt="Whisker Baggy Jeans for Men" loading="lazy">
@@ -773,7 +728,6 @@ No products found
 </article>
 
 
-<!-- 02 -->
 <article class="card" data-category="fashion" data-name="trending hand bag">
 <div class="pic">
 <img src="02-trending-hand-bag.jpg" alt="Trending Hand Bag" loading="lazy">
@@ -788,7 +742,6 @@ No products found
 </article>
 
 
-<!-- 03 -->
 <article class="card" data-category="beauty" data-name="trending jewellery set">
 <div class="pic">
 <img src="03-trending-jewellery-set.jpg" alt="Trending Jewellery Set" loading="lazy">
@@ -803,7 +756,6 @@ No products found
 </article>
 
 
-<!-- 04 -->
 <article class="card" data-category="beauty" data-name="kundan jewellery set">
 <div class="pic">
 <img src="04-kundan-jewellery-set.jpg" alt="Kundan Jewellery Set" loading="lazy">
@@ -818,7 +770,6 @@ No products found
 </article>
 
 
-<!-- 05 -->
 <article class="card" data-category="beauty" data-name="oxidised jewellery set">
 <div class="pic">
 <img src="05-oxidised-jewellery-set.jpg" alt="Oxidised Jewellery Set" loading="lazy">
@@ -833,7 +784,6 @@ No products found
 </article>
 
 
-<!-- 06 -->
 <article class="card" data-category="beauty" data-name="blue jewellery set">
 <div class="pic">
 <img src="06-blue-jewellery-set.jpg" alt="Blue Jewellery Set" loading="lazy">
@@ -848,7 +798,6 @@ No products found
 </article>
 
 
-<!-- 07 -->
 <article class="card" data-category="home" data-name="trending wall clock">
 <div class="pic">
 <img src="07-trending-wall-clock.jpg" alt="Trending Wall Clock" loading="lazy">
@@ -863,7 +812,6 @@ No products found
 </article>
 
 
-<!-- 08 -->
 <article class="card" data-category="home" data-name="trending wall clock multi">
 <div class="pic">
 <img src="08-trending-wall-clock-multi.jpg" alt="Trending Wall Clock Multi" loading="lazy">
@@ -878,7 +826,6 @@ No products found
 </article>
 
 
-<!-- 09 -->
 <article class="card" data-category="fashion" data-name="trending women top">
 <div class="pic">
 <img src="09-trending-women-top.jpg" alt="Trending Women Top" loading="lazy">
@@ -893,7 +840,6 @@ No products found
 </article>
 
 
-<!-- 10 -->
 <article class="card" data-category="fashion" data-name="top trending cotton tee">
 <div class="pic">
 <img src="10-top-trending-cotton-tee.jpg" alt="Top Trending Cotton Tee" loading="lazy">
@@ -908,7 +854,6 @@ No products found
 </article>
 
 
-<!-- 11 -->
 <article class="card" data-category="fashion" data-name="women fashion tops">
 <div class="pic">
 <img src="11-women-fashion-tops.jpg" alt="Women Fashion Tops" loading="lazy">
@@ -923,7 +868,6 @@ No products found
 </article>
 
 
-<!-- 12 -->
 <article class="card" data-category="fashion" data-name="hottest women tops">
 <div class="pic">
 <img src="12-hottest-women-tops.jpg" alt="Hottest Women Tops" loading="lazy">
@@ -938,7 +882,6 @@ No products found
 </article>
 
 
-<!-- 13 -->
 <article class="card" data-category="fashion" data-name="ladies short tops">
 <div class="pic">
 <img src="13-ladies-short-tops.jpg" alt="Ladies Short Tops" loading="lazy">
@@ -953,7 +896,6 @@ No products found
 </article>
 
 
-<!-- 14 -->
 <article class="card" data-category="fashion" data-name="men denim jeans">
 <div class="pic">
 <img src="14-men-denim-jeans.jpg" alt="Men Denim Jeans" loading="lazy">
@@ -968,7 +910,6 @@ No products found
 </article>
 
 
-<!-- 15 -->
 <article class="card" data-category="fashion" data-name="black jutti for women">
 <div class="pic">
 <img src="15-black-jutti-women.jpg" alt="Black Jutti for Women" loading="lazy">
@@ -983,7 +924,6 @@ No products found
 </article>
 
 
-<!-- 16 -->
 <article class="card" data-category="electronics" data-name="redmi note 15 5g phone case">
 <div class="pic">
 <img src="16-redmi-note-15-5g-phone-case.jpg" alt="Redmi Note 15 5G Phone Case" loading="lazy">
@@ -998,7 +938,6 @@ No products found
 </article>
 
 
-<!-- 17 -->
 <article class="card" data-category="beauty" data-name="women jewellery collection">
 <div class="pic">
 <img src="17-women-jewellery-collection.jpg" alt="Women Jewellery Collection" loading="lazy">
@@ -1013,7 +952,6 @@ No products found
 </article>
 
 
-<!-- 18 -->
 <article class="card" data-category="electronics" data-name="mini portable blender">
 <div class="pic">
 <img src="18-mini-portable-blender.jpg" alt="Mini Portable Blender" loading="lazy">
@@ -1028,7 +966,6 @@ No products found
 </article>
 
 
-<!-- 19 -->
 <article class="card" data-category="electronics" data-name="wireless tws earbuds">
 <div class="pic">
 <img src="19-wireless-tws-earbuds.jpg" alt="Wireless TWS Earbuds" loading="lazy">
@@ -1043,7 +980,6 @@ No products found
 </article>
 
 
-<!-- 20 -->
 <article class="card" data-category="electronics" data-name="mobile phone stand">
 <div class="pic">
 <img src="20-mobile-phone-stand.jpg" alt="Mobile Phone Stand" loading="lazy">
@@ -1058,7 +994,6 @@ No products found
 </article>
 
 
-<!-- 21 -->
 <article class="card" data-category="home" data-name="kitchen organizer">
 <div class="pic">
 <img src="21-kitchen-organizer.jpg" alt="Kitchen Organizer" loading="lazy">
@@ -1073,7 +1008,6 @@ No products found
 </article>
 
 
-<!-- 22 -->
 <article class="card" data-category="accessories" data-name="women sling bag">
 <div class="pic">
 <img src="22-women-sling-bag.jpg" alt="Women Sling Bag" loading="lazy">
@@ -1088,7 +1022,6 @@ No products found
 </article>
 
 
-<!-- 23 -->
 <article class="card" data-category="beauty" data-name="hair brush">
 <div class="pic">
 <img src="23-hair-brush.jpg" alt="Hair Brush" loading="lazy">
@@ -1103,7 +1036,6 @@ No products found
 </article>
 
 
-<!-- 24 -->
 <article class="card" data-category="electronics" data-name="portable mini fan">
 <div class="pic">
 <img src="24-portable-mini-fan.jpg" alt="Portable Mini Fan" loading="lazy">
@@ -1118,7 +1050,6 @@ No products found
 </article>
 
 
-<!-- 25 -->
 <article class="card" data-category="beauty" data-name="led makeup mirror">
 <div class="pic">
 <img src="25-led-makeup-mirror.jpg" alt="LED Makeup Mirror" loading="lazy">
@@ -1133,7 +1064,6 @@ No products found
 </article>
 
 
-<!-- 26 -->
 <article class="card" data-category="accessories" data-name="men wallet">
 <div class="pic">
 <img src="26-men-wallet.jpg" alt="Men Wallet" loading="lazy">
@@ -1148,7 +1078,6 @@ No products found
 </article>
 
 
-<!-- 27 -->
 <article class="card" data-category="accessories" data-name="trending sunglasses">
 <div class="pic">
 <img src="27-trending-sunglasses.jpg" alt="Trending Sunglasses" loading="lazy">
@@ -1163,7 +1092,6 @@ No products found
 </article>
 
 
-<!-- 28 -->
 <article class="card" data-category="home" data-name="home storage organizer">
 <div class="pic">
 <img src="28-home-storage-organizer.jpg" alt="Home Storage Organizer" loading="lazy">
@@ -1178,7 +1106,6 @@ No products found
 </article>
 
 
-<!-- 29 -->
 <article class="card" data-category="home" data-name="artificial plant decor">
 <div class="pic">
 <img src="29-artificial-plant-decor.jpg" alt="Artificial Plant Decor" loading="lazy">
@@ -1222,9 +1149,7 @@ No products found
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
@@ -1243,31 +1168,21 @@ Smart Shopping. Better Deals.
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
 
 let activeFilter = 'all';
 
-
 function getWishlist(){
 
   try{
-
     return JSON.parse(
       localStorage.getItem('dealioWishlist') || '[]'
     );
-
   }catch(e){
-
     return [];
-
   }
 
 }
-
 
 function applyFilters(){
 
@@ -1323,7 +1238,6 @@ function applyFilters(){
 
 }
 
-
 function syncSearchFromProducts(){
 
   document.getElementById('q').value =
@@ -1332,7 +1246,6 @@ function syncSearchFromProducts(){
   applyFilters();
 
 }
-
 
 function searchProduct(){
 
@@ -1349,7 +1262,6 @@ function searchProduct(){
 
 }
 
-
 function setFilter(filter,button){
 
   activeFilter = filter;
@@ -1357,9 +1269,7 @@ function setFilter(filter,button){
   document
     .querySelectorAll('.filters button')
     .forEach(b => {
-
       b.classList.remove('active');
-
     });
 
   button.classList.add('active');
@@ -1367,7 +1277,6 @@ function setFilter(filter,button){
   applyFilters();
 
 }
-
 
 function toggleTheme(){
 
@@ -1381,7 +1290,6 @@ function toggleTheme(){
   );
 
 }
-
 
 document
   .querySelectorAll('.card')
@@ -1416,10 +1324,7 @@ document
               x => x !== index
             );
 
-          button.classList.remove(
-            'active'
-          );
-
+          button.classList.remove('active');
           button.textContent = '♡';
 
         }else{
@@ -1430,10 +1335,7 @@ document
             )
           ];
 
-          button.classList.add(
-            'active'
-          );
-
+          button.classList.add('active');
           button.textContent = '♥';
 
         }
@@ -1447,7 +1349,6 @@ document
     );
 
   });
-
 
 document
   .getElementById('q')
@@ -1467,7 +1368,6 @@ document
     }
   );
 
-
 document
   .getElementById('q')
   .addEventListener(
@@ -1475,14 +1375,11 @@ document
     event => {
 
       if(event.key === 'Enter'){
-
         searchProduct();
-
       }
 
     }
   );
-
 
 if(
   localStorage.getItem(
@@ -1490,12 +1387,9 @@ if(
   ) === 'true'
 ){
 
-  document.body.classList.add(
-    'dark'
-  );
+  document.body.classList.add('dark');
 
 }
-
 
 applyFilters();
 
