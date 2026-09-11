@@ -56,8 +56,6 @@ a{
   gap:18px;
 }
 
-/* HEADER LOGO */
-
 .logo{
   display:flex;
   align-items:center;
@@ -389,6 +387,71 @@ h1{
   font-size:24px;
 }
 
+/* ================= SOCIAL ================= */
+
+.social{
+  margin:20px 0 5px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:11px 18px;
+  border-radius:12px;
+  color:#fff;
+  font-weight:800;
+  font-size:14px;
+  transition:.2s;
+}
+
+.social a:hover{
+  transform:translateY(-2px);
+  opacity:.92;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+}
+
+.instagram-btn{
+  background:linear-gradient(
+    135deg,
+    #833AB4,
+    #E1306C,
+    #F77737
+  );
+}
+
+/* ================= FLOATING WHATSAPP ================= */
+
+.whatsapp-float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:29px;
+  box-shadow:0 6px 20px #0003;
+  z-index:999;
+  transition:.2s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.08);
+}
+
 /* ================= DARK MODE ================= */
 
 .dark{
@@ -549,6 +612,13 @@ h1{
   .logo-img{
     width:115px;
     height:42px;
+  }
+
+  .whatsapp-float{
+    right:14px;
+    bottom:14px;
+    width:54px;
+    height:54px;
   }
 
 }
@@ -727,7 +797,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="fashion" data-name="trending hand bag">
 <div class="pic">
 <img src="02-trending-hand-bag.jpg" alt="Trending Hand Bag" loading="lazy">
@@ -740,7 +809,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/trending-hand-bag/p/b12akh" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="beauty" data-name="trending jewellery set">
 <div class="pic">
@@ -755,7 +823,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="beauty" data-name="kundan jewellery set">
 <div class="pic">
 <img src="04-kundan-jewellery-set.jpg" alt="Kundan Jewellery Set" loading="lazy">
@@ -768,7 +835,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/trending-jewellery-set/p/f79ybg" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="beauty" data-name="oxidised jewellery set">
 <div class="pic">
@@ -783,7 +849,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="beauty" data-name="blue jewellery set">
 <div class="pic">
 <img src="06-blue-jewellery-set.jpg" alt="Blue Jewellery Set" loading="lazy">
@@ -796,7 +861,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/trending-jewelry-set/p/8fbqd2" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="home" data-name="trending wall clock">
 <div class="pic">
@@ -811,7 +875,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="home" data-name="trending wall clock multi">
 <div class="pic">
 <img src="08-trending-wall-clock-multi.jpg" alt="Trending Wall Clock Multi" loading="lazy">
@@ -824,7 +887,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/trending-wall-clock/p/g4uarl" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="fashion" data-name="trending women top">
 <div class="pic">
@@ -839,7 +901,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="fashion" data-name="top trending cotton tee">
 <div class="pic">
 <img src="10-top-trending-cotton-tee.jpg" alt="Top Trending Cotton Tee" loading="lazy">
@@ -852,7 +913,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/top-trending-product/p/c1mc50" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="fashion" data-name="women fashion tops">
 <div class="pic">
@@ -867,7 +927,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="fashion" data-name="hottest women tops">
 <div class="pic">
 <img src="12-hottest-women-tops.jpg" alt="Hottest Women Tops" loading="lazy">
@@ -880,7 +939,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/tops/pl/1koe" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="fashion" data-name="ladies short tops">
 <div class="pic">
@@ -895,7 +953,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="fashion" data-name="men denim jeans">
 <div class="pic">
 <img src="14-men-denim-jeans.jpg" alt="Men Denim Jeans" loading="lazy">
@@ -908,7 +965,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/men-denim-jeans/pl/89r" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="fashion" data-name="black jutti for women">
 <div class="pic">
@@ -923,7 +979,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="electronics" data-name="redmi note 15 5g phone case">
 <div class="pic">
 <img src="16-redmi-note-15-5g-phone-case.jpg" alt="Redmi Note 15 5G Phone Case" loading="lazy">
@@ -936,7 +991,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/new-trending-back-case-cover-phone-cover-mobile-cover-back-cover-for-redminote-15-5g-transparent-mobile-case-for-r-edmi-note-15-5g-for-girls-boys-phone-cover-for-r-edmi-note-15-5g-transparent-soft-cases-covers-with-camera-protection-not-oem/p/c2f7at" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="beauty" data-name="women jewellery collection">
 <div class="pic">
@@ -951,7 +1005,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="electronics" data-name="mini portable blender">
 <div class="pic">
 <img src="18-mini-portable-blender.jpg" alt="Mini Portable Blender" loading="lazy">
@@ -964,7 +1017,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/search?q=mini%20portable%20blender" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="electronics" data-name="wireless tws earbuds">
 <div class="pic">
@@ -979,7 +1031,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="electronics" data-name="mobile phone stand">
 <div class="pic">
 <img src="20-mobile-phone-stand.jpg" alt="Mobile Phone Stand" loading="lazy">
@@ -992,7 +1043,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/search?q=mobile%20phone%20stand" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="home" data-name="kitchen organizer">
 <div class="pic">
@@ -1007,7 +1057,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="accessories" data-name="women sling bag">
 <div class="pic">
 <img src="22-women-sling-bag.jpg" alt="Women Sling Bag" loading="lazy">
@@ -1020,7 +1069,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/search?q=women%20sling%20bag" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="beauty" data-name="hair brush">
 <div class="pic">
@@ -1035,7 +1083,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="electronics" data-name="portable mini fan">
 <div class="pic">
 <img src="24-portable-mini-fan.jpg" alt="Portable Mini Fan" loading="lazy">
@@ -1048,7 +1095,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/search?q=portable%20mini%20fan" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="beauty" data-name="led makeup mirror">
 <div class="pic">
@@ -1063,7 +1109,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="accessories" data-name="men wallet">
 <div class="pic">
 <img src="26-men-wallet.jpg" alt="Men Wallet" loading="lazy">
@@ -1076,7 +1121,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/search?q=men%20wallet" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="accessories" data-name="trending sunglasses">
 <div class="pic">
@@ -1091,7 +1135,6 @@ No products found
 </div>
 </article>
 
-
 <article class="card" data-category="home" data-name="home storage organizer">
 <div class="pic">
 <img src="28-home-storage-organizer.jpg" alt="Home Storage Organizer" loading="lazy">
@@ -1104,7 +1147,6 @@ No products found
 <a class="buy" href="https://www.meesho.com/search?q=home%20storage%20organizer" target="_blank" rel="noopener noreferrer">Buy on Meesho →</a>
 </div>
 </article>
-
 
 <article class="card" data-category="home" data-name="artificial plant decor">
 <div class="pic">
@@ -1122,7 +1164,7 @@ No products found
 </div>
 
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
 
 <div class="features">
 
@@ -1159,13 +1201,49 @@ No products found
 
 Smart Shopping. Better Deals.
 
-<br><br>
+
+<div class="social">
+
+<a
+  class="whatsapp-btn"
+  href="https://wa.me/919037284266?text=Hi%20Dealio%2C%20I%20need%20help%20with%20a%20product."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+💬 WhatsApp
+</a>
+
+<a
+  class="instagram-btn"
+  href="https://www.instagram.com/wellkaart?stkn=b2w3NTJsNDJnN2Rp&utm_source=qr"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+📸 Instagram
+</a>
+
+</div>
+
+<br>
 
 <small>
 © 2026 Dealio. All rights reserved.
 </small>
 
 </footer>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/919037284266?text=Hi%20Dealio%2C%20I%20need%20help%20with%20a%20product."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with Dealio on WhatsApp"
+>
+💬
+</a>
 
 
 <script>
