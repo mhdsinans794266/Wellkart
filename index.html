@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="description" content="Dealio - Trending products and better deals.">
-
-<title>DEALIO | Trending Products</title>
+<meta name="description" content="Dealio - Smart Shopping. Better Deals.">
+<title>Dealio | Trending Products</title>
 
 <style>
 :root{
@@ -14,12 +13,10 @@
   --blue2:#2436c7;
   --orange:#ff8a00;
   --orange2:#ffb000;
-  --white:#ffffff;
-  --ink:#101a3a;
+  --ink:#0d1b4c;
   --muted:#667085;
-  --bg:#f5f7ff;
-  --card:#ffffff;
-  --border:#e4e8f2;
+  --bg:#f7f9fc;
+  --white:#ffffff;
 }
 
 *{
@@ -35,18 +32,19 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   background:var(--bg);
   color:var(--ink);
-  transition:.25s;
 }
 
 a{
   text-decoration:none;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .top{
-  background:var(--white);
-  border-bottom:1px solid var(--border);
+  background:#fff;
+  border-bottom:1px solid #e6edf5;
   position:sticky;
   top:0;
   z-index:100;
@@ -61,58 +59,41 @@ a{
   gap:18px;
 }
 
-/* Dealio Logo */
+/* ACTUAL DEALIO LOGO IMAGE */
 
-.logo-wrap{
+.logo{
   display:flex;
   align-items:center;
-  gap:9px;
-  min-width:155px;
+  flex-shrink:0;
 }
 
-.logo-icon{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  background:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:23px;
-  font-weight:1000;
-  box-shadow:0 5px 15px rgba(24,37,143,.25);
+.logo-img{
+  width:145px;
+  height:52px;
+  object-fit:contain;
+  display:block;
 }
 
-.logo-text{
-  font-size:27px;
-  font-weight:1000;
-  letter-spacing:-1px;
-  color:var(--blue);
-}
-
-.logo-text span{
-  color:var(--orange);
-}
-
-/* Search */
+/* =========================
+   SEARCH
+========================= */
 
 .search{
   flex:1;
   display:flex;
   gap:8px;
+  margin:15px 0;
 }
 
 .search input{
   flex:1;
   width:100%;
-  border:1px solid #d9dfec;
-  outline:none;
-  background:#f7f8fc;
   padding:13px 15px;
-  border-radius:13px;
-  font-size:15px;
-  color:var(--ink);
+  border:1px solid #d7e1ef;
+  border-radius:14px;
+  outline:none;
+  background:#fff;
+  font-size:16px;
 }
 
 .search input:focus{
@@ -124,28 +105,27 @@ a{
   background:var(--orange);
   color:#fff;
   padding:0 18px;
-  border-radius:13px;
-  font-size:18px;
-  cursor:pointer;
-  font-weight:800;
-}
-
-.theme{
-  border:0;
-  border-radius:13px;
-  background:var(--blue);
-  color:#fff;
-  padding:0 14px;
+  border-radius:14px;
   font-size:18px;
   cursor:pointer;
 }
 
-/* ================= HERO ================= */
+.search button:hover{
+  background:var(--orange2);
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   background:
-    radial-gradient(circle at 80% 20%,rgba(255,138,0,.16),transparent 30%),
-    linear-gradient(135deg,#e9edff,#fff 60%,#fff5e5);
+    linear-gradient(
+      135deg,
+      #eef0ff 0%,
+      #fff 58%,
+      #fff3e0 100%
+    );
   padding:55px 18px;
 }
 
@@ -166,22 +146,16 @@ a{
   border-radius:999px;
   font-size:12px;
   font-weight:900;
-  box-shadow:0 5px 15px rgba(255,138,0,.2);
 }
 
 h1{
   font-size:clamp(38px,6vw,64px);
   line-height:1.02;
-  margin:16px 0;
-  letter-spacing:-2px;
+  margin:15px 0;
 }
 
 .blue{
   color:var(--blue);
-}
-
-.orange{
-  color:var(--orange);
 }
 
 .hero p{
@@ -195,81 +169,39 @@ h1{
   display:inline-block;
   background:var(--blue);
   color:#fff;
-  padding:14px 23px;
+  padding:14px 22px;
   border-radius:12px;
   font-weight:900;
-  margin-top:8px;
-  box-shadow:0 8px 20px rgba(24,37,143,.2);
   transition:.2s;
 }
 
 .hero-btn:hover{
-  background:var(--orange);
+  background:var(--blue2);
   transform:translateY(-2px);
 }
 
-/* Dealio hero logo */
+/* ACTUAL LOGO IN HERO */
 
 .hero-logo{
   width:min(360px,90%);
+  max-height:300px;
+  object-fit:contain;
   display:block;
   margin:auto;
 }
 
-.dealio-logo-big{
-  width:300px;
-  height:300px;
-  margin:auto;
-  border-radius:70px;
-  background:var(--blue);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:
-    0 25px 60px rgba(24,37,143,.25),
-    inset 0 -15px 30px rgba(0,0,0,.08);
-}
-
-.dealio-logo-big-inner{
-  text-align:center;
-  color:#fff;
-}
-
-.dealio-logo-big .symbol{
-  width:100px;
-  height:100px;
-  margin:auto;
-  background:var(--orange);
-  border-radius:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:58px;
-  font-weight:1000;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.dealio-logo-big .name{
-  font-size:43px;
-  font-weight:1000;
-  margin-top:18px;
-  letter-spacing:-2px;
-}
-
-.dealio-logo-big .name span{
-  color:var(--orange);
-}
-
-/* ================= SECTION ================= */
+/* =========================
+   PRODUCTS SECTION
+========================= */
 
 .section{
   max-width:1120px;
   margin:auto;
-  padding:40px 18px;
+  padding:42px 18px;
 }
 
 .section h2{
-  font-size:30px;
+  font-size:29px;
   margin:0 0 5px;
 }
 
@@ -278,38 +210,41 @@ h1{
   margin:0 0 20px;
 }
 
-/* ================= FILTERS ================= */
+/* =========================
+   FILTERS
+========================= */
 
 .filters{
   display:flex;
   gap:8px;
   overflow:auto;
-  padding:4px 0 18px;
+  padding-bottom:15px;
 }
 
 .filters button{
-  border:1px solid #d7deed;
+  border:1px solid #d7e1ef;
   background:#fff;
   color:var(--ink);
   border-radius:999px;
-  padding:9px 15px;
+  padding:9px 14px;
   font-weight:700;
   white-space:nowrap;
   cursor:pointer;
-  transition:.2s;
 }
 
 .filters button:hover{
-  border-color:var(--orange);
+  border-color:var(--blue);
 }
 
 .filters button.active{
   background:var(--blue);
-  color:#fff;
   border-color:var(--blue);
+  color:#fff;
 }
 
-/* ================= PRODUCTS ================= */
+/* =========================
+   PRODUCTS GRID
+========================= */
 
 .products{
   display:grid;
@@ -318,24 +253,27 @@ h1{
 }
 
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
+  position:relative;
+  background:#fff;
+  border:1px solid #e5ecf4;
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 8px 25px rgba(16,26,58,.07);
-  position:relative;
+  box-shadow:0 8px 25px #102a4312;
   transition:.2s;
 }
 
 .card:hover{
   transform:translateY(-4px);
-  box-shadow:0 14px 30px rgba(16,26,58,.12);
+  box-shadow:0 12px 30px #102a4320;
 }
 
 .pic{
-  height:220px;
+  height:240px;
   background:#fff;
   overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .pic img{
@@ -357,10 +295,20 @@ h1{
 }
 
 .price{
-  font-size:21px;
+  font-size:22px;
   font-weight:900;
   margin:8px 0 13px;
-  color:var(--ink);
+}
+
+.tag{
+  display:inline-block;
+  background:#eef0ff;
+  color:var(--blue);
+  padding:4px 8px;
+  border-radius:7px;
+  font-size:10px;
+  font-weight:900;
+  margin-bottom:7px;
 }
 
 .buy{
@@ -376,21 +324,12 @@ h1{
 }
 
 .buy:hover{
-  background:var(--orange);
+  background:var(--blue2);
 }
 
-.tag{
-  display:inline-block;
-  background:#fff0dd;
-  color:#e56f00;
-  padding:4px 8px;
-  border-radius:7px;
-  font-size:10px;
-  font-weight:900;
-  margin-bottom:7px;
-}
-
-/* Wishlist */
+/* =========================
+   WISHLIST
+========================= */
 
 .wish{
   position:absolute;
@@ -399,20 +338,22 @@ h1{
   z-index:2;
   border:0;
   background:#fff;
-  width:37px;
-  height:37px;
+  color:#222;
+  width:36px;
+  height:36px;
   border-radius:50%;
   font-size:21px;
+  box-shadow:0 3px 10px #0002;
   cursor:pointer;
-  box-shadow:0 3px 10px rgba(0,0,0,.15);
-  color:#555;
 }
 
 .wish.active{
   color:var(--orange);
 }
 
-/* Empty */
+/* =========================
+   EMPTY
+========================= */
 
 .empty{
   display:none;
@@ -421,114 +362,121 @@ h1{
   font-weight:700;
 }
 
-/* ================= FEATURES ================= */
+/* =========================
+   FEATURES
+========================= */
 
 .features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:14px;
-  margin-top:32px;
+  margin-top:30px;
 }
 
 .feature{
-  background:var(--card);
-  border:1px solid var(--border);
+  background:#fff;
+  border:1px solid #e5ecf4;
   border-radius:16px;
-  padding:20px;
+  padding:18px;
   text-align:center;
 }
 
 .feature span{
-  font-size:28px;
+  font-size:26px;
   display:block;
-  margin-bottom:7px;
+  margin-bottom:6px;
 }
 
 .feature b{
   display:block;
-  margin-bottom:4px;
 }
 
-.feature small{
-  color:var(--muted);
-}
-
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
   margin-top:20px;
   background:var(--blue);
   color:#fff;
   text-align:center;
-  padding:35px 18px;
+  padding:30px 18px;
 }
 
-.footer .footer-logo{
-  font-size:30px;
-  font-weight:1000;
-  margin-bottom:8px;
-}
-
-.footer .footer-logo span{
+.footer b{
   color:var(--orange);
+  font-size:24px;
 }
 
-.footer small{
-  opacity:.8;
-}
-
-/* ================= DARK MODE ================= */
+/* =========================
+   DARK MODE
+========================= */
 
 .dark{
-  --bg:#091022;
-  --ink:#f3f6ff;
-  --muted:#aab6cf;
-  --card:#111b33;
-  --border:#263354;
+  --bg:#09112f;
+  --ink:#f7f9ff;
+  --muted:#b9c2d8;
 }
 
 .dark .top{
-  background:#0c1428;
-  border-color:#263354;
+  background:#0d1b4c;
+  border-color:#20345d;
 }
 
 .dark .search input{
-  background:#111b33;
-  border-color:#263354;
+  background:#111d3f;
   color:#fff;
+  border-color:#29415d;
+}
+
+.dark .card{
+  background:#111d3f;
+  color:#f7f9ff;
+  border-color:#29415d;
 }
 
 .dark .filters button{
-  background:#111b33;
-  color:#fff;
-  border-color:#263354;
+  background:#111d3f;
+  color:#f7f9ff;
+  border-color:#29415d;
 }
 
 .dark .filters button.active{
-  background:var(--blue2);
-  border-color:var(--blue2);
-}
-
-.dark .pic{
-  background:#111b33;
+  background:var(--blue);
+  color:#fff;
 }
 
 .dark .wish{
-  background:#18233d;
+  background:#152436;
   color:#fff;
 }
 
 .dark .hero{
   background:
-    radial-gradient(circle at 80% 20%,rgba(255,138,0,.15),transparent 30%),
-    linear-gradient(135deg,#0c1630,#101a32 60%,#24170b);
+    linear-gradient(
+      135deg,
+      #101a4b,
+      #09112f 60%,
+      #241707
+    );
 }
 
-.dark .logo-text{
-  color:#fff;
+.dark .hero p{
+  color:#b9c2d8;
 }
 
-/* ================= RESPONSIVE ================= */
+.dark .feature{
+  background:#111d3f;
+  border-color:#29415d;
+}
+
+.dark .footer{
+  background:#060b20;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px){
 
@@ -538,17 +486,18 @@ h1{
 
 }
 
-@media(max-width:700px){
+@media(max-width:650px){
 
   .nav{
     flex-wrap:wrap;
   }
 
-  .logo-wrap{
-    min-width:auto;
+  .logo-img{
+    width:125px;
+    height:45px;
   }
 
-  .search{
+  .nav .search{
     order:3;
     flex-basis:100%;
   }
@@ -569,6 +518,7 @@ h1{
 
   .hero-logo{
     width:250px;
+    max-height:220px;
   }
 
   .products{
@@ -577,7 +527,7 @@ h1{
   }
 
   .pic{
-    height:190px;
+    height:210px;
   }
 
   .info{
@@ -589,60 +539,74 @@ h1{
     min-height:40px;
   }
 
+  .price{
+    font-size:19px;
+  }
+
   .features{
     grid-template-columns:1fr;
   }
 
 }
 
-@media(max-width:420px){
+@media(max-width:400px){
 
   .products{
     grid-template-columns:1fr 1fr;
   }
 
   .pic{
-    height:165px;
+    height:180px;
   }
 
-  .logo-text{
-    font-size:23px;
+  .logo-img{
+    width:115px;
   }
 
-  .logo-icon{
-    width:38px;
-    height:38px;
-  }
+}
 
+/* =========================
+   SMALL UI IMPROVEMENTS
+========================= */
+
+button{
+  font-family:inherit;
+}
+
+::selection{
+  background:var(--orange);
+  color:#fff;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="top">
 
 <nav class="nav">
 
-<div class="logo-wrap">
+<a href="#" class="logo" aria-label="Dealio home">
 
-<div class="logo-icon">D</div>
+<img
+  class="logo-img"
+  src="dealio-logo.png"
+  alt="Dealio Logo"
+>
 
-<div class="logo-text">
-Deal<span>io</span>
-</div>
-
-</div>
+</a>
 
 <div class="search">
 
 <input
-id="topSearch"
-type="search"
-placeholder="Search products..."
-oninput="syncSearch('topSearch')"
+  id="q"
+  type="search"
+  placeholder="Search products..."
+  autocomplete="off"
 >
 
 <button onclick="searchProduct()">🔍</button>
@@ -654,7 +618,9 @@ oninput="syncSearch('topSearch')"
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -667,13 +633,16 @@ WELCOME TO DEALIO
 </span>
 
 <h1>
-Smart Shopping.<br>
-<span class="blue">Better </span>
-<span class="orange">Deals.</span>
+Smart Shopping.
+<br>
+<span class="blue">
+Better Deals.
+</span>
 </h1>
 
 <p>
-Discover trending products and great-value finds from Meesho — all in one place.
+Discover trending products and great-value finds from Meesho —
+all in one place.
 </p>
 
 <a class="hero-btn" href="#products">
@@ -683,19 +652,13 @@ Shop Now →
 </div>
 
 
-<div class="dealio-logo-big">
+<div>
 
-<div class="dealio-logo-big-inner">
-
-<div class="symbol">
-D
-</div>
-
-<div class="name">
-Deal<span>io</span>
-</div>
-
-</div>
+<img
+  class="hero-logo"
+  src="dealio-logo.png"
+  alt="Dealio Logo"
+>
 
 </div>
 
@@ -704,7 +667,9 @@ Deal<span>io</span>
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
 <main class="section" id="products">
 
@@ -720,16 +685,16 @@ Hand-picked Meesho finds • Updated for 2026
 <div class="search">
 
 <input
-id="productSearch"
-type="search"
-placeholder="Search products..."
-oninput="syncSearch('productSearch')"
+  id="qProducts"
+  type="search"
+  placeholder="Search products..."
+  oninput="syncSearchFromProducts()"
 >
 
 <button
-class="theme"
-onclick="toggleTheme()"
-title="Toggle dark mode"
+  class="theme"
+  onclick="toggleTheme()"
+  title="Toggle dark mode"
 >
 🌙
 </button>
@@ -742,38 +707,38 @@ title="Toggle dark mode"
 <div class="filters">
 
 <button
-class="active"
-onclick="setFilter('all',this)"
+  class="active"
+  onclick="setFilter('all',this)"
 >
 All
 </button>
 
 <button
-onclick="setFilter('fashion',this)"
+  onclick="setFilter('fashion',this)"
 >
 Fashion
 </button>
 
 <button
-onclick="setFilter('beauty',this)"
+  onclick="setFilter('beauty',this)"
 >
 Beauty
 </button>
 
 <button
-onclick="setFilter('electronics',this)"
+  onclick="setFilter('electronics',this)"
 >
 Electronics
 </button>
 
 <button
-onclick="setFilter('home',this)"
+  onclick="setFilter('home',this)"
 >
 Home
 </button>
 
 <button
-onclick="setFilter('accessories',this)"
+  onclick="setFilter('accessories',this)"
 >
 Accessories
 </button>
@@ -785,6 +750,10 @@ Accessories
 No products found
 </div>
 
+
+<!-- =========================
+     PRODUCT CARDS
+========================= -->
 
 <div class="products">
 
@@ -829,6 +798,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -872,6 +842,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -915,6 +886,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -958,6 +930,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1001,6 +974,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1044,6 +1018,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1087,6 +1062,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1130,6 +1106,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1173,6 +1150,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1216,6 +1194,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1259,6 +1238,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1302,6 +1282,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1345,6 +1326,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1388,6 +1370,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1431,6 +1414,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1474,6 +1458,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1517,6 +1502,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1560,6 +1546,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1603,6 +1590,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1646,6 +1634,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1689,6 +1678,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1732,6 +1722,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1775,6 +1766,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1818,6 +1810,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1861,6 +1854,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1904,6 +1898,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1947,6 +1942,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -1990,6 +1986,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -2033,6 +2030,7 @@ Buy on Meesho →
 </a>
 
 </div>
+
 </article>
 
 
@@ -2044,47 +2042,21 @@ Buy on Meesho →
 <div class="features">
 
 <div class="feature">
-
 <span>💎</span>
-
-<b>
-Quality Picks
-</b>
-
-<small>
-Curated products
-</small>
-
+<b>Quality Picks</b>
+<small>Curated products</small>
 </div>
 
-
 <div class="feature">
-
 <span>💰</span>
-
-<b>
-Better Deals
-</b>
-
-<small>
-Great-value finds
-</small>
-
+<b>Better Deals</b>
+<small>Great-value finds</small>
 </div>
 
-
 <div class="feature">
-
 <span>⚡</span>
-
-<b>
-Easy Shopping
-</b>
-
-<small>
-Quick access to Meesho
-</small>
-
+<b>Easy Shopping</b>
+<small>Quick access to Meesho</small>
 </div>
 
 </div>
@@ -2092,13 +2064,15 @@ Quick access to Meesho
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="footer">
 
-<div class="footer-logo">
-Deal<span>io</span>
-</div>
+<b>Dealio</b>
+
+<br>
 
 Smart Shopping. Better Deals.
 
@@ -2111,273 +2085,305 @@ Smart Shopping. Better Deals.
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* ================= FILTER ================= */
-
-let activeFilter = "all";
+let activeFilter = 'all';
 
 
-/* ================= WISHLIST ================= */
+/* =========================
+   WISHLIST
+========================= */
 
-const savedWishlist =
-JSON.parse(
-localStorage.getItem("dealioWishlist") || "[]"
-);
+function getWishlist(){
 
+  try{
 
-document
-.querySelectorAll(".card")
-.forEach((card,index)=>{
+    return JSON.parse(
+      localStorage.getItem('dealioWishlist') || '[]'
+    );
 
-const button =
-card.querySelector(".wish");
+  }catch(e){
 
+    return [];
 
-if(savedWishlist.includes(index)){
-
-button.classList.add("active");
-
-button.textContent="♥";
+  }
 
 }
 
 
-button.onclick=()=>{
-
-button.classList.toggle("active");
-
-button.textContent =
-button.classList.contains("active")
-? "♥"
-: "♡";
-
-
-let list =
-JSON.parse(
-localStorage.getItem("dealioWishlist") || "[]"
-);
-
-
-if(button.classList.contains("active")){
-
-list=[
-...new Set(
-[
-...list,
-index
-]
-)
-];
-
-}else{
-
-list =
-list.filter(
-item=>item!==index
-);
-
-}
-
-
-localStorage.setItem(
-"dealioWishlist",
-JSON.stringify(list)
-);
-
-};
-
-});
-
-
-/* ================= FILTER BUTTON ================= */
-
-function setFilter(filter,button){
-
-activeFilter=filter;
-
-
-document
-.querySelectorAll(".filters button")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
-
-
-button.classList.add("active");
-
-
-applyFilters();
-
-}
-
-
-/* ================= SEARCH ================= */
+/* =========================
+   SEARCH + FILTER
+========================= */
 
 function applyFilters(){
 
-const topInput =
-document.getElementById("topSearch");
+  const top =
+    document.getElementById('q');
 
-const productInput =
-document.getElementById("productSearch");
+  const products =
+    document.getElementById('qProducts');
 
+  const q =
+    (
+      products.value ||
+      top.value ||
+      ''
+    )
+    .toLowerCase()
+    .trim();
 
-const query =
-productInput.value
-.toLowerCase()
-.trim();
+  top.value = q;
+  products.value = q;
 
+  let shown = 0;
 
-let count=0;
+  document
+    .querySelectorAll('.card')
+    .forEach(card => {
 
+      const matchesCategory =
+        activeFilter === 'all' ||
+        card.dataset.category === activeFilter;
 
-document
-.querySelectorAll(".card")
-.forEach(card=>{
+      const matchesSearch =
+        !q ||
+        (card.dataset.name || '')
+        .toLowerCase()
+        .includes(q);
 
-const category =
-card.dataset.category;
+      const show =
+        matchesCategory &&
+        matchesSearch;
 
-const name =
-card.dataset.name;
+      card.style.display =
+        show ? '' : 'none';
 
+      if(show){
+        shown++;
+      }
 
-const categoryOK =
-activeFilter==="all" ||
-category===activeFilter;
+    });
 
-
-const searchOK =
-!query ||
-name.includes(query);
-
-
-const show =
-categoryOK && searchOK;
-
-
-card.style.display =
-show ? "" : "none";
-
-
-if(show){
-count++;
-}
-
-});
-
-
-document.getElementById("empty").style.display =
-count ? "none" : "block";
+  document.getElementById('empty').style.display =
+    shown ? 'none' : 'block';
 
 }
 
 
-/* ================= SYNC SEARCH BOXES ================= */
+/* =========================
+   SECOND SEARCH BOX
+========================= */
 
-function syncSearch(source){
+function syncSearchFromProducts(){
 
-const value =
-document
-.getElementById(source)
-.value;
+  document.getElementById('q').value =
+    document.getElementById('qProducts').value;
 
-
-if(source==="topSearch"){
-
-document
-.getElementById("productSearch")
-.value=value;
-
-}else{
-
-document
-.getElementById("topSearch")
-.value=value;
+  applyFilters();
 
 }
 
 
-applyFilters();
-
-}
-
-
-/* ================= SEARCH BUTTON ================= */
+/* =========================
+   TOP SEARCH
+========================= */
 
 function searchProduct(){
 
-document
-.getElementById("products")
-.scrollIntoView({
-behavior:"smooth"
-});
+  document.getElementById('qProducts').value =
+    document.getElementById('q').value;
 
+  applyFilters();
 
-document
-.getElementById("productSearch")
-.focus();
-
-
-applyFilters();
+  document
+    .getElementById('products')
+    .scrollIntoView({
+      behavior:'smooth'
+    });
 
 }
 
 
-/* ================= DARK MODE ================= */
+/* =========================
+   CATEGORY FILTER
+========================= */
+
+function setFilter(filter,button){
+
+  activeFilter = filter;
+
+  document
+    .querySelectorAll('.filters button')
+    .forEach(b => {
+
+      b.classList.remove('active');
+
+    });
+
+  button.classList.add('active');
+
+  applyFilters();
+
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
 
 function toggleTheme(){
 
-document
-.body
-.classList
-.toggle("dark");
+  document.body.classList.toggle('dark');
 
-
-localStorage.setItem(
-"dealioDark",
-document.body.classList.contains("dark")
-);
+  localStorage.setItem(
+    'dealioDark',
+    document.body.classList.contains('dark')
+      ? 'true'
+      : 'false'
+  );
 
 }
 
 
-/* ================= LOAD DARK MODE ================= */
+/* =========================
+   WISHLIST BUTTONS
+========================= */
+
+document
+  .querySelectorAll('.card')
+  .forEach((card,index) => {
+
+    const button =
+      card.querySelector('.wish');
+
+    const saved =
+      getWishlist();
+
+    if(saved.includes(index)){
+
+      button.classList.add('active');
+      button.textContent = '♥';
+
+    }
+
+    button.addEventListener(
+      'click',
+      () => {
+
+        let list =
+          getWishlist();
+
+        if(
+          button.classList.contains('active')
+        ){
+
+          list =
+            list.filter(
+              x => x !== index
+            );
+
+          button.classList.remove(
+            'active'
+          );
+
+          button.textContent = '♡';
+
+        }else{
+
+          list = [
+            ...new Set(
+              [...list,index]
+            )
+          ];
+
+          button.classList.add(
+            'active'
+          );
+
+          button.textContent = '♥';
+
+        }
+
+        localStorage.setItem(
+          'dealioWishlist',
+          JSON.stringify(list)
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================
+   TOP SEARCH LIVE
+========================= */
+
+document
+  .getElementById('q')
+  .addEventListener(
+    'input',
+    () => {
+
+      document.getElementById(
+        'qProducts'
+      ).value =
+        document.getElementById(
+          'q'
+        ).value;
+
+      applyFilters();
+
+    }
+  );
+
+
+/* =========================
+   ENTER KEY SEARCH
+========================= */
+
+document
+  .getElementById('q')
+  .addEventListener(
+    'keydown',
+    event => {
+
+      if(event.key === 'Enter'){
+
+        searchProduct();
+
+      }
+
+    }
+  );
+
+
+/* =========================
+   LOAD DARK MODE
+========================= */
 
 if(
-localStorage.getItem("dealioDark")==="true"
+  localStorage.getItem(
+    'dealioDark'
+  ) === 'true'
 ){
 
-document
-.body
-.classList
-.add("dark");
+  document.body.classList.add(
+    'dark'
+  );
 
 }
 
 
-/* ================= ENTER KEY SEARCH ================= */
+/* =========================
+   INITIAL FILTER
+========================= */
 
-document
-.querySelectorAll(".search input")
-.forEach(input=>{
-
-input.addEventListener(
-"keydown",
-event=>{
-
-if(event.key==="Enter"){
-
-searchProduct();
-
-}
-
-});
-
-});
+applyFilters();
 
 </script>
 
