@@ -18,13 +18,9 @@
   --bg:#f7f9fc;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -33,12 +29,9 @@ body{
   color:var(--ink);
 }
 
-a{
-  text-decoration:none;
-}
+a{text-decoration:none}
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 .top{
   background:#fff;
   border-bottom:1px solid #e6edf5;
@@ -73,8 +66,7 @@ a{
   display:block;
 }
 
-/* ================= SEARCH ================= */
-
+/* SEARCH */
 .search{
   flex:1;
   display:flex;
@@ -93,9 +85,7 @@ a{
   font-size:16px;
 }
 
-.search input:focus{
-  border-color:var(--blue);
-}
+.search input:focus{border-color:var(--blue)}
 
 .search button{
   border:0;
@@ -107,20 +97,11 @@ a{
   cursor:pointer;
 }
 
-.search button:hover{
-  background:var(--orange2);
-}
+.search button:hover{background:var(--orange2)}
 
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
-  background:
-    linear-gradient(
-      135deg,
-      #eef0ff 0%,
-      #fff 58%,
-      #fff3e0 100%
-    );
+  background:linear-gradient(135deg,#eef0ff 0%,#fff 58%,#fff3e0 100%);
   padding:55px 18px;
 }
 
@@ -149,9 +130,7 @@ h1{
   margin:15px 0;
 }
 
-.blue{
-  color:var(--blue);
-}
+.blue{color:var(--blue)}
 
 .hero p{
   font-size:18px;
@@ -183,8 +162,7 @@ h1{
   margin:auto;
 }
 
-/* ================= PRODUCTS ================= */
-
+/* PRODUCTS */
 .section{
   max-width:1120px;
   margin:auto;
@@ -201,8 +179,7 @@ h1{
   margin:0 0 20px;
 }
 
-/* ================= FILTERS ================= */
-
+/* FILTERS */
 .filters{
   display:flex;
   gap:8px;
@@ -221,9 +198,7 @@ h1{
   cursor:pointer;
 }
 
-.filters button:hover{
-  border-color:var(--blue);
-}
+.filters button:hover{border-color:var(--blue)}
 
 .filters button.active{
   background:var(--blue);
@@ -231,8 +206,7 @@ h1{
   color:#fff;
 }
 
-/* ================= PRODUCT GRID ================= */
-
+/* PRODUCT GRID */
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -270,9 +244,7 @@ h1{
   display:block;
 }
 
-.info{
-  padding:15px;
-}
+.info{padding:15px}
 
 .info h3{
   font-size:17px;
@@ -310,12 +282,9 @@ h1{
   transition:.2s;
 }
 
-.buy:hover{
-  background:var(--blue2);
-}
+.buy:hover{background:var(--blue2)}
 
-/* ================= WISHLIST ================= */
-
+/* WISHLIST */
 .wish{
   position:absolute;
   right:10px;
@@ -332,11 +301,7 @@ h1{
   cursor:pointer;
 }
 
-.wish.active{
-  color:var(--orange);
-}
-
-/* ================= EMPTY ================= */
+.wish.active{color:var(--orange)}
 
 .empty{
   display:none;
@@ -345,8 +310,7 @@ h1{
   font-weight:700;
 }
 
-/* ================= FEATURES ================= */
-
+/* FEATURES */
 .features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -368,12 +332,9 @@ h1{
   margin-bottom:6px;
 }
 
-.feature b{
-  display:block;
-}
+.feature b{display:block}
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 .footer{
   margin-top:20px;
   background:var(--blue);
@@ -387,8 +348,7 @@ h1{
   font-size:24px;
 }
 
-/* ================= SOCIAL ================= */
-
+/* SOCIAL */
 .social{
   margin:20px 0 5px;
   display:flex;
@@ -401,7 +361,7 @@ h1{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:7px;
+  gap:8px;
   padding:11px 18px;
   border-radius:12px;
   color:#fff;
@@ -415,21 +375,21 @@ h1{
   opacity:.92;
 }
 
-.whatsapp-btn{
-  background:#25D366;
-}
+.whatsapp-btn{background:#25D366}
 
 .instagram-btn{
-  background:linear-gradient(
-    135deg,
-    #833AB4,
-    #E1306C,
-    #F77737
-  );
+  background:linear-gradient(135deg,#833AB4,#E1306C,#F77737);
 }
 
-/* ================= FLOATING WHATSAPP ================= */
+/* SVG ICONS */
+.social-icon{
+  width:20px;
+  height:20px;
+  display:block;
+  flex-shrink:0;
+}
 
+/* FLOATING WHATSAPP */
 .whatsapp-float{
   position:fixed;
   right:18px;
@@ -442,18 +402,20 @@ h1{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:29px;
   box-shadow:0 6px 20px #0003;
   z-index:999;
   transition:.2s;
 }
 
-.whatsapp-float:hover{
-  transform:scale(1.08);
+.whatsapp-float:hover{transform:scale(1.08)}
+
+.whatsapp-float svg{
+  width:31px;
+  height:31px;
+  display:block;
 }
 
-/* ================= DARK MODE ================= */
-
+/* DARK MODE */
 .dark{
   --bg:#09112f;
   --ink:#f7f9ff;
@@ -494,43 +456,26 @@ h1{
 }
 
 .dark .hero{
-  background:
-    linear-gradient(
-      135deg,
-      #101a4b,
-      #09112f 60%,
-      #241707
-    );
+  background:linear-gradient(135deg,#101a4b,#09112f 60%,#241707);
 }
 
-.dark .hero p{
-  color:#b9c2d8;
-}
+.dark .hero p{color:#b9c2d8}
 
 .dark .feature{
   background:#111d3f;
   border-color:#29415d;
 }
 
-.dark .footer{
-  background:#060b20;
-}
+.dark .footer{background:#060b20}
 
-/* ================= RESPONSIVE ================= */
-
+/* RESPONSIVE */
 @media(max-width:900px){
-
-  .products{
-    grid-template-columns:repeat(3,1fr);
-  }
-
+  .products{grid-template-columns:repeat(3,1fr)}
 }
 
 @media(max-width:650px){
 
-  .nav{
-    flex-wrap:wrap;
-  }
+  .nav{flex-wrap:wrap}
 
   .logo{
     width:125px;
@@ -547,9 +492,7 @@ h1{
     flex-basis:100%;
   }
 
-  .hero{
-    padding:42px 18px;
-  }
+  .hero{padding:42px 18px}
 
   .hero-inner{
     grid-template-columns:1fr;
@@ -571,38 +514,25 @@ h1{
     gap:12px;
   }
 
-  .pic{
-    height:210px;
-  }
+  .pic{height:210px}
 
-  .info{
-    padding:12px;
-  }
+  .info{padding:12px}
 
   .info h3{
     font-size:15px;
     min-height:40px;
   }
 
-  .price{
-    font-size:19px;
-  }
+  .price{font-size:19px}
 
-  .features{
-    grid-template-columns:1fr;
-  }
-
+  .features{grid-template-columns:1fr}
 }
 
 @media(max-width:400px){
 
-  .products{
-    grid-template-columns:1fr 1fr;
-  }
+  .products{grid-template-columns:1fr 1fr}
 
-  .pic{
-    height:180px;
-  }
+  .pic{height:180px}
 
   .logo{
     width:115px;
@@ -620,12 +550,9 @@ h1{
     width:54px;
     height:54px;
   }
-
 }
 
-button{
-  font-family:inherit;
-}
+button{font-family:inherit}
 
 ::selection{
   background:var(--orange);
@@ -636,41 +563,20 @@ button{
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header class="top">
-
 <nav class="nav">
 
 <a href="#" class="logo" aria-label="Dealio home">
-
-<img
-  class="logo-img"
-  src="./dealio-logo.PNG?v=2"
-  alt="Dealio Logo"
->
-
+<img class="logo-img" src="./dealio-logo.PNG?v=2" alt="Dealio Logo">
 </a>
 
 <div class="search">
-
-<input
-  id="q"
-  type="search"
-  placeholder="Search products..."
-  autocomplete="off"
->
-
+<input id="q" type="search" placeholder="Search products..." autocomplete="off">
 <button onclick="searchProduct()">🔍</button>
-
 </div>
 
 </nav>
-
 </header>
-
-
-<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -678,16 +584,12 @@ button{
 
 <div>
 
-<span class="badge">
-WELCOME TO DEALIO
-</span>
+<span class="badge">WELCOME TO DEALIO</span>
 
 <h1>
 Smart Shopping.
 <br>
-<span class="blue">
-Better Deals.
-</span>
+<span class="blue">Better Deals.</span>
 </h1>
 
 <p>
@@ -695,9 +597,7 @@ Discover trending products and great-value finds from Meesho —
 all in one place.
 </p>
 
-<a class="hero-btn" href="#products">
-Shop Now →
-</a>
+<a class="hero-btn" href="#products">Shop Now →</a>
 
 </div>
 
@@ -712,17 +612,11 @@ Shop Now →
 </div>
 
 </div>
-
 </section>
-
-
-<!-- ================= PRODUCTS ================= -->
 
 <main class="section" id="products">
 
-<h2>
-🔥 Trending Products
-</h2>
+<h2>🔥 Trending Products</h2>
 
 <p class="sub">
 Hand-picked Meesho finds • Updated for 2026
@@ -747,47 +641,23 @@ Hand-picked Meesho finds • Updated for 2026
 
 </div>
 
-
 <div class="filters">
 
-<button class="active" onclick="setFilter('all',this)">
-All
-</button>
-
-<button onclick="setFilter('fashion',this)">
-Fashion
-</button>
-
-<button onclick="setFilter('beauty',this)">
-Beauty
-</button>
-
-<button onclick="setFilter('electronics',this)">
-Electronics
-</button>
-
-<button onclick="setFilter('home',this)">
-Home
-</button>
-
-<button onclick="setFilter('accessories',this)">
-Accessories
-</button>
+<button class="active" onclick="setFilter('all',this)">All</button>
+<button onclick="setFilter('fashion',this)">Fashion</button>
+<button onclick="setFilter('beauty',this)">Beauty</button>
+<button onclick="setFilter('electronics',this)">Electronics</button>
+<button onclick="setFilter('home',this)">Home</button>
+<button onclick="setFilter('accessories',this)">Accessories</button>
 
 </div>
 
-
-<div id="empty" class="empty">
-No products found
-</div>
-
+<div id="empty" class="empty">No products found</div>
 
 <div class="products">
 
 <article class="card" data-category="fashion" data-name="whisker baggy jeans for men">
-<div class="pic">
-<img src="01-whisker-baggy-jeans-men.jpg" alt="Whisker Baggy Jeans for Men" loading="lazy">
-</div>
+<div class="pic"><img src="01-whisker-baggy-jeans-men.jpg" alt="Whisker Baggy Jeans for Men" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -798,9 +668,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="trending hand bag">
-<div class="pic">
-<img src="02-trending-hand-bag.jpg" alt="Trending Hand Bag" loading="lazy">
-</div>
+<div class="pic"><img src="02-trending-hand-bag.jpg" alt="Trending Hand Bag" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -811,9 +679,7 @@ No products found
 </article>
 
 <article class="card" data-category="beauty" data-name="trending jewellery set">
-<div class="pic">
-<img src="03-trending-jewellery-set.jpg" alt="Trending Jewellery Set" loading="lazy">
-</div>
+<div class="pic"><img src="03-trending-jewellery-set.jpg" alt="Trending Jewellery Set" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -824,9 +690,7 @@ No products found
 </article>
 
 <article class="card" data-category="beauty" data-name="kundan jewellery set">
-<div class="pic">
-<img src="04-kundan-jewellery-set.jpg" alt="Kundan Jewellery Set" loading="lazy">
-</div>
+<div class="pic"><img src="04-kundan-jewellery-set.jpg" alt="Kundan Jewellery Set" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -837,9 +701,7 @@ No products found
 </article>
 
 <article class="card" data-category="beauty" data-name="oxidised jewellery set">
-<div class="pic">
-<img src="05-oxidised-jewellery-set.jpg" alt="Oxidised Jewellery Set" loading="lazy">
-</div>
+<div class="pic"><img src="05-oxidised-jewellery-set.jpg" alt="Oxidised Jewellery Set" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -850,9 +712,7 @@ No products found
 </article>
 
 <article class="card" data-category="beauty" data-name="blue jewellery set">
-<div class="pic">
-<img src="06-blue-jewellery-set.jpg" alt="Blue Jewellery Set" loading="lazy">
-</div>
+<div class="pic"><img src="06-blue-jewellery-set.jpg" alt="Blue Jewellery Set" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -863,9 +723,7 @@ No products found
 </article>
 
 <article class="card" data-category="home" data-name="trending wall clock">
-<div class="pic">
-<img src="07-trending-wall-clock.jpg" alt="Trending Wall Clock" loading="lazy">
-</div>
+<div class="pic"><img src="07-trending-wall-clock.jpg" alt="Trending Wall Clock" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -876,9 +734,7 @@ No products found
 </article>
 
 <article class="card" data-category="home" data-name="trending wall clock multi">
-<div class="pic">
-<img src="08-trending-wall-clock-multi.jpg" alt="Trending Wall Clock Multi" loading="lazy">
-</div>
+<div class="pic"><img src="08-trending-wall-clock-multi.jpg" alt="Trending Wall Clock Multi" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -889,9 +745,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="trending women top">
-<div class="pic">
-<img src="09-trending-women-top.jpg" alt="Trending Women Top" loading="lazy">
-</div>
+<div class="pic"><img src="09-trending-women-top.jpg" alt="Trending Women Top" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -902,9 +756,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="top trending cotton tee">
-<div class="pic">
-<img src="10-top-trending-cotton-tee.jpg" alt="Top Trending Cotton Tee" loading="lazy">
-</div>
+<div class="pic"><img src="10-top-trending-cotton-tee.jpg" alt="Top Trending Cotton Tee" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -915,9 +767,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="women fashion tops">
-<div class="pic">
-<img src="11-women-fashion-tops.jpg" alt="Women Fashion Tops" loading="lazy">
-</div>
+<div class="pic"><img src="11-women-fashion-tops.jpg" alt="Women Fashion Tops" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -928,9 +778,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="hottest women tops">
-<div class="pic">
-<img src="12-hottest-women-tops.jpg" alt="Hottest Women Tops" loading="lazy">
-</div>
+<div class="pic"><img src="12-hottest-women-tops.jpg" alt="Hottest Women Tops" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -941,9 +789,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="ladies short tops">
-<div class="pic">
-<img src="13-ladies-short-tops.jpg" alt="Ladies Short Tops" loading="lazy">
-</div>
+<div class="pic"><img src="13-ladies-short-tops.jpg" alt="Ladies Short Tops" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -954,9 +800,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="men denim jeans">
-<div class="pic">
-<img src="14-men-denim-jeans.jpg" alt="Men Denim Jeans" loading="lazy">
-</div>
+<div class="pic"><img src="14-men-denim-jeans.jpg" alt="Men Denim Jeans" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -967,9 +811,7 @@ No products found
 </article>
 
 <article class="card" data-category="fashion" data-name="black jutti for women">
-<div class="pic">
-<img src="15-black-jutti-women.jpg" alt="Black Jutti for Women" loading="lazy">
-</div>
+<div class="pic"><img src="15-black-jutti-women.jpg" alt="Black Jutti for Women" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -980,9 +822,7 @@ No products found
 </article>
 
 <article class="card" data-category="electronics" data-name="redmi note 15 5g phone case">
-<div class="pic">
-<img src="16-redmi-note-15-5g-phone-case.jpg" alt="Redmi Note 15 5G Phone Case" loading="lazy">
-</div>
+<div class="pic"><img src="16-redmi-note-15-5g-phone-case.jpg" alt="Redmi Note 15 5G Phone Case" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -993,9 +833,7 @@ No products found
 </article>
 
 <article class="card" data-category="beauty" data-name="women jewellery collection">
-<div class="pic">
-<img src="17-women-jewellery-collection.jpg" alt="Women Jewellery Collection" loading="lazy">
-</div>
+<div class="pic"><img src="17-women-jewellery-collection.jpg" alt="Women Jewellery Collection" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1006,9 +844,7 @@ No products found
 </article>
 
 <article class="card" data-category="electronics" data-name="mini portable blender">
-<div class="pic">
-<img src="18-mini-portable-blender.jpg" alt="Mini Portable Blender" loading="lazy">
-</div>
+<div class="pic"><img src="18-mini-portable-blender.jpg" alt="Mini Portable Blender" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1019,9 +855,7 @@ No products found
 </article>
 
 <article class="card" data-category="electronics" data-name="wireless tws earbuds">
-<div class="pic">
-<img src="19-wireless-tws-earbuds.jpg" alt="Wireless TWS Earbuds" loading="lazy">
-</div>
+<div class="pic"><img src="19-wireless-tws-earbuds.jpg" alt="Wireless TWS Earbuds" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1032,9 +866,7 @@ No products found
 </article>
 
 <article class="card" data-category="electronics" data-name="mobile phone stand">
-<div class="pic">
-<img src="20-mobile-phone-stand.jpg" alt="Mobile Phone Stand" loading="lazy">
-</div>
+<div class="pic"><img src="20-mobile-phone-stand.jpg" alt="Mobile Phone Stand" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1045,9 +877,7 @@ No products found
 </article>
 
 <article class="card" data-category="home" data-name="kitchen organizer">
-<div class="pic">
-<img src="21-kitchen-organizer.jpg" alt="Kitchen Organizer" loading="lazy">
-</div>
+<div class="pic"><img src="21-kitchen-organizer.jpg" alt="Kitchen Organizer" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1058,9 +888,7 @@ No products found
 </article>
 
 <article class="card" data-category="accessories" data-name="women sling bag">
-<div class="pic">
-<img src="22-women-sling-bag.jpg" alt="Women Sling Bag" loading="lazy">
-</div>
+<div class="pic"><img src="22-women-sling-bag.jpg" alt="Women Sling Bag" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1071,9 +899,7 @@ No products found
 </article>
 
 <article class="card" data-category="beauty" data-name="hair brush">
-<div class="pic">
-<img src="23-hair-brush.jpg" alt="Hair Brush" loading="lazy">
-</div>
+<div class="pic"><img src="23-hair-brush.jpg" alt="Hair Brush" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1084,9 +910,7 @@ No products found
 </article>
 
 <article class="card" data-category="electronics" data-name="portable mini fan">
-<div class="pic">
-<img src="24-portable-mini-fan.jpg" alt="Portable Mini Fan" loading="lazy">
-</div>
+<div class="pic"><img src="24-portable-mini-fan.jpg" alt="Portable Mini Fan" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1097,9 +921,7 @@ No products found
 </article>
 
 <article class="card" data-category="beauty" data-name="led makeup mirror">
-<div class="pic">
-<img src="25-led-makeup-mirror.jpg" alt="LED Makeup Mirror" loading="lazy">
-</div>
+<div class="pic"><img src="25-led-makeup-mirror.jpg" alt="LED Makeup Mirror" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1110,9 +932,7 @@ No products found
 </article>
 
 <article class="card" data-category="accessories" data-name="men wallet">
-<div class="pic">
-<img src="26-men-wallet.jpg" alt="Men Wallet" loading="lazy">
-</div>
+<div class="pic"><img src="26-men-wallet.jpg" alt="Men Wallet" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1123,9 +943,7 @@ No products found
 </article>
 
 <article class="card" data-category="accessories" data-name="trending sunglasses">
-<div class="pic">
-<img src="27-trending-sunglasses.jpg" alt="Trending Sunglasses" loading="lazy">
-</div>
+<div class="pic"><img src="27-trending-sunglasses.jpg" alt="Trending Sunglasses" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1136,9 +954,7 @@ No products found
 </article>
 
 <article class="card" data-category="home" data-name="home storage organizer">
-<div class="pic">
-<img src="28-home-storage-organizer.jpg" alt="Home Storage Organizer" loading="lazy">
-</div>
+<div class="pic"><img src="28-home-storage-organizer.jpg" alt="Home Storage Organizer" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1149,9 +965,7 @@ No products found
 </article>
 
 <article class="card" data-category="home" data-name="artificial plant decor">
-<div class="pic">
-<img src="29-artificial-plant-decor.jpg" alt="Artificial Plant Decor" loading="lazy">
-</div>
+<div class="pic"><img src="29-artificial-plant-decor.jpg" alt="Artificial Plant Decor" loading="lazy"></div>
 <button class="wish">♡</button>
 <div class="info">
 <span class="tag">TRENDING</span>
@@ -1162,9 +976,6 @@ No products found
 </article>
 
 </div>
-
-
-<!-- ================= FEATURES ================= -->
 
 <div class="features">
 
@@ -1190,9 +1001,6 @@ No products found
 
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer class="footer">
 
 <b>Dealio</b>
@@ -1201,25 +1009,61 @@ No products found
 
 Smart Shopping. Better Deals.
 
-
 <div class="social">
 
+<!-- WHATSAPP WITH EMBEDDED SVG -->
 <a
   class="whatsapp-btn"
   href="https://wa.me/919037284266?text=Hi%20Dealio%2C%20I%20need%20help%20with%20a%20product."
   target="_blank"
   rel="noopener noreferrer"
+  aria-label="Contact Dealio on WhatsApp"
 >
-💬 WhatsApp
+
+<svg class="social-icon" viewBox="0 0 32 32" aria-hidden="true">
+<path
+fill="currentColor"
+d="M16.01 3.2C8.94 3.2 3.21 8.93 3.21 16c0 2.25.59 4.45 1.72 6.38L3.2 28.8l6.58-1.72A12.78 12.78 0 0 0 16 28.8h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.39h-.01a10.59 10.59 0 0 1-5.4-1.47l-.39-.23-3.91 1.02 1.04-3.81-.25-.39a10.57 10.57 0 1 1 8.92 4.88zm5.8-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1-1.24-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.77-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.62-.5-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.64s1.13 3.06 1.29 3.27c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37z"
+/>
+</svg>
+
+WhatsApp
+
 </a>
 
+<!-- INSTAGRAM -->
 <a
   class="instagram-btn"
   href="https://www.instagram.com/wellkaart?stkn=b2w3NTJsNDJnN2Rp&utm_source=qr"
   target="_blank"
   rel="noopener noreferrer"
+  aria-label="Follow Dealio on Instagram"
 >
-📸 Instagram
+
+<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+<rect
+x="3"
+y="3"
+width="18"
+height="18"
+rx="5"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+<circle
+cx="12"
+cy="12"
+r="4"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+/>
+<circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+</svg>
+
+Instagram
+
 </a>
 
 </div>
@@ -1232,9 +1076,7 @@ Smart Shopping. Better Deals.
 
 </footer>
 
-
-<!-- ================= FLOATING WHATSAPP ================= -->
-
+<!-- FLOATING WHATSAPP WITH SVG -->
 <a
   class="whatsapp-float"
   href="https://wa.me/919037284266?text=Hi%20Dealio%2C%20I%20need%20help%20with%20a%20product."
@@ -1242,9 +1084,15 @@ Smart Shopping. Better Deals.
   rel="noopener noreferrer"
   aria-label="Chat with Dealio on WhatsApp"
 >
-💬
-</a>
 
+<svg viewBox="0 0 32 32" aria-hidden="true">
+<path
+fill="currentColor"
+d="M16.01 3.2C8.94 3.2 3.21 8.93 3.21 16c0 2.25.59 4.45 1.72 6.38L3.2 28.8l6.58-1.72A12.78 12.78 0 0 0 16 28.8h.01c7.06 0 12.79-5.73 12.79-12.8S23.08 3.2 16.01 3.2zm0 23.39h-.01a10.59 10.59 0 0 1-5.4-1.47l-.39-.23-3.91 1.02 1.04-3.81-.25-.39a10.57 10.57 0 1 1 8.92 4.88zm5.8-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.77-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.62-.5-.54-.71-.55h-.6c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.64s1.13 3.06 1.29 3.27c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37z"
+/>
+</svg>
+
+</a>
 
 <script>
 
