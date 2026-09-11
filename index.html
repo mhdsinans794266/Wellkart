@@ -1024,58 +1024,176 @@ h1{
   color:#15803d;
 }
 
-/* LOGGED IN */
+/* ================= FLIPKART STYLE ACCOUNT ================= */
 
 .account-profile{
   display:none;
 }
 
-.account-profile.show{display:block}
+.account-profile.show{
+  display:block;
+}
+
+.account-header-card{
+  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  color:#fff;
+  border-radius:12px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:14px;
+}
 
 .profile-icon{
-  width:75px;
-  height:75px;
-  margin:0 auto 12px;
+  width:58px;
+  height:58px;
+  flex-shrink:0;
   border-radius:50%;
-  background:var(--blue);
-  color:#fff;
+  background:#fff;
+  color:var(--blue);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:32px;
+  font-size:24px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.account-header-info{
+  min-width:0;
+}
+
+.account-greeting{
+  font-size:14px;
+  opacity:.9;
+  margin-bottom:3px;
+}
+
+.account-user-name{
+  font-size:20px;
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.account-user-email{
+  font-size:12px;
+  opacity:.85;
+  margin-top:3px;
+  word-break:break-all;
+}
+
+.account-section-title{
+  font-size:13px;
+  color:var(--muted);
+  font-weight:900;
+  margin:18px 3px 8px;
+  text-transform:uppercase;
+}
+
+.account-actions-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.account-action{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:10px;
+  padding:15px 10px;
+  cursor:pointer;
+  text-align:left;
+  transition:.2s;
+  color:var(--ink);
+}
+
+.account-action:hover{
+  background:#f5f7fb;
+  transform:translateY(-1px);
+}
+
+.account-action-icon{
+  font-size:25px;
+  display:block;
+  margin-bottom:7px;
+}
+
+.account-action-title{
+  display:block;
+  font-size:13px;
   font-weight:900;
 }
 
-.profile-email{
-  text-align:center;
-  font-weight:800;
-  word-break:break-word;
-  margin-bottom:20px;
+.account-action-sub{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin-top:3px;
 }
 
 .account-menu{
   display:grid;
-  gap:8px;
+  gap:7px;
 }
 
 .account-menu button{
+  width:100%;
   border:1px solid var(--border);
   background:#fff;
-  border-radius:8px;
-  padding:12px;
+  color:var(--ink);
+  border-radius:9px;
+  padding:13px;
   text-align:left;
   font-weight:800;
   cursor:pointer;
+  transition:.2s;
 }
 
 .account-menu button:hover{
   background:#f5f7fb;
 }
 
+.account-menu-icon{
+  display:inline-block;
+  width:27px;
+  font-size:18px;
+}
+
 .logout-btn{
   background:#fee2e2 !important;
   color:#dc2626 !important;
   border-color:#fecaca !important;
+}
+
+.account-count{
+  float:right;
+  background:var(--orange);
+  color:#fff;
+  min-width:19px;
+  height:19px;
+  padding:0 5px;
+  border-radius:20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  font-weight:900;
+}
+
+@media(max-width:400px){
+
+  .account-actions-grid{
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+  }
+
+  .account-action{
+    padding:13px 8px;
+  }
+
 }
 
 /* FOOTER */
@@ -1429,6 +1547,35 @@ h1{
   background:var(--orange);
   color:#fff;
 }
+
+
+/* ================= ACCOUNT SUB-PAGES ================= */
+.account-submodal{display:none;position:fixed;inset:0;background:#0008;z-index:4500;align-items:center;justify-content:center;padding:14px}
+.account-submodal.show{display:flex}
+.account-subbox{width:min(560px,100%);max-height:88vh;overflow:auto;background:var(--card);color:var(--ink);border-radius:14px;padding:20px;position:relative;box-shadow:0 20px 60px #0004}
+.account-subclose{position:absolute;right:12px;top:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--bg);color:var(--ink);font-size:20px;cursor:pointer}
+.account-subtitle{font-size:22px;font-weight:900;margin:0 45px 4px 0}
+.account-subdesc{font-size:12px;color:var(--muted);margin:0 0 16px}
+.account-list{display:grid;gap:9px}
+.account-list-item{border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--card)}
+.account-list-item h4{margin:0 0 5px;font-size:14px}
+.account-list-item p{margin:3px 0;color:var(--muted);font-size:12px}
+.account-empty{padding:25px 10px;text-align:center;color:var(--muted)}
+.account-form{display:grid;gap:9px}
+.account-form label{font-size:12px;font-weight:800;color:var(--muted)}
+.account-form input,.account-form textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:9px;background:var(--bg);color:var(--ink);outline:none}
+.account-form textarea{min-height:75px;resize:vertical}
+.account-primary{border:0;border-radius:9px;padding:12px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;font-weight:900;cursor:pointer}
+.account-secondary{border:1px solid var(--border);border-radius:9px;padding:11px;background:var(--card);color:var(--ink);font-weight:800;cursor:pointer}
+.account-danger{border:1px solid #fecaca;border-radius:9px;padding:11px;background:#fee2e2;color:#dc2626;font-weight:800;cursor:pointer}
+.account-inline{display:flex;gap:8px;flex-wrap:wrap}
+.account-inline>*{flex:1;min-width:120px}
+.account-order-status{display:inline-block;padding:4px 8px;border-radius:20px;background:#fff7ed;color:#c2410c;font-size:10px;font-weight:900}
+.account-setting-row{border:1px solid var(--border);border-radius:10px;padding:13px;margin-bottom:9px}
+.account-setting-row strong{display:block;font-size:14px;margin-bottom:4px}
+.account-setting-row span{font-size:11px;color:var(--muted)}
+@media(max-width:420px){.account-subbox{padding:16px}.account-subtitle{font-size:20px}}
+
 </style>
 </head>
 
@@ -2118,33 +2265,93 @@ Create Account
 
 <div id="accountProfile" class="account-profile">
 
-<div class="profile-icon">👤</div>
+  <div class="account-header-card">
 
-<h2 class="account-title">My Account</h2>
+    <div id="profileIcon" class="profile-icon">
+      👤
+    </div>
 
-<p id="profileEmail" class="profile-email"></p>
+    <div class="account-header-info">
 
-<div class="account-menu">
+      <div class="account-greeting">
+        Hello,
+      </div>
 
-<button onclick="showWishlist();closeAccount();">
-❤️ My Wishlist
-</button>
+      <div id="profileName" class="account-user-name">
+        Dealio User
+      </div>
 
-<button onclick="showCart();closeAccount();">
-🛒 My Cart
-</button>
+      <div id="profileEmail" class="account-user-email"></div>
 
-<button onclick="showToast('Orders feature coming next 📦');">
-📦 My Orders
-</button>
+    </div>
 
-<button onclick="showToast('Address feature coming next 📍');">
-📍 Saved Addresses
-</button>
+  </div>
 
-<button class="logout-btn" onclick="logoutUser()">
-🚪 Logout
-</button>
+  <div class="account-section-title">
+    My Shopping
+  </div>
+
+  <div class="account-actions-grid">
+
+    <button class="account-action" onclick="showAccountOrders()">
+      <span class="account-action-icon">📦</span>
+      <span class="account-action-title">My Orders</span>
+      <span class="account-action-sub">Track your orders</span>
+    </button>
+
+    <button class="account-action" onclick="showWishlist();closeAccount();">
+      <span class="account-action-icon">❤️</span>
+      <span class="account-action-title">
+        My Wishlist
+        <span id="accountWishCount" class="account-count">0</span>
+      </span>
+      <span class="account-action-sub">Saved products</span>
+    </button>
+
+    <button class="account-action" onclick="showCart();closeAccount();">
+      <span class="account-action-icon">🛒</span>
+      <span class="account-action-title">
+        My Cart
+        <span id="accountCartCount" class="account-count">0</span>
+      </span>
+      <span class="account-action-sub">Products in cart</span>
+    </button>
+
+    <button class="account-action" onclick="showAccountAddresses()">
+      <span class="account-action-icon">📍</span>
+      <span class="account-action-title">My Addresses</span>
+      <span class="account-action-sub">Manage delivery address</span>
+    </button>
+
+  </div>
+
+  <div class="account-section-title">
+    Account &amp; Settings
+  </div>
+
+  <div class="account-menu">
+
+    <button onclick="showAccountSettings()">
+      <span class="account-menu-icon">⚙️</span>
+      Account Settings
+    </button>
+
+    <button onclick="showAccountHelp()">
+      <span class="account-menu-icon">❓</span>
+      Help &amp; Support
+    </button>
+
+    <button onclick="showAccountPrivacy()">
+      <span class="account-menu-icon">🔒</span>
+      Privacy &amp; Security
+    </button>
+
+    <button class="logout-btn" onclick="logoutUser()">
+      <span class="account-menu-icon">🚪</span>
+      Logout
+    </button>
+
+  </div>
 
 </div>
 
@@ -2152,6 +2359,68 @@ Create Account
 
 </div>
 
+
+<!-- ACCOUNT SUB-PAGES -->
+<div id="ordersModal" class="account-submodal">
+  <div class="account-subbox">
+    <button class="account-subclose" onclick="closeAccountSubModal('ordersModal')">✕</button>
+    <h2 class="account-subtitle">📦 My Orders</h2>
+    <p class="account-subdesc">Your Dealio order requests and their current status.</p>
+    <div id="ordersList" class="account-list"></div>
+  </div>
+</div>
+
+<div id="addressesModal" class="account-submodal">
+  <div class="account-subbox">
+    <button class="account-subclose" onclick="closeAccountSubModal('addressesModal')">✕</button>
+    <h2 class="account-subtitle">📍 My Addresses</h2>
+    <p class="account-subdesc">Save your delivery details for faster ordering.</p>
+    <div id="addressList" class="account-list"></div>
+    <hr style="border:0;border-top:1px solid var(--border);margin:16px 0">
+    <h3 style="margin:0 0 10px">Add new address</h3>
+    <form id="addressForm" class="account-form">
+      <input id="addressName" placeholder="Full name" required>
+      <input id="addressPhone" placeholder="Phone number" inputmode="tel" required>
+      <textarea id="addressLine" placeholder="House / street / area" required></textarea>
+      <input id="addressCity" placeholder="City" required>
+      <input id="addressPincode" placeholder="PIN code" inputmode="numeric" required>
+      <button class="account-primary" type="submit">Save Address</button>
+    </form>
+  </div>
+</div>
+
+<div id="settingsModal" class="account-submodal">
+  <div class="account-subbox">
+    <button class="account-subclose" onclick="closeAccountSubModal('settingsModal')">✕</button>
+    <h2 class="account-subtitle">⚙️ Account Settings</h2>
+    <p class="account-subdesc">Update your Dealio profile information.</p>
+    <form id="settingsForm" class="account-form">
+      <label>Display name</label>
+      <input id="settingsName" required>
+      <label>Email</label>
+      <input id="settingsEmail" type="email" readonly>
+      <button class="account-primary" type="submit">Save Changes</button>
+    </form>
+    <div id="settingsMessage" style="font-size:12px;margin-top:10px;font-weight:800"></div>
+  </div>
+</div>
+
+<div id="privacyModal" class="account-submodal">
+  <div class="account-subbox">
+    <button class="account-subclose" onclick="closeAccountSubModal('privacyModal')">✕</button>
+    <h2 class="account-subtitle">🔒 Privacy &amp; Security</h2>
+    <p class="account-subdesc">Manage the security of your Dealio account.</p>
+    <div class="account-setting-row">
+      <strong>Change password</strong>
+      <span>We will send a secure password-reset email to your registered email.</span>
+      <button class="account-primary" style="margin-top:10px;width:100%" onclick="sendDealioPasswordReset()">Send Reset Email</button>
+    </div>
+    <div class="account-setting-row">
+      <strong>Local shopping data</strong>
+      <span>Wishlist, cart, addresses and order-request history are stored in this browser.</span>
+      <button class="account-danger" style="margin-top:10px;width:100%" onclick="clearDealioLocalData()">Clear Local Shopping Data</button>
+    </div>
+  </div>
 </div>
 
 <script type="module">
@@ -2168,7 +2437,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-  updateProfile
+  updateProfile,
+  sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -2988,11 +3258,28 @@ box.innerHTML=list.map(cardHTML).join("");
 
 function updateCounts(){
 
+const wishlistCount=getWishlist().length;
+const cartCount=getCart().length;
+
 document.getElementById("wishCount").textContent=
-getWishlist().length;
+wishlistCount;
 
 document.getElementById("cartCount").textContent=
-getCart().length;
+cartCount;
+
+const accountWish=
+document.getElementById("accountWishCount");
+
+const accountCart=
+document.getElementById("accountCartCount");
+
+if(accountWish){
+accountWish.textContent=wishlistCount;
+}
+
+if(accountCart){
+accountCart.textContent=cartCount;
+}
 
 }
 
@@ -3108,34 +3395,49 @@ document.getElementById("summaryGrand").textContent="₹"+total;
 function orderCart(){
 
 const ids=getCart();
-
 const list=products.filter(p=>ids.includes(p.id));
 
 if(!list.length){
-
 showToast("Cart is empty");
-
 return;
-
 }
 
+const user=auth.currentUser;
+if(!user){
+showToast("Please login before placing an order 🔐");
+openAccount();
+return;
+}
+
+const total=list.reduce((sum,p)=>sum+p.price,0);
+const order={
+ id:"DL"+Date.now().toString().slice(-8),
+ date:new Date().toLocaleString("en-IN"),
+ items:list.map(p=>({id:p.id,name:p.name,price:p.price,image:p.image})),
+ total:total,
+ status:"Order request sent"
+};
+
+const key="dealioOrders_"+encodeURIComponent(user.email||"user");
+const orders=JSON.parse(localStorage.getItem(key)||"[]");
+orders.unshift(order);
+localStorage.setItem(key,JSON.stringify(orders));
+
 let message="Hi Dealio, I want to order:%0A%0A";
-
 list.forEach((p,i)=>{
-
-message+=
-`${i+1}. ${p.name} - ₹${p.price}%0A`;
-
+message+=`${i+1}. ${p.name} - ₹${p.price}%0A`;
 });
-
-message+="%0APlease help me with the order.";
+message+=`%0AOrder ID: ${order.id}%0ATotal: ₹${total}%0APlease help me with the order.`;
 
 window.open(
 "https://wa.me/919037284266?text="+message,
 "_blank"
 );
 
+showToast("Order request saved 📦");
+updateAccountCounts();
 }
+
 
 
 /* =========================================================
@@ -3371,8 +3673,28 @@ document.getElementById("authArea").style.display="none";
 document.getElementById("accountProfile")
 .classList.add("show");
 
-document.getElementById("profileEmail").textContent=
-user.email || "Dealio User";
+const name =
+user.displayName ||
+user.email?.split("@")[0] ||
+"Dealio User";
+
+const email =
+user.email ||
+"Dealio User";
+
+document.getElementById("profileName")
+.textContent=name;
+
+document.getElementById("profileEmail")
+.textContent=email;
+
+const initial =
+name.charAt(0).toUpperCase();
+
+document.getElementById("profileIcon")
+.textContent=initial;
+
+updateAccountCounts();
 
 }
 
@@ -3386,6 +3708,167 @@ document.getElementById("accountProfile")
 showLoginForm();
 
 }
+
+/* =========================================================
+   ACCOUNT MENU ACTIONS
+========================================================= */
+
+function updateAccountCounts(){
+
+const wishlistCount=getWishlist().length;
+const cartCount=getCart().length;
+
+const wish=
+document.getElementById("accountWishCount");
+
+const cart=
+document.getElementById("accountCartCount");
+
+if(wish){
+wish.textContent=wishlistCount;
+}
+
+if(cart){
+cart.textContent=cartCount;
+}
+
+}
+
+function getUserStorageKey(prefix){
+const email=auth.currentUser?.email||"guest";
+return prefix+encodeURIComponent(email);
+}
+
+function closeAccountSubModal(id){
+const el=document.getElementById(id);
+if(el) el.classList.remove("show");
+if(!document.querySelector(".account-submodal.show") && !document.getElementById("productModal")?.classList.contains("show")){
+  document.body.classList.remove("no-scroll");
+}
+}
+
+function showAccountOrders(){
+if(!auth.currentUser){openAccount();return;}
+closeAccount();
+const orders=JSON.parse(localStorage.getItem(getUserStorageKey("dealioOrders_"))||"[]");
+const box=document.getElementById("ordersList");
+if(!orders.length){
+box.innerHTML=`<div class="account-empty"><div style="font-size:42px">📦</div><h3>No orders yet</h3><p>Your order requests will appear here after you order through WhatsApp.</p><button class="account-primary" onclick="closeAccountSubModal('ordersModal');showShop()">Start Shopping</button></div>`;
+}else{
+box.innerHTML=orders.map(o=>`<div class="account-list-item"><h4>Order ${o.id}</h4><p>${o.date}</p><p>${o.items.length} product(s) · ₹${o.total}</p><span class="account-order-status">${o.status}</span><div style="margin-top:8px;font-size:11px;color:var(--muted)">${o.items.map(x=>x.name).join(" • ")}</div></div>`).join("");
+}
+document.getElementById("ordersModal").classList.add("show");
+document.body.classList.add("no-scroll");
+}
+
+function renderAddresses(){
+const box=document.getElementById("addressList");
+const addresses=JSON.parse(localStorage.getItem(getUserStorageKey("dealioAddresses_"))||"[]");
+if(!addresses.length){box.innerHTML=`<div class="account-empty">No saved address yet. Add one below 📍</div>`;return;}
+box.innerHTML=addresses.map((a,i)=>`<div class="account-list-item"><h4>${a.name}</h4><p>${a.phone}</p><p>${a.line}, ${a.city} - ${a.pincode}</p><button class="account-danger" style="margin-top:8px" onclick="deleteAddress(${i})">Delete</button></div>`).join("");
+}
+
+function showAccountAddresses(){
+if(!auth.currentUser){openAccount();return;}
+closeAccount();
+renderAddresses();
+document.getElementById("addressForm").reset();
+document.getElementById("addressesModal").classList.add("show");
+document.body.classList.add("no-scroll");
+}
+
+function deleteAddress(index){
+const key=getUserStorageKey("dealioAddresses_");
+const addresses=JSON.parse(localStorage.getItem(key)||"[]");
+addresses.splice(index,1);
+localStorage.setItem(key,JSON.stringify(addresses));
+renderAddresses();
+showToast("Address deleted");
+}
+
+document.getElementById("addressForm").addEventListener("submit",function(e){
+e.preventDefault();
+const key=getUserStorageKey("dealioAddresses_");
+const addresses=JSON.parse(localStorage.getItem(key)||"[]");
+addresses.push({
+name:document.getElementById("addressName").value.trim(),
+phone:document.getElementById("addressPhone").value.trim(),
+line:document.getElementById("addressLine").value.trim(),
+city:document.getElementById("addressCity").value.trim(),
+pincode:document.getElementById("addressPincode").value.trim()
+});
+localStorage.setItem(key,JSON.stringify(addresses));
+this.reset();
+renderAddresses();
+showToast("Address saved 📍");
+});
+
+function showAccountSettings(){
+if(!auth.currentUser){openAccount();return;}
+closeAccount();
+document.getElementById("settingsName").value=auth.currentUser.displayName||"";
+document.getElementById("settingsEmail").value=auth.currentUser.email||"";
+document.getElementById("settingsMessage").textContent="";
+document.getElementById("settingsModal").classList.add("show");
+document.body.classList.add("no-scroll");
+}
+
+document.getElementById("settingsForm").addEventListener("submit",async function(e){
+e.preventDefault();
+const name=document.getElementById("settingsName").value.trim();
+if(!name){return;}
+const button=this.querySelector("button[type=submit]");
+button.disabled=true;
+button.textContent="Saving...";
+try{
+await updateProfile(auth.currentUser,{displayName:name});
+document.getElementById("profileName").textContent=name;
+document.getElementById("profileIcon").textContent=name.charAt(0).toUpperCase();
+document.getElementById("accountLabel").textContent=name;
+document.getElementById("settingsMessage").textContent="Profile updated successfully ✅";
+showToast("Account updated ✅");
+}catch(error){
+console.error(error);
+document.getElementById("settingsMessage").textContent="Could not update profile.";
+}finally{
+button.disabled=false;
+button.textContent="Save Changes";
+}
+});
+
+function showAccountHelp(){
+window.open("https://wa.me/919037284266?text=Hi%20Dealio%2C%20I%20need%20help%20with%20my%20account.","_blank");
+}
+
+function showAccountPrivacy(){
+if(!auth.currentUser){openAccount();return;}
+closeAccount();
+document.getElementById("privacyModal").classList.add("show");
+document.body.classList.add("no-scroll");
+}
+
+async function sendDealioPasswordReset(){
+const email=auth.currentUser?.email;
+if(!email){showToast("Please login first");return;}
+try{
+await sendPasswordResetEmail(auth,email);
+showToast("Password reset email sent 📧");
+}catch(error){
+console.error(error);
+showToast("Could not send reset email");
+}
+}
+
+function clearDealioLocalData(){
+if(!auth.currentUser)return;
+if(!confirm("Clear this account's wishlist, cart, addresses and order-request history from this browser?"))return;
+const email=encodeURIComponent(auth.currentUser.email||"user");
+["dealioWishlist","dealioCart","dealioAddresses_"+email,"dealioOrders_"+email].forEach(k=>localStorage.removeItem(k));
+updateCounts();
+updateAccountCounts();
+showToast("Local shopping data cleared");
+}
+
 
 function updateAccountHeader(user){
 
@@ -3805,6 +4288,12 @@ closeAccount,
 showLoginForm,
 showSignupForm,
 logoutUser,
+
+showAccountOrders,
+showAccountAddresses,
+showAccountSettings,
+showAccountHelp,
+showAccountPrivacy,
 
 showToast,
 
