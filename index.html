@@ -201,8 +201,6 @@ button,input,select{font-family:inherit}
   margin-top:-5px;
 }
 
-/* ACCOUNT BUTTON */
-
 .account-btn{
   position:relative;
 }
@@ -873,7 +871,7 @@ h1{
   color:#b45309;
 }
 
-/* ================= ACCOUNT MODAL ================= */
+/* ACCOUNT MODAL */
 
 .account-modal{
   display:none;
@@ -890,6 +888,8 @@ h1{
 
 .account-box{
   width:min(430px,100%);
+  max-height:90vh;
+  overflow:auto;
   background:#fff;
   border-radius:16px;
   padding:28px;
@@ -996,6 +996,11 @@ h1{
 }
 
 .auth-submit:hover{background:var(--blue2)}
+
+.auth-submit:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
 
 .auth-message{
   display:none;
@@ -1429,10 +1434,7 @@ h1{
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header class="top">
-
 <nav class="nav">
 
 <a href="#" class="logo" onclick="goHome();return false;" aria-label="Dealio Home">
@@ -1490,10 +1492,9 @@ Theme
 </div>
 
 </nav>
-
 </header>
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 
 <section id="homePage">
 
@@ -1636,7 +1637,7 @@ View All →
 
 </section>
 
-<!-- ================= SHOP ================= -->
+<!-- SHOP -->
 
 <section id="shopPage" class="section" style="display:none">
 
@@ -1656,7 +1657,7 @@ id="shopSearch"
 class="toolbar-search"
 type="search"
 placeholder="Search products..."
-oninput="updateShopSearch"
+oninput="updateShopSearch()"
 >
 
 <select id="sortSelect" class="toolbar-select" onchange="renderShop()">
@@ -1751,7 +1752,7 @@ onclick="toggleFilters()"
 
 </section>
 
-<!-- ================= WISHLIST ================= -->
+<!-- WISHLIST -->
 
 <section id="wishlistPage" class="section" style="display:none">
 
@@ -1780,7 +1781,7 @@ Shop Products
 
 </section>
 
-<!-- ================= CART ================= -->
+<!-- CART -->
 
 <section id="cartPage" class="section cart-page">
 
@@ -1826,7 +1827,7 @@ Shop Products
 
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -1861,11 +1862,9 @@ rel="noopener noreferrer"
 >
 
 <svg class="social-icon" viewBox="0 0 24 24">
-
 <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
 <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
 <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
-
 </svg>
 
 Instagram
@@ -1880,7 +1879,7 @@ Instagram
 
 </footer>
 
-<!-- FLOATING WHATSAPP -->
+<!-- WHATSAPP FLOAT -->
 
 <a
 class="whatsapp-float"
@@ -1985,7 +1984,7 @@ onclick="addModalToCart()"
 
 </div>
 
-<!-- ================= ACCOUNT MODAL ================= -->
+<!-- ACCOUNT MODAL -->
 
 <div id="accountModal" class="account-modal">
 
@@ -2027,8 +2026,6 @@ Create Account
 
 </div>
 
-<!-- LOGIN -->
-
 <form id="loginForm" class="auth-form active">
 
 <label class="auth-label">Email</label>
@@ -2061,8 +2058,6 @@ Login
 <div id="loginMessage" class="auth-message"></div>
 
 </form>
-
-<!-- SIGNUP -->
 
 <form id="signupForm" class="auth-form">
 
@@ -2120,8 +2115,6 @@ Create Account
 </form>
 
 </div>
-
-<!-- LOGGED IN PROFILE -->
 
 <div id="accountProfile" class="account-profile">
 
@@ -2184,14 +2177,12 @@ const firebaseConfig = {
   projectId: "dealio-8fd36",
   storageBucket: "dealio-8fd36.firebasestorage.app",
   messagingSenderId: "851595691830",
-  appId: "1:851595691830:web:259dfe159db0b2e8555597"
+  appId: "1:851595691830:web:259db0b2e8555597"
 };
 
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
 
-/* Make auth available to normal functions */
 window.dealioAuth = auth;
 
 
@@ -2522,6 +2513,7 @@ url:"https://www.meesho.com/search?q=artificial%20plants%20home%20decor"
 
 ];
 
+
 /* =========================================================
    STORAGE
 ========================================================= */
@@ -2567,6 +2559,7 @@ JSON.stringify(list)
 updateCounts();
 
 }
+
 
 /* =========================================================
    CARD
@@ -2654,6 +2647,7 @@ onclick="addToCart(${p.id})"
 
 }
 
+
 /* =========================================================
    HOME
 ========================================================= */
@@ -2666,6 +2660,7 @@ box.innerHTML=
 products.slice(0,8).map(cardHTML).join("");
 
 }
+
 
 /* =========================================================
    SHOP
@@ -2730,11 +2725,14 @@ box.innerHTML=list.map(cardHTML).join("");
 
 function updateShopSearch(){
 
-shopSearchText=document.getElementById("shopSearch").value;
+const input=document.getElementById("shopSearch");
+
+shopSearchText=input.value.trim();
 
 renderShop();
 
 }
+
 
 /* =========================================================
    NAVIGATION
@@ -2755,7 +2753,10 @@ hideAllPages();
 
 document.getElementById("homePage").style.display="block";
 
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
@@ -2767,7 +2768,10 @@ document.getElementById("shopPage").style.display="block";
 
 renderShop();
 
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
@@ -2779,7 +2783,10 @@ document.getElementById("wishlistPage").style.display="block";
 
 renderWishlist();
 
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
@@ -2791,12 +2798,17 @@ document.getElementById("cartPage").classList.add("show");
 
 renderCart();
 
-window.scrollTo({top:0,behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 function showCategories(){
+
 showShop();
+
 }
 
 function setCategory(category){
@@ -2809,6 +2821,7 @@ renderShop();
 
 }
 
+
 /* =========================================================
    SEARCH
 ========================================================= */
@@ -2818,8 +2831,11 @@ function runSearch(){
 const value=document.getElementById("headerSearch").value.trim();
 
 if(!value){
+
 showShop();
+
 return;
+
 }
 
 showShop();
@@ -2836,19 +2852,30 @@ document.getElementById("suggestions").classList.remove("show");
 
 function focusSearch(){
 
-document.getElementById("headerSearch").focus();
+const input=document.getElementById("headerSearch");
 
-window.scrollTo({top:0,behavior:"smooth"});
+input.focus();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
-document.getElementById("headerSearch").addEventListener("keydown",function(e){
+document.getElementById("headerSearch").addEventListener(
+"keydown",
+function(e){
 
-if(e.key==="Enter") runSearch();
+if(e.key==="Enter"){
+runSearch();
+}
 
 });
 
-document.getElementById("headerSearch").addEventListener("input",function(){
+document.getElementById("headerSearch").addEventListener(
+"input",
+function(){
 
 const value=this.value.toLowerCase().trim();
 
@@ -2858,6 +2885,7 @@ if(!value){
 
 box.innerHTML="";
 box.classList.remove("show");
+
 return;
 
 }
@@ -2870,6 +2898,7 @@ if(!matches.length){
 
 box.innerHTML="";
 box.classList.remove("show");
+
 return;
 
 }
@@ -2899,20 +2928,31 @@ box.classList.add("show");
 
 });
 
+
 /* =========================================================
    WISHLIST
 ========================================================= */
 
 function toggleWishlist(id,event){
 
-if(event) event.stopPropagation();
+if(event){
+event.stopPropagation();
+}
 
 let list=getWishlist();
 
 if(list.includes(id)){
+
 list=list.filter(x=>x!==id);
+
+showToast("Removed from wishlist");
+
 }else{
+
 list.push(id);
+
+showToast("Added to wishlist ❤️");
+
 }
 
 saveWishlist(list);
@@ -2948,10 +2988,14 @@ box.innerHTML=list.map(cardHTML).join("");
 
 function updateCounts(){
 
-document.getElementById("wishCount").textContent=getWishlist().length;
-document.getElementById("cartCount").textContent=getCart().length;
+document.getElementById("wishCount").textContent=
+getWishlist().length;
+
+document.getElementById("cartCount").textContent=
+getCart().length;
 
 }
+
 
 /* =========================================================
    CART
@@ -2962,12 +3006,18 @@ function addToCart(id){
 let cart=getCart();
 
 if(!cart.includes(id)){
+
 cart.push(id);
-}
 
 saveCart(cart);
 
 showToast("Added to cart 🛒");
+
+}else{
+
+showToast("Already in cart 🛒");
+
+}
 
 }
 
@@ -2978,6 +3028,8 @@ let cart=getCart().filter(x=>x!==id);
 saveCart(cart);
 
 renderCart();
+
+showToast("Removed from cart");
 
 }
 
@@ -3042,7 +3094,10 @@ Remove
 
 `).join("");
 
-const total=list.reduce((sum,p)=>sum+p.price,0);
+const total=list.reduce(
+(sum,p)=>sum+p.price,
+0
+);
 
 document.getElementById("summaryItems").textContent=list.length;
 document.getElementById("summaryTotal").textContent="₹"+total;
@@ -3059,6 +3114,7 @@ const list=products.filter(p=>ids.includes(p.id));
 if(!list.length){
 
 showToast("Cart is empty");
+
 return;
 
 }
@@ -3066,7 +3122,10 @@ return;
 let message="Hi Dealio, I want to order:%0A%0A";
 
 list.forEach((p,i)=>{
-message+=`${i+1}. ${p.name} - ₹${p.price}%0A`;
+
+message+=
+`${i+1}. ${p.name} - ₹${p.price}%0A`;
+
 });
 
 message+="%0APlease help me with the order.";
@@ -3077,6 +3136,7 @@ window.open(
 );
 
 }
+
 
 /* =========================================================
    PRODUCT MODAL
@@ -3093,22 +3153,36 @@ if(!p) return;
 currentModalProduct=p;
 
 document.getElementById("modalImage").src=p.image;
+
 document.getElementById("modalImage").alt=p.name;
+
 document.getElementById("modalName").textContent=p.name;
-document.getElementById("modalRating").textContent=p.rating+" ★ Dealio Rating";
-document.getElementById("modalPrice").textContent="₹"+p.price;
+
+document.getElementById("modalRating").textContent=
+p.rating+" ★ Dealio Rating";
+
+document.getElementById("modalPrice").textContent=
+"₹"+p.price;
+
 document.getElementById("modalDeal").innerHTML=
 `<span class="discount">${p.discount}% Deal</span>`;
+
 document.getElementById("modalBuy").href=p.url;
 
 document.getElementById("productModal").classList.add("show");
+
 document.body.classList.add("no-scroll");
+
+document.getElementById("suggestions")
+.classList.remove("show");
 
 }
 
 function closeModal(){
 
-document.getElementById("productModal").classList.remove("show");
+document.getElementById("productModal")
+.classList.remove("show");
+
 document.body.classList.remove("no-scroll");
 
 }
@@ -3121,11 +3195,15 @@ addToCart(currentModalProduct.id);
 
 }
 
-document.getElementById("productModal").addEventListener("click",function(e){
+document.getElementById("productModal")
+.addEventListener("click",function(e){
 
-if(e.target===this) closeModal();
+if(e.target===this){
+closeModal();
+}
 
 });
+
 
 /* =========================================================
    FILTER
@@ -3145,6 +3223,7 @@ panel.classList.contains("show")
 
 }
 
+
 /* =========================================================
    DARK MODE
 ========================================================= */
@@ -3163,6 +3242,10 @@ dark ? "true" : "false"
 document.getElementById("themeIcon").textContent=
 dark ? "☀️" : "🌙";
 
+showToast(
+dark ? "Dark mode enabled 🌙" : "Light mode enabled ☀️"
+);
+
 }
 
 if(localStorage.getItem("dealioDark")==="true"){
@@ -3173,19 +3256,26 @@ document.getElementById("themeIcon").textContent="☀️";
 
 }
 
+
 /* =========================================================
    ACCOUNT UI
 ========================================================= */
 
 function openAccount(){
 
-document.getElementById("accountModal").classList.add("show");
+document.getElementById("accountModal")
+.classList.add("show");
 
 document.body.classList.add("no-scroll");
 
-if(window.dealioAuth && window.dealioAuth.currentUser){
+if(
+window.dealioAuth &&
+window.dealioAuth.currentUser
+){
 
-showLoggedInAccount(window.dealioAuth.currentUser);
+showLoggedInAccount(
+window.dealioAuth.currentUser
+);
 
 }else{
 
@@ -3197,7 +3287,8 @@ showLoginForm();
 
 function closeAccount(){
 
-document.getElementById("accountModal").classList.remove("show");
+document.getElementById("accountModal")
+.classList.remove("show");
 
 document.body.classList.remove("no-scroll");
 
@@ -3205,11 +3296,22 @@ document.body.classList.remove("no-scroll");
 
 function showLoginForm(){
 
-document.getElementById("loginForm").classList.add("active");
-document.getElementById("signupForm").classList.remove("active");
+document.getElementById("authArea").style.display="block";
 
-document.getElementById("loginTab").classList.add("active");
-document.getElementById("signupTab").classList.remove("active");
+document.getElementById("accountProfile")
+.classList.remove("show");
+
+document.getElementById("loginForm")
+.classList.add("active");
+
+document.getElementById("signupForm")
+.classList.remove("active");
+
+document.getElementById("loginTab")
+.classList.add("active");
+
+document.getElementById("signupTab")
+.classList.remove("active");
 
 clearAuthMessages();
 
@@ -3217,11 +3319,22 @@ clearAuthMessages();
 
 function showSignupForm(){
 
-document.getElementById("signupForm").classList.add("active");
-document.getElementById("loginForm").classList.remove("active");
+document.getElementById("authArea").style.display="block";
 
-document.getElementById("signupTab").classList.add("active");
-document.getElementById("loginTab").classList.remove("active");
+document.getElementById("accountProfile")
+.classList.remove("show");
+
+document.getElementById("signupForm")
+.classList.add("active");
+
+document.getElementById("loginForm")
+.classList.remove("active");
+
+document.getElementById("signupTab")
+.classList.add("active");
+
+document.getElementById("loginTab")
+.classList.remove("active");
 
 clearAuthMessages();
 
@@ -3229,10 +3342,14 @@ clearAuthMessages();
 
 function clearAuthMessages(){
 
-document.getElementById("loginMessage").className="auth-message";
+document.getElementById("loginMessage").className=
+"auth-message";
+
 document.getElementById("loginMessage").textContent="";
 
-document.getElementById("signupMessage").className="auth-message";
+document.getElementById("signupMessage").className=
+"auth-message";
+
 document.getElementById("signupMessage").textContent="";
 
 }
@@ -3251,7 +3368,8 @@ function showLoggedInAccount(user){
 
 document.getElementById("authArea").style.display="none";
 
-document.getElementById("accountProfile").classList.add("show");
+document.getElementById("accountProfile")
+.classList.add("show");
 
 document.getElementById("profileEmail").textContent=
 user.email || "Dealio User";
@@ -3262,7 +3380,8 @@ function showLoggedOutAccount(){
 
 document.getElementById("authArea").style.display="block";
 
-document.getElementById("accountProfile").classList.remove("show");
+document.getElementById("accountProfile")
+.classList.remove("show");
 
 showLoginForm();
 
@@ -3275,7 +3394,10 @@ const icon=document.getElementById("accountIcon");
 
 if(user){
 
-const name=user.displayName || user.email?.split("@")[0] || "Account";
+const name=
+user.displayName ||
+user.email?.split("@")[0] ||
+"Account";
 
 label.textContent=name;
 icon.textContent="👤";
@@ -3289,18 +3411,31 @@ icon.textContent="👤";
 
 }
 
+
 /* =========================================================
    SIGN UP
 ========================================================= */
 
-document.getElementById("signupForm").addEventListener("submit",async function(e){
+document.getElementById("signupForm")
+.addEventListener("submit",async function(e){
 
 e.preventDefault();
 
-const name=document.getElementById("signupName").value.trim();
-const email=document.getElementById("signupEmail").value.trim();
-const password=document.getElementById("signupPassword").value;
-const confirm=document.getElementById("signupConfirm").value;
+const name=
+document.getElementById("signupName")
+.value.trim();
+
+const email=
+document.getElementById("signupEmail")
+.value.trim();
+
+const password=
+document.getElementById("signupPassword")
+.value;
+
+const confirm=
+document.getElementById("signupConfirm")
+.value;
 
 if(password!==confirm){
 
@@ -3326,22 +3461,27 @@ return;
 
 }
 
-const button=this.querySelector("button[type=submit]");
+const button=
+this.querySelector("button[type=submit]");
 
 button.disabled=true;
 button.textContent="Creating account...";
 
 try{
 
-const result=await createUserWithEmailAndPassword(
+const result=
+await createUserWithEmailAndPassword(
 auth,
 email,
 password
 );
 
-await updateProfile(result.user,{
+await updateProfile(
+result.user,
+{
 displayName:name
-});
+}
+);
 
 showAuthMessage(
 "signupMessage",
@@ -3353,25 +3493,48 @@ this.reset();
 
 setTimeout(()=>{
 
-showLoggedInAccount(auth.currentUser);
-updateAccountHeader(auth.currentUser);
+showLoggedInAccount(
+auth.currentUser
+);
+
+updateAccountHeader(
+auth.currentUser
+);
 
 },700);
 
 }catch(error){
 
+console.error(error);
+
 let message="Unable to create account.";
 
 if(error.code==="auth/email-already-in-use"){
-message="This email is already registered. Please login.";
+
+message=
+"This email is already registered. Please login.";
+
 }
 
 if(error.code==="auth/invalid-email"){
-message="Please enter a valid email address.";
+
+message=
+"Please enter a valid email address.";
+
 }
 
 if(error.code==="auth/weak-password"){
-message="Password is too weak. Use at least 6 characters.";
+
+message=
+"Password is too weak. Use at least 6 characters.";
+
+}
+
+if(error.code==="auth/network-request-failed"){
+
+message=
+"Network error. Please check your internet connection.";
+
 }
 
 showAuthMessage(
@@ -3389,25 +3552,34 @@ button.textContent="Create Account";
 
 });
 
+
 /* =========================================================
    LOGIN
 ========================================================= */
 
-document.getElementById("loginForm").addEventListener("submit",async function(e){
+document.getElementById("loginForm")
+.addEventListener("submit",async function(e){
 
 e.preventDefault();
 
-const email=document.getElementById("loginEmail").value.trim();
-const password=document.getElementById("loginPassword").value;
+const email=
+document.getElementById("loginEmail")
+.value.trim();
 
-const button=this.querySelector("button[type=submit]");
+const password=
+document.getElementById("loginPassword")
+.value;
+
+const button=
+this.querySelector("button[type=submit]");
 
 button.disabled=true;
 button.textContent="Logging in...";
 
 try{
 
-const result=await signInWithEmailAndPassword(
+const result=
+await signInWithEmailAndPassword(
 auth,
 email,
 password
@@ -3422,11 +3594,14 @@ showAuthMessage(
 setTimeout(()=>{
 
 showLoggedInAccount(result.user);
+
 updateAccountHeader(result.user);
 
 },500);
 
 }catch(error){
+
+console.error(error);
 
 let message="Login failed.";
 
@@ -3435,11 +3610,31 @@ error.code==="auth/invalid-credential" ||
 error.code==="auth/wrong-password" ||
 error.code==="auth/user-not-found"
 ){
-message="Incorrect email or password.";
+
+message=
+"Incorrect email or password.";
+
 }
 
 if(error.code==="auth/invalid-email"){
-message="Please enter a valid email.";
+
+message=
+"Please enter a valid email.";
+
+}
+
+if(error.code==="auth/user-disabled"){
+
+message=
+"This account has been disabled.";
+
+}
+
+if(error.code==="auth/network-request-failed"){
+
+message=
+"Network error. Check your internet connection.";
+
 }
 
 showAuthMessage(
@@ -3457,6 +3652,7 @@ button.textContent="Login";
 
 });
 
+
 /* =========================================================
    LOGOUT
 ========================================================= */
@@ -3469,21 +3665,30 @@ await signOut(auth);
 
 closeAccount();
 
-showToast("Logged out successfully 👋");
+showToast(
+"Logged out successfully 👋"
+);
 
 }catch(error){
 
-showToast("Logout failed.");
+console.error(error);
+
+showToast(
+"Logout failed."
+);
 
 }
 
 }
+
 
 /* =========================================================
    AUTH STATE
 ========================================================= */
 
-onAuthStateChanged(auth,(user)=>{
+onAuthStateChanged(
+auth,
+(user)=>{
 
 updateAccountHeader(user);
 
@@ -3499,17 +3704,22 @@ showLoggedOutAccount();
 
 });
 
+
 /* =========================================================
-   ACCOUNT MODAL CLICK OUTSIDE
+   ACCOUNT MODAL OUTSIDE CLICK
 ========================================================= */
 
-document.getElementById("accountModal").addEventListener("click",function(e){
+document.getElementById("accountModal")
+.addEventListener("click",function(e){
 
 if(e.target===this){
+
 closeAccount();
+
 }
 
 });
+
 
 /* =========================================================
    TOAST
@@ -3517,13 +3727,16 @@ closeAccount();
 
 function showToast(message){
 
-const old=document.getElementById("dealioToast");
+const old=
+document.getElementById("dealioToast");
 
 if(old) old.remove();
 
-const toast=document.createElement("div");
+const toast=
+document.createElement("div");
 
 toast.id="dealioToast";
+
 toast.textContent=message;
 
 toast.style.cssText=`
@@ -3540,22 +3753,74 @@ font-weight:800;
 font-size:13px;
 z-index:5000;
 box-shadow:0 5px 20px #0003;
+max-width:90%;
+text-align:center;
 `;
 
 document.body.appendChild(toast);
 
 setTimeout(()=>{
+
+if(toast.parentNode){
 toast.remove();
+}
+
 },1800);
 
 }
+
+
+/* =========================================================
+   IMPORTANT:
+   MODULE FUNCTIONS MUST BE EXPOSED TO WINDOW
+   FOR INLINE onclick="" TO WORK
+========================================================= */
+
+Object.assign(window,{
+
+goHome,
+showShop,
+showWishlist,
+showCart,
+showCategories,
+setCategory,
+
+runSearch,
+focusSearch,
+updateShopSearch,
+
+toggleWishlist,
+addToCart,
+removeFromCart,
+
+openProduct,
+closeModal,
+addModalToCart,
+
+toggleFilters,
+toggleTheme,
+
+openAccount,
+closeAccount,
+showLoginForm,
+showSignupForm,
+logoutUser,
+
+showToast,
+
+renderShop
+
+});
+
 
 /* =========================================================
    INITIAL
 ========================================================= */
 
 renderHome();
+
 renderShop();
+
 updateCounts();
 
 </script>
