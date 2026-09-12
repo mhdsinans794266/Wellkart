@@ -1553,7 +1553,7 @@ h1{
 .account-submodal{display:none;position:fixed;inset:0;background:#0008;z-index:4500;align-items:center;justify-content:center;padding:14px}
 .account-submodal.show{display:flex}
 .account-subbox{width:min(560px,100%);max-height:88vh;overflow:auto;background:var(--card);color:var(--ink);border-radius:14px;padding:20px;position:relative;box-shadow:0 20px 60px #0004}
-.account-subclose{position:absolute;right:12px;top:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--bg);color:var(--ink);font-size:20px;cursor:pointer}
+.account-subclose{position:absolute;right:12px;top:12px;width:40px;height:40px;border:0;border-radius:50%;background:var(--bg);color:var(--ink);font-size:22px;line-height:40px;text-align:center;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .account-subtitle{font-size:22px;font-weight:900;margin:0 45px 4px 0}
 .account-subdesc{font-size:12px;color:var(--muted);margin:0 0 16px}
 .account-list{display:grid;gap:9px}
@@ -1575,35 +1575,6 @@ h1{
 .account-setting-row strong{display:block;font-size:14px;margin-bottom:4px}
 .account-setting-row span{font-size:11px;color:var(--muted)}
 @media(max-width:420px){.account-subbox{padding:16px}.account-subtitle{font-size:20px}}
-
-
-/* ================= MULTI IMAGE PRODUCT GALLERY ================= */
-.modal-gallery{
-  display:flex;
-  gap:7px;
-  margin-top:12px;
-  overflow-x:auto;
-  padding:2px 1px 5px;
-  scrollbar-width:thin;
-}
-.modal-gallery-thumb{
-  width:58px;
-  height:58px;
-  flex:0 0 58px;
-  border:2px solid var(--border);
-  border-radius:8px;
-  background:#fff;
-  padding:0;
-  overflow:hidden;
-  cursor:pointer;
-}
-.modal-gallery-thumb.active{border-color:var(--blue)}
-.modal-gallery-thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
 
 </style>
 </head>
@@ -2117,8 +2088,6 @@ Account
 </div>
 
 <div class="modal-info">
-
-<div id="modalGallery" class="modal-gallery" aria-label="Product images"></div>
 
 <span class="tag">DEALIO PICK</span>
 
@@ -2810,23 +2779,90 @@ rating:4.3,
 discount:30,
 image:"29-artificial-plant-decor.jpg",
 url:"https://www.meesho.com/search?q=artificial%20plants%20home%20decor"
+}
+
+,
+
+{
+id:31,
+name:"New design Fancy Printed Shoulder bag / Women tote handbags / Printed bag / Stylish Women Shopping bag / bag for women / tote bag",
+category:"fashion",
+price:376,
+rating:4.2,
+discount:25,
+image:"IMG_4566.AVIF",
+images:[
+"IMG_4566.AVIF",
+"IMG_4568.AVIF",
+"IMG_4565.AVIF",
+"IMG_4567.AVIF"
+],
+url:"https://www.meesho.com/s/p/8usphp?utm_source=ws"
 },
 
 {
-id:30,
-name:"Zaphariq Women Gold Plated Contemporary Stackable Rings Set of 22",
-category:"beauty",
-price:198,
-rating:4.1,
+id:32,
+name:"Trending wedding purse / ladies bridal clutch / stylish bridal purse / partywear clutch / party wear sling bag / bridal purse",
+category:"fashion",
+price:377,
+rating:4.2,
 discount:25,
-image:"IMG_4559.AVIF",
+image:"48184f1a-7cf8-489b-952a-2e39661c0a34.JPG",
 images:[
-"IMG_4559.AVIF",
-"IMG_4560.AVIF",
-"IMG_4561.AVIF",
-"IMG_4562.AVIF"
+"48184f1a-7cf8-489b-952a-2e39661c0a34.JPG",
+"ebafa902-f306-4d95-a26c-5bc732cfb237.JPG",
+"bc71811d-c801-4e6b-b9ab-e2dc4043fe2b.JPG",
+"65b79e4e-ef52-4ab9-af1c-1b38eaa363b5.JPG"
 ],
-url:"https://www.meesho.com/s/p/gebr7v?utm_source=si"
+url:"https://www.meesho.com/s/p/bkk8p6?utm_source=ws"
+},
+
+{
+id:33,
+name:"Elite Versatile Women Slingbags",
+category:"accessories",
+price:276,
+rating:4.2,
+discount:25,
+image:"IMG_4578.AVIF",
+images:[
+"IMG_4578.AVIF",
+"IMG_4576.AVIF",
+"IMG_4577.AVIF",
+"IMG_4575.AVIF"
+],
+url:"https://www.meesho.com/s/p/8zj373?utm_source=ws"
+},
+
+{
+id:34,
+name:"Mehpriye Oxidize Silver Plated Bahubali Earrings",
+category:"beauty",
+price:136,
+rating:4.2,
+discount:25,
+image:"IMG_4580.jpeg",
+images:[
+"IMG_4580.jpeg"
+],
+url:"https://www.meesho.com/s/p/3b1ajf?utm_source=ws"
+},
+
+{
+id:35,
+name:"Unique Water & Juice Glasses",
+category:"home",
+price:215,
+rating:4.2,
+discount:25,
+image:"IMG_4585.jpeg",
+images:[
+"IMG_4585.jpeg",
+"IMG_4584.jpeg",
+"IMG_4583.jpeg",
+"IMG_4582.jpeg"
+],
+url:"https://www.meesho.com/s/p/7t8p1v?utm_source=ws"
 }
 
 ];
@@ -3502,36 +3538,9 @@ if(!p) return;
 
 currentModalProduct=p;
 
-const galleryImages=
-Array.isArray(p.images) && p.images.length
-? p.images
-: [p.image];
+document.getElementById("modalImage").src=p.image;
 
-const modalImage=
-document.getElementById("modalImage");
-
-const gallery=
-document.getElementById("modalGallery");
-
-modalImage.src=galleryImages[0];
-modalImage.alt=p.name;
-
-gallery.innerHTML=galleryImages.map((src,index)=>`
-<button
-type="button"
-class="modal-gallery-thumb ${index===0 ? "active" : ""}"
-onclick="selectModalImage(${index})"
-aria-label="View image ${index+1}"
->
-<img
-src="${src}"
-alt="${p.name} image ${index+1}"
-loading="lazy"
->
-</button>
-`).join("");
-
-p._galleryImages=galleryImages;
+document.getElementById("modalImage").alt=p.name;
 
 document.getElementById("modalName").textContent=p.name;
 
@@ -3552,28 +3561,6 @@ document.body.classList.add("no-scroll");
 
 document.getElementById("suggestions")
 .classList.remove("show");
-
-}
-
-function selectModalImage(index){
-
-const p=currentModalProduct;
-
-if(!p) return;
-
-const images=
-p._galleryImages && p._galleryImages.length
-? p._galleryImages
-: [p.image];
-
-if(!images[index]) return;
-
-document.getElementById("modalImage").src=images[index];
-
-document.querySelectorAll(".modal-gallery-thumb")
-.forEach((button,i)=>{
-button.classList.toggle("active",i===index);
-});
 
 }
 
@@ -3838,8 +3825,21 @@ return prefix+encodeURIComponent(email);
 
 function closeAccountSubModal(id){
 const el=document.getElementById(id);
-if(el) el.classList.remove("show");
+if(el){
+  el.classList.remove("show");
+  el.style.display="";
+}
 if(!document.querySelector(".account-submodal.show") && !document.getElementById("productModal")?.classList.contains("show")){
+  document.body.classList.remove("no-scroll");
+}
+}
+
+function closeAllAccountSubModals(){
+document.querySelectorAll(".account-submodal").forEach(el=>{
+  el.classList.remove("show");
+  el.style.display="";
+});
+if(!document.getElementById("productModal")?.classList.contains("show")){
   document.body.classList.remove("no-scroll");
 }
 }
@@ -4356,6 +4356,32 @@ toast.remove();
    FOR INLINE onclick="" TO WORK
 ========================================================= */
 
+/* =========================================================
+   ACCOUNT SUB-MODAL CLOSE HANDLERS
+   ========================================================= */
+
+document.addEventListener("click",function(e){
+  const closeBtn=e.target.closest(".account-subclose");
+  if(closeBtn){
+    e.preventDefault();
+    e.stopPropagation();
+    const modal=closeBtn.closest(".account-submodal");
+    if(modal) closeAccountSubModal(modal.id);
+    return;
+  }
+
+  const overlay=e.target.closest(".account-submodal");
+  if(overlay && e.target===overlay){
+    closeAccountSubModal(overlay.id);
+  }
+});
+
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"){
+    closeAllAccountSubModals();
+  }
+});
+
 Object.assign(window,{
 
 goHome,
@@ -4374,7 +4400,6 @@ addToCart,
 removeFromCart,
 
 openProduct,
-selectModalImage,
 closeModal,
 addModalToCart,
 
