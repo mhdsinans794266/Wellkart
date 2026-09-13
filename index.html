@@ -26,8 +26,6 @@
 
 html{scroll-behavior:smooth}
 
-.dealio-catalog-count{margin-top:7px;color:var(--muted);font-size:12px}.dealio-catalog-count strong{color:var(--blue)}
-
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
@@ -1555,7 +1553,7 @@ h1{
 .account-submodal{display:none;position:fixed;inset:0;background:#0008;z-index:4500;align-items:center;justify-content:center;padding:14px}
 .account-submodal.show{display:flex}
 .account-subbox{width:min(560px,100%);max-height:88vh;overflow:auto;background:var(--card);color:var(--ink);border-radius:14px;padding:20px;position:relative;box-shadow:0 20px 60px #0004}
-.account-subclose{position:absolute;right:12px;top:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--bg);color:var(--ink);font-size:20px;cursor:pointer}
+.account-subclose{position:absolute;right:12px;top:12px;width:40px;height:40px;border:0;border-radius:50%;background:var(--bg);color:var(--ink);font-size:22px;line-height:40px;text-align:center;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .account-subtitle{font-size:22px;font-weight:900;margin:0 45px 4px 0}
 .account-subdesc{font-size:12px;color:var(--muted);margin:0 0 16px}
 .account-list{display:grid;gap:9px}
@@ -1578,546 +1576,6 @@ h1{
 .account-setting-row span{font-size:11px;color:var(--muted)}
 @media(max-width:420px){.account-subbox{padding:16px}.account-subtitle{font-size:20px}}
 
-
-/* ================= MULTI IMAGE PRODUCT GALLERY ================= */
-.modal-gallery{
-  display:flex;
-  gap:7px;
-  margin-top:12px;
-  overflow-x:auto;
-  padding:2px 1px 5px;
-  scrollbar-width:thin;
-}
-.modal-gallery-thumb{
-  width:58px;
-  height:58px;
-  flex:0 0 58px;
-  border:2px solid var(--border);
-  border-radius:8px;
-  background:#fff;
-  padding:0;
-  overflow:hidden;
-  cursor:pointer;
-}
-.modal-gallery-thumb.active{border-color:var(--blue)}
-.modal-gallery-thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-
-/* ================= DEALIO PREMIUM PHASE 1 ================= */
-:root{
-  --blue:#1428a0;
-  --blue2:#3155e8;
-  --orange:#ff7a00;
-  --orange2:#ffb000;
-  --green:#0f9f55;
-  --ink:#101828;
-  --muted:#667085;
-  --bg:#f6f8fc;
-  --card:#ffffff;
-  --border:#e4e7ec;
-  --soft:#eef2ff;
-  --shadow:0 10px 30px rgba(16,24,40,.07);
-}
-
-body{
-  background:
-    radial-gradient(circle at 10% -10%,rgba(49,85,232,.08),transparent 28%),
-    radial-gradient(circle at 90% 0%,rgba(255,122,0,.07),transparent 24%),
-    var(--bg);
-}
-
-.top{
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  box-shadow:0 1px 0 rgba(16,24,40,.05);
-}
-
-.nav{max-width:1280px;padding:10px 18px}
-.header-search{max-width:720px}
-.header-search-box{
-  height:48px;
-  border:1px solid transparent;
-  box-shadow:inset 0 0 0 1px rgba(16,24,40,.03);
-  transition:.2s;
-}
-.header-search-box:focus-within{
-  background:#fff;
-  border-color:#b8c4ff;
-  box-shadow:0 0 0 4px rgba(49,85,232,.10);
-}
-.header-search-box button{
-  width:54px;
-  background:linear-gradient(135deg,var(--orange),var(--orange2));
-}
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  padding:54px 18px 48px;
-  background:
-    radial-gradient(circle at 82% 30%,rgba(49,85,232,.18),transparent 25%),
-    linear-gradient(135deg,#eef1ff 0%,#fff 55%,#fff4e5 100%);
-}
-.hero:after{
-  content:"";
-  position:absolute;
-  width:330px;height:330px;
-  right:-110px;bottom:-170px;
-  border-radius:50%;
-  background:rgba(255,122,0,.08);
-}
-.hero-inner{max-width:1280px;position:relative;z-index:1}
-.badge{
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
-  box-shadow:0 8px 20px rgba(20,40,160,.18);
-}
-h1{letter-spacing:-2px}
-.hero p{font-size:17px}
-.hero-btn{
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(20,40,160,.16);
-  transition:.2s;
-}
-.hero-btn:hover{transform:translateY(-2px)}
-.hero-btn.secondary{box-shadow:none}
-
-.category-section{max-width:1280px}
-.category-strip{
-  border-radius:16px;
-  box-shadow:var(--shadow);
-}
-.category-item{padding:19px 8px;transition:.2s}
-.category-item:hover{transform:translateY(-3px)}
-
-.section{max-width:1280px}
-.section-title-row{margin-bottom:18px}
-.section h2{letter-spacing:-.6px}
-
-.deal-banner{
-  position:relative;
-  overflow:hidden;
-  border-radius:18px;
-  padding:22px 24px;
-  background:
-    radial-gradient(circle at 85% 20%,rgba(255,255,255,.18),transparent 20%),
-    linear-gradient(135deg,#1428a0,#3155e8);
-  box-shadow:0 14px 34px rgba(20,40,160,.18);
-}
-.deal-banner:after{
-  content:"";
-  position:absolute;
-  width:180px;height:180px;
-  right:-70px;top:-90px;
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:50%;
-}
-
-.products{gap:18px}
-.card{
-  border-radius:16px;
-  border-color:#e7eaf0;
-  box-shadow:0 3px 12px rgba(16,24,40,.035);
-  transition:transform .22s,box-shadow .22s,border-color .22s;
-}
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 38px rgba(16,24,40,.12);
-  border-color:#d7ddf4;
-}
-.pic{height:255px}
-.pic img{transition:transform .35s}
-.card:hover .pic img{transform:scale(1.035)}
-.info{padding:14px}
-.tag{
-  background:#eef2ff;
-  color:#3148c9;
-  border-radius:999px;
-  padding:5px 8px;
-}
-.price{font-size:21px}
-.buy,.add-cart{border-radius:9px}
-.buy{background:linear-gradient(135deg,var(--blue),var(--blue2))}
-.wish{border:1px solid #edf0f5}
-
-.deal-meta{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-  margin-top:9px;
-}
-.store-badge,.deal-score{
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  border-radius:999px;
-  padding:5px 8px;
-  font-size:10px;
-  font-weight:900;
-}
-.store-badge{background:#f2f4f7;color:#344054}
-.deal-score{background:#ecfdf3;color:#087443}
-.deal-score strong{font-size:11px}
-
-.quick-deals{
-  display:flex;
-  gap:8px;
-  overflow:auto;
-  padding:2px 1px 4px;
-  margin:-3px 0 22px;
-  scrollbar-width:none;
-}
-.quick-deals::-webkit-scrollbar{display:none}
-.quick-deal{
-  flex:0 0 auto;
-  border:1px solid var(--border);
-  background:#fff;
-  color:var(--ink);
-  border-radius:999px;
-  padding:9px 13px;
-  font-size:12px;
-  font-weight:900;
-  cursor:pointer;
-  transition:.2s;
-}
-.quick-deal:hover{
-  border-color:#bdc7ff;
-  color:var(--blue);
-  transform:translateY(-1px);
-}
-
-.premium-strip{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  margin:0 0 26px;
-}
-.premium-pill{
-  background:rgba(255,255,255,.82);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:13px;
-  box-shadow:0 5px 18px rgba(16,24,40,.035);
-}
-.premium-pill b{display:block;font-size:12px}
-.premium-pill span{font-size:11px;color:var(--muted)}
-
-.dark .premium-pill,.dark .quick-deal{background:#111d3f}
-.dark .store-badge{background:#17264d;color:#dce4ff}
-.dark .top{background:rgba(13,27,76,.94)}
-.dark .header-search-box:focus-within{background:#111d3f;border-color:#5266c9}
-.dark .hero{
-  background:
-    radial-gradient(circle at 82% 30%,rgba(49,85,232,.22),transparent 25%),
-    linear-gradient(135deg,#101a4b,#09112f 60%,#241707);
-}
-
-@media(max-width:950px){
-  .premium-strip{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:700px){
-  .hero{padding:40px 15px 35px}
-  h1{letter-spacing:-1.2px}
-  .premium-strip{grid-template-columns:repeat(2,1fr);gap:8px}
-  .premium-pill{padding:11px}
-  .pic{height:215px}
-}
-@media(max-width:400px){
-  .premium-strip{grid-template-columns:1fr 1fr}
-  .pic{height:185px}
-}
-
-
-/* =========================================================
-   DEALIO PREMIUM PHASE 2 — SMART DISCOVERY
-========================================================= */
-
-.smart-discovery{
-  margin:14px 0 18px;
-  padding:14px;
-  border:1px solid var(--border);
-  border-radius:18px;
-  background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(238,241,255,.9));
-  box-shadow:0 8px 28px rgba(24,37,143,.06);
-}
-.smart-discovery-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:10px;
-}
-.smart-discovery-head b{font-size:15px}
-.smart-discovery-head span{font-size:12px;color:var(--muted)}
-.smart-chips{display:flex;gap:8px;flex-wrap:wrap}
-.smart-chip{
-  border:1px solid var(--border);
-  background:#fff;
-  color:var(--ink);
-  border-radius:999px;
-  padding:8px 12px;
-  font-size:12px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.2s ease;
-}
-.smart-chip:hover{transform:translateY(-1px);border-color:#b9c3ff;box-shadow:0 5px 15px rgba(24,37,143,.08)}
-.smart-chip.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-
-.shop-result-bar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin:10px 0 14px;
-  flex-wrap:wrap;
-}
-.result-count{font-size:13px;color:var(--muted)}
-.result-count strong{color:var(--ink)}
-.smart-note{
-  font-size:12px;
-  color:var(--blue);
-  font-weight:700;
-}
-.compare-float{
-  position:fixed;
-  left:50%;
-  bottom:18px;
-  transform:translateX(-50%) translateY(120px);
-  width:min(720px,calc(100% - 24px));
-  padding:12px 14px;
-  border:1px solid rgba(255,255,255,.55);
-  border-radius:18px;
-  background:rgba(17,25,55,.94);
-  color:#fff;
-  box-shadow:0 18px 50px rgba(0,0,0,.25);
-  backdrop-filter:blur(14px);
-  z-index:9998;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  transition:.25s ease;
-}
-.compare-float.show{transform:translateX(-50%) translateY(0)}
-.compare-float-info{font-size:13px}
-.compare-float-info strong{display:block;font-size:14px}
-.compare-float-info span{opacity:.75}
-.compare-action{
-  border:0;
-  border-radius:12px;
-  padding:10px 14px;
-  background:var(--orange);
-  color:#111827;
-  font-weight:800;
-  cursor:pointer;
-  white-space:nowrap;
-}
-.compare-action:disabled{opacity:.45;cursor:not-allowed}
-.compare-check{
-  position:absolute;
-  top:10px;
-  left:10px;
-  z-index:4;
-  width:34px;
-  height:34px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  background:rgba(255,255,255,.94);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-.compare-check input{accent-color:var(--blue);width:16px;height:16px}
-.compare-modal{
-  position:fixed;
-  inset:0;
-  z-index:10001;
-  background:rgba(9,15,35,.68);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-}
-.compare-modal.show{display:flex}
-.compare-box{
-  width:min(1000px,100%);
-  max-height:90vh;
-  overflow:auto;
-  background:var(--card);
-  color:var(--ink);
-  border-radius:24px;
-  box-shadow:0 30px 90px rgba(0,0,0,.3);
-  padding:20px;
-}
-.compare-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-bottom:14px;
-}
-.compare-head h3{margin:0}
-.compare-close{
-  border:1px solid var(--border);
-  background:var(--bg);
-  border-radius:10px;
-  width:38px;
-  height:38px;
-  cursor:pointer;
-  font-size:18px;
-}
-.compare-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
-}
-.compare-item{
-  border:1px solid var(--border);
-  border-radius:18px;
-  overflow:hidden;
-  background:var(--bg);
-}
-.compare-item img{width:100%;height:180px;object-fit:cover;display:block}
-.compare-item-body{padding:13px}
-.compare-item h4{
-  margin:0 0 9px;
-  font-size:14px;
-  line-height:1.35;
-}
-.compare-stat{
-  display:flex;
-  justify-content:space-between;
-  gap:8px;
-  padding:7px 0;
-  border-top:1px solid var(--border);
-  font-size:12px;
-}
-.compare-stat b{font-size:13px}
-.best-choice{
-  margin-top:10px;
-  padding:9px 10px;
-  border-radius:10px;
-  background:var(--soft);
-  color:var(--blue);
-  font-size:12px;
-  font-weight:800;
-}
-.dark .smart-discovery{background:linear-gradient(135deg,rgba(20,27,54,.96),rgba(27,34,73,.94))}
-.dark .smart-chip,.dark .compare-check{background:#141b36;color:#fff}
-.dark .compare-box{background:#10162d;color:#fff}
-.dark .compare-item{background:#161d38}
-.dark .compare-stat{border-color:#293252}
-.dark .compare-float{background:rgba(10,15,31,.96)}
-
-@media(max-width:700px){
-  .smart-discovery{padding:12px}
-  .smart-discovery-head{align-items:flex-start;flex-direction:column;gap:4px}
-  .compare-grid{grid-template-columns:1fr}
-  .compare-item img{height:220px}
-  .compare-float{bottom:10px}
-}
-
-</style>
-
-<style id="dealio-phase3-css">
-/* ================= DEALIO PHASE 3 UI ================= */
-.d3-offer-row{display:grid;grid-template-columns:minmax(170px,1fr) auto auto auto;align-items:center;gap:14px;padding:15px;border:1px solid rgba(127,127,127,.16);border-radius:16px;background:rgba(255,255,255,.68);margin:9px 0}
-.d3-best-offer{box-shadow:0 8px 28px rgba(0,0,0,.08);border-color:rgba(245,145,50,.5)}
-.d3-offer-store{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.d3-store-icon{font-size:18px}.d3-best-badge{font-size:9px;font-weight:800;letter-spacing:.08em;padding:4px 7px;border-radius:999px;background:rgba(245,145,50,.16)}
-.d3-offer-price{font-weight:900;font-size:19px;white-space:nowrap}.d3-offer-meta{font-size:12px;opacity:.72;white-space:nowrap}
-.d3-offer-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;border-radius:11px;padding:9px 13px;background:#111;color:#fff;white-space:nowrap}
-.d3-modal-backdrop{position:fixed;inset:0;z-index:99999;background:rgba(5,8,15,.58);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:18px}
-.d3-offer-modal{position:relative;width:min(820px,100%);max-height:88vh;overflow:auto;border-radius:24px;padding:25px;background:var(--card-bg,#fff);box-shadow:0 30px 80px rgba(0,0,0,.28)}
-.d3-close{position:absolute;right:16px;top:13px;border:0;background:transparent;font-size:30px;cursor:pointer;opacity:.7}
-.d3-modal-kicker{font-size:10px;font-weight:900;letter-spacing:.15em;opacity:.6}.d3-offer-modal h2{margin:7px 40px 5px 0}.d3-modal-sub{margin:0 0 18px;opacity:.68}
-.d3-store-directory{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:20px 0}
-.d3-store-card{border:1px solid rgba(127,127,127,.16);border-radius:17px;padding:15px;text-align:left;background:rgba(255,255,255,.55);cursor:pointer;display:flex;flex-direction:column;gap:5px;transition:.2s}
-.d3-store-card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.d3-store-card span{font-size:23px}.d3-store-card small{opacity:.6}
-@media(max-width:700px){.d3-offer-row{grid-template-columns:1fr auto}.d3-offer-meta{grid-column:1}.d3-offer-btn{grid-column:2;grid-row:2}.d3-offer-price{grid-column:2;grid-row:1}}
-</style>
-
-<style id="dealio-phase4-56-css">
-
-
-
-/* =========================================================
-   DEALIO PREMIUM PHASE 4 — PERSONALIZATION + DEAL ENGINE
-========================================================= */
-.phase4-section{margin-top:28px}
-.phase4-head{display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:15px}
-.phase4-kicker{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:900;color:var(--blue);background:var(--soft);border:1px solid var(--border);padding:6px 9px;border-radius:999px;margin-bottom:7px}
-.phase4-head h2{margin:0 0 4px;font-size:26px;letter-spacing:-.6px}
-.phase4-head p{margin:0;color:var(--muted);font-size:13px}
-.phase4-link{border:0;background:none;color:var(--blue);font-weight:900;cursor:pointer;white-space:nowrap}
-.phase4-panel{background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(238,241,255,.92));border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:0 8px 28px rgba(24,37,143,.05);margin-bottom:18px}
-.phase4-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-.phase4-panel-head strong{font-size:15px}
-.phase4-panel-head span{font-size:11px;color:var(--muted)}
-.phase4-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.phase4-card{min-width:0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;position:relative;transition:.22s;box-shadow:0 4px 14px rgba(16,24,40,.035)}
-.phase4-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(16,24,40,.10)}
-.phase4-card-img{height:150px;border-radius:10px;overflow:hidden;background:#fff;cursor:pointer}
-.phase4-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
-.phase4-card:hover .phase4-card-img img{transform:scale(1.035)}
-.phase4-card h3{font-size:13px;line-height:1.35;margin:9px 2px 5px;min-height:35px}
-.phase4-price{font-size:17px;font-weight:900;margin:0 2px 2px}
-.phase4-meta{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:5px 2px 0;flex-wrap:wrap}
-.phase4-badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 7px;font-size:9px;font-weight:900;background:#ecfdf3;color:#087443}
-.phase4-store{font-size:9px;font-weight:800;color:var(--muted)}
-.phase4-card-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}
-.phase4-card-actions button,.phase4-card-actions a{border:0;border-radius:8px;padding:8px 5px;font-size:10px;font-weight:900;text-align:center;cursor:pointer;text-decoration:none}
-.phase4-open{background:var(--blue);color:#fff}
-.phase4-alert{background:#fff3e0;color:#b45309}
-.phase4-alert.active{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa}
-.phase4-empty{border:1px dashed var(--border);border-radius:14px;padding:24px 14px;text-align:center;color:var(--muted);background:rgba(255,255,255,.65)}
-.phase4-empty strong{display:block;color:var(--ink);margin-bottom:4px}
-.phase4-drop{border:1px solid #fed7aa;background:#fffaf2;border-radius:10px;padding:9px;margin-top:8px;font-size:10px;font-weight:800;color:#9a3412}
-.phase4-alert-modal{position:fixed;inset:0;z-index:11000;background:rgba(9,15,35,.68);display:none;align-items:center;justify-content:center;padding:16px}
-.phase4-alert-modal.show{display:flex}
-.phase4-alert-box{width:min(430px,100%);background:var(--card);color:var(--ink);border-radius:20px;padding:20px;box-shadow:0 30px 90px rgba(0,0,0,.3);position:relative}
-.phase4-alert-box h3{margin:0 35px 5px 0;font-size:19px}
-.phase4-alert-box p{margin:0 0 14px;color:var(--muted);font-size:12px;line-height:1.5}
-.phase4-alert-close{position:absolute;right:12px;top:12px;width:34px;height:34px;border:0;border-radius:50%;background:var(--bg);color:var(--ink);cursor:pointer;font-size:18px}
-.phase4-alert-current{background:var(--soft);border-radius:11px;padding:11px;margin-bottom:12px;font-size:12px}
-.phase4-alert-current b{font-size:18px;color:var(--blue);display:block;margin-top:2px}
-.phase4-alert-box label{display:block;font-size:12px;font-weight:900;margin:10px 0 6px}
-.phase4-alert-box input{width:100%;height:44px;border:1px solid var(--border);border-radius:9px;padding:0 12px;background:var(--bg);color:var(--ink);outline:none}
-.phase4-alert-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
-.phase4-alert-actions button{border:0;border-radius:9px;padding:11px;font-weight:900;cursor:pointer}
-.phase4-save-alert{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff}
-.phase4-cancel-alert{background:var(--bg);color:var(--ink);border:1px solid var(--border)!important}
-.phase4-alert-status{margin-top:10px;font-size:11px;font-weight:800;color:var(--blue);min-height:15px}
-.dark .phase4-panel{background:linear-gradient(135deg,#111d3f,#17264d)}
-.dark .phase4-card{background:#111d3f}
-.dark .phase4-card-img{background:#111d3f}
-.dark .phase4-empty{background:#111d3f}
-.dark .phase4-drop{background:#3b2b14;color:#ffc66d;border-color:#6b4a1c}
-.dark .phase4-alert-box{background:#111d3f}
-.dark .phase4-alert-current{background:#17264d}
-@media(max-width:950px){.phase4-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:700px){.phase4-head{align-items:center}.phase4-head h2{font-size:22px}.phase4-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.phase4-card{padding:8px}.phase4-card-img{height:170px}.phase4-card h3{font-size:12px}.phase4-card-actions{grid-template-columns:1fr}.phase4-panel{padding:12px}}
-@media(max-width:400px){.phase4-card-img{height:145px}.phase4-head p{font-size:11px}.phase4-link{font-size:11px}}
-
-
-/* ================= DEALIO PHASE 5 + 6 ================= */
-.p56-section{max-width:1200px;margin:auto;padding:26px 18px}.p56-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}.p56-head h2{margin:0 0 5px;font-size:28px}.p56-head p{margin:0;color:var(--muted)}
-.p56-actions{display:flex;gap:8px;flex-wrap:wrap}.p56-btn{border:0;border-radius:8px;padding:10px 14px;font-weight:900;cursor:pointer;background:var(--blue);color:#fff}.p56-btn.alt{background:#fff;color:var(--blue);border:1px solid var(--border)}
-.p56-compare-panel{background:linear-gradient(135deg,#eef0ff,#fff7eb);border:1px solid var(--border);border-radius:14px;padding:18px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}.p56-compare-panel h3{margin:0 0 7px;font-size:22px}.p56-compare-panel p{margin:0;color:var(--muted);line-height:1.55}.p56-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.p56-mini{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px}.p56-mini b{display:block;font-size:12px}.p56-mini span{font-size:12px;color:var(--muted)}
-.p56-result{margin-top:12px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:13px}.p56-result-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.p56-result h4{margin:0;font-size:14px}.p56-offers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.p56-offer{border:1px solid var(--border);border-radius:9px;padding:10px}.p56-offer.best{border-color:var(--orange);box-shadow:0 0 0 2px #ff8a0018}.p56-offer b{display:block}.p56-offer small{color:var(--muted)}
-.p56-ai-fab{position:fixed;right:20px;bottom:20px;z-index:2400;border:0;border-radius:999px;padding:13px 17px;background:linear-gradient(135deg,var(--blue),var(--orange));color:#fff;font-weight:900;box-shadow:0 10px 30px #0003;cursor:pointer}.p56-ai-panel{position:fixed;right:20px;bottom:78px;width:min(420px,calc(100vw - 30px));max-height:72vh;z-index:2401;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 20px 60px #0004;display:none;overflow:hidden}.p56-ai-panel.show{display:block}.p56-ai-head{padding:15px;background:linear-gradient(135deg,#eef0ff,#fff7eb);display:flex;justify-content:space-between;align-items:center}.p56-ai-head strong{font-size:16px}.p56-ai-close{border:0;background:#fff;border-radius:50%;width:32px;height:32px;cursor:pointer}.p56-ai-body{padding:14px;overflow:auto;max-height:55vh}.p56-ai-input{display:flex;gap:7px}.p56-ai-input input{flex:1;height:43px;border:1px solid var(--border);border-radius:8px;padding:0 12px;outline:none}.p56-ai-input button{border:0;border-radius:8px;background:var(--blue);color:#fff;padding:0 14px;font-weight:900;cursor:pointer}.p56-chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.p56-chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:800;cursor:pointer}.p56-ai-answer{margin-top:12px;background:#f7f8fc;border-radius:10px;padding:11px;line-height:1.5;font-size:13px}.p56-ai-products{display:grid;gap:8px;margin-top:10px}.p56-ai-product{display:grid;grid-template-columns:55px 1fr auto;gap:9px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:9px;padding:7px}.p56-ai-product img{width:55px;height:55px;object-fit:cover;border-radius:7px}.p56-ai-product b{font-size:12px;display:block}.p56-ai-product small{color:var(--muted)}.p56-ai-product button{border:0;background:var(--blue);color:#fff;border-radius:7px;padding:7px;font-size:11px;font-weight:800;cursor:pointer}
-@media(max-width:760px){.p56-compare-panel{grid-template-columns:1fr}.p56-mini-grid,.p56-offers{grid-template-columns:1fr}.p56-head{align-items:start;flex-direction:column}.p56-ai-fab{right:14px;bottom:78px}.p56-ai-panel{right:14px;bottom:140px}}
-body.dark .p56-compare-panel,body.dark .p56-result,body.dark .p56-mini,body.dark .p56-offer,body.dark .p56-ai-panel,body.dark .p56-ai-product,body.dark .p56-chip{background:#151b2b;color:#eef2ff;border-color:#30384e}body.dark .p56-ai-answer{background:#20283a}
 </style>
 </head>
 
@@ -2202,7 +1660,8 @@ Smart Shopping.
 </h1>
 
 <p>
-Discover trending products, compare value and find smarter deals — all in one place.
+Discover trending products and great-value finds from Meesho —
+all in one place.
 </p>
 
 <div class="hero-actions">
@@ -2273,35 +1732,22 @@ alt="Dealio"
 
 <section class="section">
 
-<div class="premium-strip">
-  <div class="premium-pill"><b>🔎 Smart Discovery</b><span>Find products worth buying</span></div>
-  <div class="premium-pill"><b>💰 Deal Score</b><span>Spot stronger-value deals</span></div>
-  <div class="premium-pill"><b>🏪 Store Ready</b><span>Built for multi-store shopping</span></div>
-  <div class="premium-pill"><b>❤️ Save & Compare</b><span>Keep your favourites close</span></div>
-</div>
-
 <div class="deal-banner">
+
 <div>
 <h3>🔥 Trending Deals</h3>
-<p>Fresh picks, stronger value and smarter ways to shop.</p>
-</div>
-<button onclick="showShop()">Explore Deals →</button>
+<p>Find popular products at great-value prices.</p>
 </div>
 
-<div class="quick-deals">
-  <button class="quick-deal" onclick="setCategory('all')">✨ All Picks</button>
-  <button class="quick-deal" onclick="setCategory('fashion')">👕 Fashion</button>
-  <button class="quick-deal" onclick="setCategory('beauty')">💎 Beauty</button>
-  <button class="quick-deal" onclick="setCategory('electronics')">📱 Electronics</button>
-  <button class="quick-deal" onclick="setCategory('home')">🏠 Home</button>
-  <button class="quick-deal" onclick="setCategory('accessories')">👜 Accessories</button>
+<button onclick="showShop()">View Deals →</button>
+
 </div>
 
 <div class="section-title-row">
 
 <div>
 <h2>🔥 Trending Products</h2>
-<p class="sub">All 30 Dealio products • Updated for 2026</p><div class="dealio-catalog-count">🛍️ <strong>30 products</strong> available in the Dealio catalog</div>
+<p class="sub">Hand-picked Dealio finds • Updated for 2026</p>
 </div>
 
 <button class="view-all" onclick="showShop()">
@@ -2328,59 +1774,11 @@ View All →
 
 <div class="feature">
 <span>⚡</span>
-<b>Smart Shopping</b>
-<small>Discover & shop with confidence</small>
+<b>Easy Shopping</b>
+<small>Quick access to Meesho</small>
 </div>
 
-
 </div>
-
-<!-- ================= DEALIO PHASE 4 ================= -->
-<section class="phase4-section">
-  <div class="phase4-panel">
-    <div class="phase4-panel-head">
-      <div>
-        <div class="phase4-kicker">🧠 PERSONALIZED DEAL ENGINE</div>
-        <strong id="phase4PersonalTitle">Smart picks based on your shopping</strong>
-      </div>
-      <span id="phase4PersonalHint">Learns locally from your activity</span>
-    </div>
-    <div id="recommendedProducts" class="phase4-grid"></div>
-  </div>
-
-  <div class="phase4-panel">
-    <div class="phase4-panel-head">
-      <div>
-        <div class="phase4-kicker">🔥 DEAL ENGINE</div>
-        <strong>Best Deals Right Now</strong>
-      </div>
-      <button class="phase4-link" onclick="showShop()">See all deals →</button>
-    </div>
-    <div id="bestDealsProducts" class="phase4-grid"></div>
-  </div>
-
-  <div class="phase4-panel">
-    <div class="phase4-panel-head">
-      <div>
-        <div class="phase4-kicker">👀 YOUR ACTIVITY</div>
-        <strong>Recently Viewed</strong>
-      </div>
-      <span>Stored only in this browser</span>
-    </div>
-    <div id="recentlyViewedProducts" class="phase4-grid"></div>
-  </div>
-
-  <div class="phase4-panel">
-    <div class="phase4-panel-head">
-      <div>
-        <div class="phase4-kicker">🔔 PRICE WATCH</div>
-        <strong>Price Drop Alerts</strong>
-      </div>
-      <span id="priceAlertSummary">Local alerts</span>
-    </div>
-    <div id="priceAlertsProducts" class="phase4-grid"></div>
-  </div>
-</section>
 
 </section>
 
@@ -2415,7 +1813,6 @@ oninput="updateShopSearch()"
 <option value="high">Price: High to Low</option>
 <option value="rating">Rating: High to Low</option>
 <option value="discount">Discount: High to Low</option>
-<option value="best">⚡ Best Value / Deal Score</option>
 </select>
 
 <button
@@ -2426,29 +1823,6 @@ onclick="toggleFilters()"
 ⚙ Filters
 </button>
 
-<select id="storeFilter" class="toolbar-select" onchange="renderShop()">
-<option value="all">All Stores</option>
-</select>
-
-</div>
-
-<div class="smart-discovery">
-  <div class="smart-discovery-head">
-    <b>✨ Smart Discovery</b>
-    <span>Try natural searches like “wireless earbuds under ₹1500”</span>
-  </div>
-  <div class="smart-chips">
-    <button class="smart-chip" onclick="applySmartPreset('under500')">Under ₹500</button>
-    <button class="smart-chip" onclick="applySmartPreset('discount30')">30%+ Off</button>
-    <button class="smart-chip" onclick="applySmartPreset('rating4')">4★+ Rated</button>
-    <button class="smart-chip" onclick="applySmartPreset('best')">⚡ Best Value</button>
-    <button class="smart-chip" onclick="applySmartPreset('all')">Reset</button>
-  </div>
-</div>
-
-<div class="shop-result-bar">
-  <div id="shopResultCount" class="result-count"></div>
-  <div id="smartSearchNote" class="smart-note"></div>
 </div>
 
 <div id="filterPanel" class="filter-panel">
@@ -2715,10 +2089,8 @@ Account
 
 <div class="modal-info">
 
-<div id="modalGallery" class="modal-gallery" aria-label="Product images"></div>
-
 <span class="tag">DEALIO PICK</span>
-<div id="modalStore" class="deal-meta"></div>
+
 <h2 id="modalName"></h2>
 
 <span id="modalRating" class="modal-rating"></span>
@@ -2728,7 +2100,7 @@ Account
 <div id="modalDeal"></div>
 
 <p class="modal-desc">
-A hand-picked Dealio product. Check the value score, save it, add it to your cart, or continue to the store.
+A hand-picked Dealio product. Tap below to save it to your cart, wishlist, or continue to Meesho.
 </p>
 
 <div class="modal-actions">
@@ -2739,7 +2111,7 @@ class="modal-buy"
 target="_blank"
 rel="noopener noreferrer"
 >
-View Deal
+Buy on Meesho
 </a>
 
 <button
@@ -3099,7 +2471,7 @@ rating:4.5,
 discount:20,
 image:"01-whisker-baggy-jeans-men.jpg",
 url:"https://www.meesho.com/af_invite/119465688:instagram_stories:10227282?p_id=1036219135&ext_id=h4xrsv&utm_source=instagram_stories"
-store:"Meesho",},
+},
 
 {
 id:2,
@@ -3110,7 +2482,7 @@ rating:4.4,
 discount:25,
 image:"02-trending-hand-bag.jpg",
 url:"https://www.meesho.com/trending-hand-bag/p/b12akh"
-store:"Meesho",},
+},
 
 {
 id:3,
@@ -3121,7 +2493,7 @@ rating:4.6,
 discount:30,
 image:"03-trending-jewellery-set.jpg",
 url:"https://www.meesho.com/trending-jewellery-set/p/98sbgp"
-store:"Meesho",},
+},
 
 {
 id:4,
@@ -3132,7 +2504,7 @@ rating:4.5,
 discount:30,
 image:"04-kundan-jewellery-set.jpg",
 url:"https://www.meesho.com/trending-jewellery-set/p/f79ybg"
-store:"Meesho",},
+},
 
 {
 id:5,
@@ -3143,7 +2515,7 @@ rating:4.5,
 discount:35,
 image:"05-oxidised-jewellery-set.jpg",
 url:"https://www.meesho.com/trending-jewellery-set/p/a6uu54"
-store:"Meesho",},
+},
 
 {
 id:6,
@@ -3154,7 +2526,7 @@ rating:4.3,
 discount:25,
 image:"06-blue-jewellery-set.jpg",
 url:"https://www.meesho.com/trending-jewelry-set/p/8fbqd2"
-store:"Meesho",},
+},
 
 {
 id:7,
@@ -3165,7 +2537,7 @@ rating:4.4,
 discount:20,
 image:"07-trending-wall-clock.jpg",
 url:"https://www.meesho.com/trending-wall-clock/p/fthk74"
-store:"Meesho",},
+},
 
 {
 id:8,
@@ -3176,7 +2548,7 @@ rating:4.3,
 discount:20,
 image:"08-trending-wall-clock-multi.jpg",
 url:"https://www.meesho.com/trending-wall-clock/p/g4uarl"
-store:"Meesho",},
+},
 
 {
 id:9,
@@ -3187,7 +2559,7 @@ rating:4.4,
 discount:25,
 image:"09-trending-women-top.jpg",
 url:"https://www.meesho.com/trending-tops/p/ewg1ie"
-store:"Meesho",},
+},
 
 {
 id:10,
@@ -3198,7 +2570,7 @@ rating:4.3,
 discount:20,
 image:"10-top-trending-cotton-tee.jpg",
 url:"https://www.meesho.com/top-trending-product/p/c1mc50"
-store:"Meesho",},
+},
 
 {
 id:11,
@@ -3209,7 +2581,7 @@ rating:4.4,
 discount:25,
 image:"11-women-fashion-tops.jpg",
 url:"https://www.meesho.com/tops-ladies/pl/3ja"
-store:"Meesho",},
+},
 
 {
 id:12,
@@ -3220,7 +2592,7 @@ rating:4.3,
 discount:20,
 image:"12-hottest-women-tops.jpg",
 url:"https://www.meesho.com/tops/pl/1koe"
-store:"Meesho",},
+},
 
 {
 id:13,
@@ -3231,7 +2603,7 @@ rating:4.4,
 discount:30,
 image:"13-ladies-short-tops.jpg",
 url:"https://www.meesho.com/ladies-short-top/pl/7y9"
-store:"Meesho",},
+},
 
 {
 id:14,
@@ -3242,7 +2614,7 @@ rating:4.3,
 discount:20,
 image:"14-men-denim-jeans.jpg",
 url:"https://www.meesho.com/men-denim-jeans/pl/89r"
-store:"Meesho",},
+},
 
 {
 id:15,
@@ -3253,7 +2625,7 @@ rating:4.5,
 discount:25,
 image:"15-black-jutti-women.jpg",
 url:"https://www.meesho.com/newtrendylatest-design-black-jutie-trending-expansive-jutie-and-every-day-wear-for-womengirl/p/9aidbg"
-store:"Meesho",},
+},
 
 {
 id:16,
@@ -3264,7 +2636,7 @@ rating:4.4,
 discount:35,
 image:"16-redmi-note-15-5g-phone-case.jpg",
 url:"https://www.meesho.com/new-trending-back-case-cover-phone-cover-mobile-cover-back-cover-for-redminote-15-5g-transparent-mobile-case-for-r-edmi-note-15-5g-for-girls-boys-phone-cover-for-r-edmi-note-15-5g-transparent-soft-cases-covers-with-camera-protection-not-oem/p/c2f7at"
-store:"Meesho",},
+},
 
 {
 id:17,
@@ -3275,7 +2647,7 @@ rating:4.5,
 discount:30,
 image:"17-women-jewellery-collection.jpg",
 url:"https://www.meesho.com/jewellery/pl/9tx"
-store:"Meesho",},
+},
 
 {
 id:18,
@@ -3286,7 +2658,7 @@ rating:4.3,
 discount:20,
 image:"18-mini-portable-blender.jpg",
 url:"https://www.meesho.com/search?q=mini%20portable%20blender"
-store:"Meesho",},
+},
 
 {
 id:19,
@@ -3297,7 +2669,7 @@ rating:4.2,
 discount:25,
 image:"19-wireless-tws-earbuds.jpg",
 url:"https://www.meesho.com/search?q=wireless%20tws%20earbuds"
-store:"Meesho",},
+},
 
 {
 id:20,
@@ -3308,7 +2680,7 @@ rating:4.4,
 discount:20,
 image:"20-mobile-phone-stand.jpg",
 url:"https://www.meesho.com/search?q=mobile%20phone%20stand"
-store:"Meesho",},
+},
 
 {
 id:21,
@@ -3319,7 +2691,7 @@ rating:4.4,
 discount:25,
 image:"21-kitchen-organizer.jpg",
 url:"https://www.meesho.com/search?q=kitchen%20organizer"
-store:"Meesho",},
+},
 
 {
 id:22,
@@ -3330,7 +2702,7 @@ rating:4.5,
 discount:25,
 image:"22-women-sling-bag.jpg",
 url:"https://www.meesho.com/search?q=women%20sling%20bag"
-store:"Meesho",},
+},
 
 {
 id:23,
@@ -3341,7 +2713,7 @@ rating:4.3,
 discount:30,
 image:"23-hair-brush.jpg",
 url:"https://www.meesho.com/search?q=hair%20brush"
-store:"Meesho",},
+},
 
 {
 id:24,
@@ -3352,7 +2724,7 @@ rating:4.2,
 discount:25,
 image:"24-portable-mini-fan.jpg",
 url:"https://www.meesho.com/search?q=portable%20mini%20fan"
-store:"Meesho",},
+},
 
 {
 id:25,
@@ -3363,7 +2735,7 @@ rating:4.5,
 discount:30,
 image:"25-led-makeup-mirror.jpg",
 url:"https://www.meesho.com/search?q=led%20makeup%20mirror"
-store:"Meesho",},
+},
 
 {
 id:26,
@@ -3374,7 +2746,7 @@ rating:4.4,
 discount:25,
 image:"26-men-wallet.jpg",
 url:"https://www.meesho.com/search?q=men%20wallet"
-store:"Meesho",},
+},
 
 {
 id:27,
@@ -3385,7 +2757,7 @@ rating:4.3,
 discount:30,
 image:"27-trending-sunglasses.jpg",
 url:"https://www.meesho.com/search?q=trending%20sunglasses"
-store:"Meesho",},
+},
 
 {
 id:28,
@@ -3396,7 +2768,7 @@ rating:4.4,
 discount:25,
 image:"28-home-storage-organizer.jpg",
 url:"https://www.meesho.com/search?q=home%20storage%20organizer"
-store:"Meesho",},
+},
 
 {
 id:29,
@@ -3407,30 +2779,94 @@ rating:4.3,
 discount:30,
 image:"29-artificial-plant-decor.jpg",
 url:"https://www.meesho.com/search?q=artificial%20plants%20home%20decor"
-store:"Meesho",},
+}
+
+,
 
 {
-id:30,
-name:"Zaphariq Women Gold Plated Contemporary Stackable Rings Set of 22",
-category:"beauty",
-price:198,
-rating:4.1,
+id:31,
+name:"New design Fancy Printed Shoulder bag / Women tote handbags / Printed bag / Stylish Women Shopping bag / bag for women / tote bag",
+category:"fashion",
+price:376,
+rating:4.2,
 discount:25,
-image:"IMG_4559.AVIF",
+image:"IMG_4566.AVIF",
 images:[
-"IMG_4559.AVIF",
-"IMG_4560.AVIF",
-"IMG_4561.AVIF",
-"IMG_4562.AVIF"
+"IMG_4566.AVIF",
+"IMG_4568.AVIF",
+"IMG_4565.AVIF",
+"IMG_4567.AVIF"
 ],
-url:"https://www.meesho.com/s/p/gebr7v?utm_source=si"
-store:"Meesho",}
+url:"https://www.meesho.com/s/p/8usphp?utm_source=ws"
+},
+
+{
+id:32,
+name:"Trending wedding purse / ladies bridal clutch / stylish bridal purse / partywear clutch / party wear sling bag / bridal purse",
+category:"fashion",
+price:377,
+rating:4.2,
+discount:25,
+image:"48184f1a-7cf8-489b-952a-2e39661c0a34.JPG",
+images:[
+"48184f1a-7cf8-489b-952a-2e39661c0a34.JPG",
+"ebafa902-f306-4d95-a26c-5bc732cfb237.JPG",
+"bc71811d-c801-4e6b-b9ab-e2dc4043fe2b.JPG",
+"65b79e4e-ef52-4ab9-af1c-1b38eaa363b5.JPG"
+],
+url:"https://www.meesho.com/s/p/bkk8p6?utm_source=ws"
+},
+
+{
+id:33,
+name:"Elite Versatile Women Slingbags",
+category:"accessories",
+price:276,
+rating:4.2,
+discount:25,
+image:"IMG_4578.AVIF",
+images:[
+"IMG_4578.AVIF",
+"IMG_4576.AVIF",
+"IMG_4577.AVIF",
+"IMG_4575.AVIF"
+],
+url:"https://www.meesho.com/s/p/8zj373?utm_source=ws"
+},
+
+{
+id:34,
+name:"Mehpriye Oxidize Silver Plated Bahubali Earrings",
+category:"beauty",
+price:136,
+rating:4.2,
+discount:25,
+image:"IMG_4580.jpeg",
+images:[
+"IMG_4580.jpeg"
+],
+url:"https://www.meesho.com/s/p/3b1ajf?utm_source=ws"
+},
+
+{
+id:35,
+name:"Unique Water & Juice Glasses",
+category:"home",
+price:215,
+rating:4.2,
+discount:25,
+image:"IMG_4585.jpeg",
+images:[
+"IMG_4585.jpeg",
+"IMG_4584.jpeg",
+"IMG_4583.jpeg",
+"IMG_4582.jpeg"
+],
+url:"https://www.meesho.com/s/p/7t8p1v?utm_source=ws"
+}
 
 ];
 
-
-// Expose the product catalog to additive Phase 3/4 scripts.
-window.products=products;
 
 /* =========================================================
    STORAGE
@@ -3483,47 +2919,30 @@ updateCounts();
    CARD
 ========================================================= */
 
-function getDealScore(p){
-const ratingScore=Math.min(5,Number(p.rating)||0)*12;
-const discountScore=Math.min(40,Number(p.discount)||0)*1.05;
-const valueScore=Math.max(0,30-(Number(p.price)||0)/100);
-return Math.max(50,Math.min(99,Math.round(ratingScore+discountScore+valueScore)));
-}
-
 function cardHTML(p){
 
 const wishlist=getWishlist();
+
 const wish=wishlist.includes(p.id)?"♥":"♡";
 const active=wishlist.includes(p.id)?"active":"";
-const score=getDealScore(p);
-const store=p.store||"Marketplace";
-const compared=getCompareList().includes(p.id);
 
 return `
 
 <article class="card">
 
 <div class="pic" onclick="openProduct(${p.id})">
+
 <img
 src="${p.image}"
-alt="${escapeHTML(p.name)}"
+alt="${p.name}"
 loading="lazy"
 >
-</div>
 
-<label class="compare-check" title="Add to comparison" onclick="event.stopPropagation()">
-<input
-type="checkbox"
-${compared?"checked":""}
-onchange="toggleCompare(${p.id},this.checked)"
-aria-label="Compare ${escapeHTML(p.name)}"
->
-</label>
+</div>
 
 <button
 class="wish ${active}"
 onclick="toggleWishlist(${p.id},event)"
-aria-label="Add ${escapeHTML(p.name)} to wishlist"
 >
 ${wish}
 </button>
@@ -3532,25 +2951,26 @@ ${wish}
 
 <span class="tag">DEALIO PICK</span>
 
-<h3>${escapeHTML(p.name)}</h3>
+<h3>${p.name}</h3>
 
 <div class="rating-line">
-<span class="rating">${Number(p.rating||0).toFixed(1)} ★</span>
+
+<span class="rating">${p.rating} ★</span>
+
 <span class="rating-text">Dealio Rating</span>
+
 </div>
 
-<div class="price">₹${Number(p.price||0).toLocaleString("en-IN")}</div>
+<div class="price">₹${p.price}</div>
 
 <div>
-<span class="old-price">
-₹${Math.round(p.price/(1-(Number(p.discount)||0)/100)).toLocaleString("en-IN")}
-</span>
-<span class="discount">${p.discount}% off</span>
-</div>
 
-<div class="deal-meta">
-<span class="store-badge">🏪 ${escapeHTML(store)}</span>
-<span class="deal-score">⚡ <strong>${score}</strong> Deal Score</span>
+<span class="old-price">
+₹${Math.round(p.price/(1-p.discount/100))}
+</span>
+
+<span class="discount">${p.discount}% off</span>
+
 </div>
 
 <div class="card-buttons">
@@ -3560,9 +2980,8 @@ class="buy"
 href="${p.url}"
 target="_blank"
 rel="noopener noreferrer"
-onclick="trackDealClick(${p.id})"
 >
-View Deal →
+Buy
 </a>
 
 <button
@@ -3579,7 +2998,9 @@ onclick="addToCart(${p.id})"
 </article>
 
 `;
+
 }
+
 
 /* =========================================================
    HOME
@@ -3590,7 +3011,7 @@ function renderHome(){
 const box=document.getElementById("homeProducts");
 
 box.innerHTML=
-[...products].sort((a,b)=>getDealScore(b)-getDealScore(a)).slice(0,30).map(cardHTML).join("");
+products.slice(0,8).map(cardHTML).join("");
 
 }
 
@@ -3601,276 +3022,71 @@ box.innerHTML=
 
 let shopSearchText="";
 
-function normalizeSearchText(value){
-return String(value||"")
-.toLowerCase()
-.replace(/[₹,]/g," ")
-.replace(/\s+/g," ")
-.trim();
-}
+function renderShop(){
 
-function escapeHTML(value){
-return String(value??"")
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-}
-
-const smartAliases={
-"mobile":"electronics",
-"phone":"electronics",
-"phones":"electronics",
-"smartphone":"electronics",
-"earbud":"electronics",
-"earbuds":"electronics",
-"headphone":"electronics",
-"headphones":"electronics",
-"watch":"accessories",
-"watches":"accessories",
-"shirt":"fashion",
-"shirts":"fashion",
-"tshirt":"fashion",
-"t-shirts":"fashion",
-"top":"fashion",
-"tops":"fashion",
-"jeans":"fashion",
-"bag":"fashion",
-"bags":"fashion",
-"purse":"fashion",
-"jewellery":"beauty",
-"jewelry":"beauty",
-"earrings":"beauty",
-"makeup":"beauty",
-"skincare":"beauty",
-"decor":"home",
-"storage":"home",
-"organizer":"home",
-"organisers":"home"
-};
-
-function parseSmartQuery(query){
-const q=normalizeSearchText(query);
-const tokens=q.split(" ").filter(Boolean);
-
-let maxPrice=null;
-let minPrice=null;
-let minDiscount=null;
-let minRating=null;
-let category=null;
-
-const under=q.match(/(?:under|below|less than|max)\s*(?:₹|rs\.?|inr)?\s*(\d+(?:\.\d+)?)/i);
-const over=q.match(/(?:above|over|more than|min)\s*(?:₹|rs\.?|inr)?\s*(\d+(?:\.\d+)?)/i);
-const discount=q.match(/(\d+(?:\.\d+)?)\s*%?\s*(?:off|discount|deal)/i);
-const rating=q.match(/(\d(?:\.\d)?)\s*(?:star|stars|rating|★)/i);
-
-if(under) maxPrice=Number(under[1]);
-if(over) minPrice=Number(over[1]);
-if(discount) minDiscount=Number(discount[1]);
-if(rating) minRating=Number(rating[1]);
-
-for(const token of tokens){
-if(["fashion","beauty","electronics","home","accessories"].includes(token)){
-category=token;
-break;
-}
-if(smartAliases[token]){
-category=smartAliases[token];
-}
-}
-
-let cleaned=q
-.replace(/(?:under|below|less than|max)\s*(?:₹|rs\.?|inr)?\s*\d+(?:\.\d+)?/gi,"")
-.replace(/(?:above|over|more than|min)\s*(?:₹|rs\.?|inr)?\s*\d+(?:\.\d+)?/gi,"")
-.replace(/\d+(?:\.\d+)?\s*%?\s*(?:off|discount|deal)/gi,"")
-.replace(/\d(?:\.\d)?\s*(?:star|stars|rating|★)/gi,"")
-.replace(/\b(best|cheap|cheapest|good|top|trending|latest|find|show|me|products?|deals?)\b/gi,"")
-.replace(/\s+/g," ")
-.trim();
-
-return {q,tokens:cleaned.split(" ").filter(Boolean),maxPrice,minPrice,minDiscount,minRating,category};
-}
-
-function smartRelevance(p,parsed){
-const name=normalizeSearchText(p.name);
-const category=normalizeSearchText(p.category);
-const store=normalizeSearchText(p.store||"");
-let score=getDealScore(p)*0.15;
-
-if(!parsed.q) return score;
-
-if(name===parsed.q) score+=80;
-if(name.includes(parsed.q)) score+=35;
-
-for(const token of parsed.tokens){
-if(name.includes(token)) score+=12;
-if(category===token) score+=20;
-if(store.includes(token)) score+=8;
-
-const alias=smartAliases[token];
-if(alias && category===alias) score+=18;
-}
-
-if(parsed.category && category===parsed.category) score+=28;
-if(parsed.maxPrice!==null && Number(p.price)<=parsed.maxPrice) score+=10;
-if(parsed.minPrice!==null && Number(p.price)>=parsed.minPrice) score+=8;
-if(parsed.minDiscount!==null && Number(p.discount)>=parsed.minDiscount) score+=8;
-if(parsed.minRating!==null && Number(p.rating)>=parsed.minRating) score+=8;
-
-return score;
-}
-
-function getSmartFilteredProducts(){
-const parsed=parseSmartQuery(shopSearchText);
-const category=document.getElementById("categoryFilter")?.value||"all";
-const price=document.getElementById("priceFilter")?.value||"all";
-const discount=document.getElementById("discountFilter")?.value||"all";
-const rating=document.getElementById("ratingFilter")?.value||"all";
-const store=document.getElementById("storeFilter")?.value||"all";
+const category=document.getElementById("categoryFilter").value;
+const price=document.getElementById("priceFilter").value;
+const discount=document.getElementById("discountFilter").value;
+const rating=document.getElementById("ratingFilter").value;
+const sort=document.getElementById("sortSelect").value;
 
 let list=products.filter(p=>{
 
 if(category!=="all" && p.category!==category) return false;
 
-if(store!=="all" && (p.store||"Marketplace").toLowerCase()!==store.toLowerCase()) return false;
-
 if(price==="under199" && p.price>=199) return false;
+
 if(price==="199to399" && (p.price<199 || p.price>399)) return false;
+
 if(price==="above399" && p.price<400) return false;
 
 if(discount!=="all" && p.discount<Number(discount)) return false;
+
 if(rating!=="all" && p.rating<Number(rating)) return false;
 
-if(parsed.maxPrice!==null && p.price>parsed.maxPrice) return false;
-if(parsed.minPrice!==null && p.price<parsed.minPrice) return false;
-if(parsed.minDiscount!==null && p.discount<parsed.minDiscount) return false;
-if(parsed.minRating!==null && p.rating<parsed.minRating) return false;
-if(parsed.category && category==="all" && p.category!==parsed.category) return false;
-
-if(parsed.tokens.length){
-const relevance=smartRelevance(p,parsed);
-if(relevance<4) return false;
+if(
+shopSearchText &&
+!p.name.toLowerCase().includes(shopSearchText.toLowerCase())
+){
+return false;
 }
 
 return true;
+
 });
-
-list.forEach(p=>p._smartScore=smartRelevance(p,parsed));
-return {list,parsed};
-}
-
-function renderShop(){
-
-const sort=document.getElementById("sortSelect").value;
-const result=getSmartFilteredProducts();
-let list=result.list;
-const parsed=result.parsed;
 
 if(sort==="low") list.sort((a,b)=>a.price-b.price);
 if(sort==="high") list.sort((a,b)=>b.price-a.price);
 if(sort==="rating") list.sort((a,b)=>b.rating-a.rating);
 if(sort==="discount") list.sort((a,b)=>b.discount-a.discount);
-if(sort==="best") list.sort((a,b)=>getDealScore(b)-getDealScore(a));
-if(sort==="relevance" && parsed.tokens.length){
-list.sort((a,b)=>(b._smartScore||0)-(a._smartScore||0));
-}
-if(sort==="relevance" && !parsed.tokens){
-list.sort((a,b)=>getDealScore(b)-getDealScore(a));
-}
 
 const box=document.getElementById("shopProducts");
 const empty=document.getElementById("shopEmpty");
-const count=document.getElementById("shopResultCount");
-const note=document.getElementById("smartSearchNote");
-
-if(count){
-count.innerHTML=`<strong>${list.length}</strong> product${list.length===1?"":"s"} found`;
-}
-
-if(note){
-const notes=[];
-if(parsed.maxPrice!==null) notes.push(`under ₹${parsed.maxPrice}`);
-if(parsed.minPrice!==null) notes.push(`above ₹${parsed.minPrice}`);
-if(parsed.minDiscount!==null) notes.push(`${parsed.minDiscount}%+ off`);
-if(parsed.minRating!==null) notes.push(`${parsed.minRating}★+`);
-if(parsed.category) notes.push(parsed.category);
-note.textContent=notes.length ? `Smart filters: ${notes.join(" • ")}` : "";
-}
 
 if(!list.length){
+
 box.innerHTML="";
 empty.style.display="block";
+
 }else{
+
 empty.style.display="none";
 box.innerHTML=list.map(cardHTML).join("");
+
 }
 
-updateCompareBar();
 }
 
 function updateShopSearch(){
 
 const input=document.getElementById("shopSearch");
+
 shopSearchText=input.value.trim();
 
-const header=document.getElementById("headerSearch");
-if(header && header.value!==shopSearchText) header.value=shopSearchText;
-
 renderShop();
+
 }
 
-function applySmartPreset(type){
-
-const search=document.getElementById("shopSearch");
-const discount=document.getElementById("discountFilter");
-const rating=document.getElementById("ratingFilter");
-const price=document.getElementById("priceFilter");
-const sort=document.getElementById("sortSelect");
-
-if(search) search.value="";
-shopSearchText="";
-
-if(type==="under500"){
-price.value="all";
-discount.value="all";
-rating.value="all";
-sort.value="low";
-shopSearchText="under 500";
-}else if(type==="discount30"){
-price.value="all";
-discount.value="30";
-rating.value="all";
-sort.value="discount";
-}else if(type==="rating4"){
-price.value="all";
-discount.value="all";
-rating.value="4";
-sort.value="rating";
-}else if(type==="best"){
-price.value="all";
-discount.value="all";
-rating.value="all";
-sort.value="best";
-}else{
-price.value="all";
-discount.value="all";
-rating.value="all";
-sort.value="relevance";
-}
-
-renderShop();
-showShop();
-}
-
-function renderStoreOptions(){
-const select=document.getElementById("storeFilter");
-if(!select) return;
-
-const stores=[...new Set(products.map(p=>p.store||"Marketplace"))].sort();
-select.innerHTML='<option value="all">All Stores</option>'+
-stores.map(s=>`<option value="${escapeHTML(s)}">${escapeHTML(s)}</option>`).join("");
-}
 
 /* =========================================================
    NAVIGATION
@@ -4015,33 +3231,30 @@ document.getElementById("headerSearch").addEventListener(
 "input",
 function(){
 
-const value=this.value.trim();
+const value=this.value.toLowerCase().trim();
+
 const box=document.getElementById("suggestions");
 
 if(!value){
+
 box.innerHTML="";
 box.classList.remove("show");
+
 return;
+
 }
 
-const parsed=parseSmartQuery(value);
 const matches=products
-.map(p=>({p,score:smartRelevance(p,parsed)}))
-.filter(x=>x.score>=4)
-.sort((a,b)=>b.score-a.score)
-.slice(0,7)
-.map(x=>x.p);
+.filter(p=>p.name.toLowerCase().includes(value))
+.slice(0,6);
 
 if(!matches.length){
-box.innerHTML=`
-<div class="suggestion" onclick="runSearch()">
-<div>
-<div class="suggestion-name">Search Dealio for “${escapeHTML(value)}”</div>
-<div class="suggestion-price">Try smart filters like “under ₹500”</div>
-</div>
-</div>`;
-box.classList.add("show");
+
+box.innerHTML="";
+box.classList.remove("show");
+
 return;
+
 }
 
 box.innerHTML=matches.map(p=>`
@@ -4055,9 +3268,9 @@ onclick="openProduct(${p.id})"
 
 <div>
 
-<div class="suggestion-name">${escapeHTML(p.name)}</div>
+<div class="suggestion-name">${p.name}</div>
 
-<div class="suggestion-price">₹${Number(p.price).toLocaleString("en-IN")} · ${p.store||"Marketplace"}</div>
+<div class="suggestion-price">₹${p.price}</div>
 
 </div>
 
@@ -4068,6 +3281,7 @@ onclick="openProduct(${p.id})"
 box.classList.add("show");
 
 });
+
 
 /* =========================================================
    WISHLIST
@@ -4324,36 +3538,9 @@ if(!p) return;
 
 currentModalProduct=p;
 
-const galleryImages=
-Array.isArray(p.images) && p.images.length
-? p.images
-: [p.image];
+document.getElementById("modalImage").src=p.image;
 
-const modalImage=
-document.getElementById("modalImage");
-
-const gallery=
-document.getElementById("modalGallery");
-
-modalImage.src=galleryImages[0];
-modalImage.alt=p.name;
-
-gallery.innerHTML=galleryImages.map((src,index)=>`
-<button
-type="button"
-class="modal-gallery-thumb ${index===0 ? "active" : ""}"
-onclick="selectModalImage(${index})"
-aria-label="View image ${index+1}"
->
-<img
-src="${src}"
-alt="${p.name} image ${index+1}"
-loading="lazy"
->
-</button>
-`).join("");
-
-p._galleryImages=galleryImages;
+document.getElementById("modalImage").alt=p.name;
 
 document.getElementById("modalName").textContent=p.name;
 
@@ -4364,13 +3551,8 @@ document.getElementById("modalPrice").textContent=
 "₹"+p.price;
 
 document.getElementById("modalDeal").innerHTML=
-`<div class="deal-meta">
-  <span class="store-badge">🏪 ${p.store||"Marketplace"}</span>
-  <span class="deal-score">⚡ <strong>${getDealScore(p)}</strong> Deal Score</span>
-</div>
-<div style="margin-top:8px"><span class="discount">${p.discount}% Deal</span></div>`;
+`<span class="discount">${p.discount}% Deal</span>`;
 
-document.getElementById("modalStore").innerHTML="";
 document.getElementById("modalBuy").href=p.url;
 
 document.getElementById("productModal").classList.add("show");
@@ -4379,28 +3561,6 @@ document.body.classList.add("no-scroll");
 
 document.getElementById("suggestions")
 .classList.remove("show");
-
-}
-
-function selectModalImage(index){
-
-const p=currentModalProduct;
-
-if(!p) return;
-
-const images=
-p._galleryImages && p._galleryImages.length
-? p._galleryImages
-: [p.image];
-
-if(!images[index]) return;
-
-document.getElementById("modalImage").src=images[index];
-
-document.querySelectorAll(".modal-gallery-thumb")
-.forEach((button,i)=>{
-button.classList.toggle("active",i===index);
-});
 
 }
 
@@ -4665,8 +3825,21 @@ return prefix+encodeURIComponent(email);
 
 function closeAccountSubModal(id){
 const el=document.getElementById(id);
-if(el) el.classList.remove("show");
+if(el){
+  el.classList.remove("show");
+  el.style.display="";
+}
 if(!document.querySelector(".account-submodal.show") && !document.getElementById("productModal")?.classList.contains("show")){
+  document.body.classList.remove("no-scroll");
+}
+}
+
+function closeAllAccountSubModals(){
+document.querySelectorAll(".account-submodal").forEach(el=>{
+  el.classList.remove("show");
+  el.style.display="";
+});
+if(!document.getElementById("productModal")?.classList.contains("show")){
   document.body.classList.remove("no-scroll");
 }
 }
@@ -5183,6 +4356,32 @@ toast.remove();
    FOR INLINE onclick="" TO WORK
 ========================================================= */
 
+/* =========================================================
+   ACCOUNT SUB-MODAL CLOSE HANDLERS
+   ========================================================= */
+
+document.addEventListener("click",function(e){
+  const closeBtn=e.target.closest(".account-subclose");
+  if(closeBtn){
+    e.preventDefault();
+    e.stopPropagation();
+    const modal=closeBtn.closest(".account-submodal");
+    if(modal) closeAccountSubModal(modal.id);
+    return;
+  }
+
+  const overlay=e.target.closest(".account-submodal");
+  if(overlay && e.target===overlay){
+    closeAccountSubModal(overlay.id);
+  }
+});
+
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"){
+    closeAllAccountSubModals();
+  }
+});
+
 Object.assign(window,{
 
 goHome,
@@ -5201,7 +4400,6 @@ addToCart,
 removeFromCart,
 
 openProduct,
-selectModalImage,
 closeModal,
 addModalToCart,
 
@@ -5222,195 +4420,15 @@ showAccountPrivacy,
 
 showToast,
 
-renderShop,
-trackDealClick,
-getDealScore,
-getStoreProducts,
-getBestDeal,
-parseSmartQuery,
-applySmartPreset,
-getCompareList,
-toggleCompare,
-openCompare,
-closeCompare
+renderShop
 
 });
-
-
-/* =========================================================
-   DEAL ENGINE / AFFILIATE-READY FOUNDATION
-========================================================= */
-
-function trackDealClick(id){
-const p=products.find(x=>x.id===id);
-if(!p) return;
-
-const click={
-  productId:p.id,
-  product:p.name,
-  store:p.store||"Marketplace",
-  timestamp:new Date().toISOString()
-};
-
-try{
-  const history=JSON.parse(localStorage.getItem("dealioDealClicks")||"[]");
-  history.unshift(click);
-  localStorage.setItem("dealioDealClicks",JSON.stringify(history.slice(0,100)));
-}catch(e){
-  console.warn("Deal click tracking unavailable",e);
-}
-}
-
-function getStoreProducts(store){
-return products.filter(p=>(p.store||"Marketplace").toLowerCase()===String(store).toLowerCase());
-}
-
-function getBestDeal(){
-return [...products].sort((a,b)=>getDealScore(b)-getDealScore(a))[0]||null;
-}
-
-/* =========================================================
-   SMART COMPARISON
-========================================================= */
-
-function getCompareList(){
-try{
-return JSON.parse(localStorage.getItem("dealioCompare")||"[]");
-}catch(e){
-return [];
-}
-}
-
-function saveCompareList(list){
-localStorage.setItem("dealioCompare",JSON.stringify(list.slice(0,3)));
-updateCompareBar();
-}
-
-function toggleCompare(id,checked){
-
-let list=getCompareList();
-
-if(checked){
-if(!list.includes(id)){
-if(list.length>=3){
-showToast("Compare up to 3 products only");
-renderShop();
-return;
-}
-list.push(id);
-}
-}else{
-list=list.filter(x=>x!==id);
-}
-
-saveCompareList(list);
-renderShop();
-}
-
-function updateCompareBar(){
-
-let bar=document.getElementById("compareFloat");
-
-if(!bar){
-bar=document.createElement("div");
-bar.id="compareFloat";
-bar.className="compare-float";
-bar.innerHTML=`
-<div class="compare-float-info">
-<strong>⚖️ Compare Products</strong>
-<span id="compareFloatText">Select products to compare</span>
-</div>
-<button class="compare-action" id="compareNowBtn" onclick="openCompare()" disabled>
-Compare Now
-</button>`;
-document.body.appendChild(bar);
-}
-
-const list=getCompareList();
-const text=document.getElementById("compareFloatText");
-const btn=document.getElementById("compareNowBtn");
-
-if(text) text.textContent=`${list.length}/3 selected${list.length===0?" · Pick products to compare":""}`;
-if(btn) btn.disabled=list.length<2;
-
-bar.classList.toggle("show",list.length>0);
-}
-
-function openCompare(){
-
-const ids=getCompareList();
-if(ids.length<2){
-showToast("Select at least 2 products");
-return;
-}
-
-let modal=document.getElementById("compareModal");
-
-if(!modal){
-modal=document.createElement("div");
-modal.id="compareModal";
-modal.className="compare-modal";
-modal.innerHTML=`
-<div class="compare-box" onclick="event.stopPropagation()">
-<div class="compare-head">
-<div>
-<h3>⚖️ Compare Products</h3>
-<div class="result-count">Price, rating, discount and Deal Score</div>
-</div>
-<button class="compare-close" onclick="closeCompare()">✕</button>
-</div>
-<div id="compareGrid" class="compare-grid"></div>
-</div>`;
-modal.addEventListener("click",function(e){
-if(e.target===modal) closeCompare();
-});
-document.body.appendChild(modal);
-}
-
-const selected=ids.map(id=>products.find(p=>p.id===id)).filter(Boolean);
-const bestScore=Math.max(...selected.map(getDealScore));
-const grid=document.getElementById("compareGrid");
-
-grid.innerHTML=selected.map(p=>{
-const score=getDealScore(p);
-const best=score===bestScore;
-return `
-<div class="compare-item">
-<img src="${p.image}" alt="${escapeHTML(p.name)}">
-<div class="compare-item-body">
-<h4>${escapeHTML(p.name)}</h4>
-<div class="compare-stat"><span>Price</span><b>₹${Number(p.price).toLocaleString("en-IN")}</b></div>
-<div class="compare-stat"><span>Discount</span><b>${p.discount}%</b></div>
-<div class="compare-stat"><span>Rating</span><b>${Number(p.rating||0).toFixed(1)} ★</b></div>
-<div class="compare-stat"><span>Store</span><b>${escapeHTML(p.store||"Marketplace")}</b></div>
-<div class="compare-stat"><span>Deal Score</span><b>${score}/99</b></div>
-${best?`<div class="best-choice">🏆 Best overall value</div>`:""}
-<div style="margin-top:10px">
-<a class="buy" style="display:block;text-align:center" href="${p.url}" target="_blank" rel="noopener noreferrer" onclick="trackDealClick(${p.id})">View Deal →</a>
-</div>
-</div>
-</div>`;
-}).join("");
-
-modal.classList.add("show");
-document.body.classList.add("no-scroll");
-}
-
-function closeCompare(){
-const modal=document.getElementById("compareModal");
-if(modal) modal.classList.remove("show");
-if(!document.getElementById("productModal")?.classList.contains("show")){
-document.body.classList.remove("no-scroll");
-}
-}
-
 
 
 /* =========================================================
    INITIAL
 ========================================================= */
 
-renderStoreOptions();
 renderHome();
 
 renderShop();
@@ -5419,650 +4437,5 @@ updateCounts();
 
 </script>
 
-
-<script>
-/* ================= DEALIO PHASE 3 — MULTI-STORE / AFFILIATE READY ================= */
-const affiliatePartners = {
-  amazon:  { enabled:false, label:"Amazon",  icon:"🛒" },
-  flipkart:{ enabled:false, label:"Flipkart",icon:"🛍️" },
-  meesho:  { enabled:true,  label:"Meesho",  icon:"🛒" },
-  myntra:  { enabled:false, label:"Myntra",  icon:"👗" },
-  ajio:    { enabled:false, label:"AJIO",    icon:"🛍️" },
-  croma:   { enabled:false, label:"Croma",   icon:"📱" },
-  nykaa:   { enabled:false, label:"Nykaa",   icon:"💄" },
-  tatacliq:{ enabled:false, label:"Tata CLiQ",icon:"🛒" }
-};
-
-function normalizeStoreId(name){
-  return String(name||"").toLowerCase().replace(/[^a-z0-9]+/g,"");
-}
-function getOffers(p){
-  if(!p) return [];
-  if(Array.isArray(p.offers) && p.offers.length) return p.offers.map((o,i)=>({
-    ...o,
-    store:o.store || p.store || "Store",
-    price:Number(o.price ?? p.price ?? 0),
-    url:o.url || p.url || "#",
-    affiliateUrl:o.affiliateUrl || "",
-    inStock:o.inStock !== false,
-    offerIndex:i
-  }));
-  return [{
-    store:p.store || "Store",
-    price:Number(p.price || 0),
-    url:p.url || "#",
-    affiliateUrl:p.affiliateUrl || "",
-    inStock:p.inStock !== false,
-    discount:Number(p.discount || 0),
-    rating:Number(p.rating || 0),
-    offerIndex:0
-  }];
-}
-function getBestOffer(p){
-  const offers=getOffers(p).filter(o=>o.inStock!==false && Number(o.price)>0);
-  return offers.sort((a,b)=>a.price-b.price)[0] || getOffers(p)[0] || null;
-}
-function getAffiliateUrl(p, offer){
-  if(!offer) return "#";
-  return offer.affiliateUrl || offer.url || p?.url || "#";
-}
-function getStoreIcon(store){
-  const key=normalizeStoreId(store);
-  return affiliatePartners[key]?.icon || "🛒";
-}
-function getStoreLabel(store){
-  const key=normalizeStoreId(store);
-  return affiliatePartners[key]?.label || store || "Store";
-}
-function getOfferDiscount(p, offer){
-  if(Number.isFinite(Number(offer?.discount))) return Number(offer.discount);
-  return Number(p?.discount || 0);
-}
-function formatDealioPrice(n){
-  return "₹"+Number(n||0).toLocaleString("en-IN");
-}
-function escapeDealio(v){
-  return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-}
-function trackStoreClick(p, offer){
-  try{
-    const key="dealioAffiliateClicks";
-    const data=JSON.parse(localStorage.getItem(key)||"[]");
-    data.push({
-      productId:p?.id ?? null,
-      product:p?.name || "",
-      store:offer?.store || p?.store || "",
-      storeId:normalizeStoreId(offer?.store || p?.store),
-      offerIndex:offer?.offerIndex ?? 0,
-      affiliateEnabled:!!offer?.affiliateUrl,
-      timestamp:new Date().toISOString()
-    });
-    localStorage.setItem(key,JSON.stringify(data.slice(-1000)));
-  }catch(e){}
-}
-function trackDealClickPhase3(p, offer){
-  trackStoreClick(p, offer);
-  if(typeof window.trackDealClick==="function"){
-    try{ window.trackDealClick(p?.id); }catch(e){}
-  }
-}
-function getStoreStats(){
-  const rows={};
-  try{
-    const data=JSON.parse(localStorage.getItem("dealioAffiliateClicks")||"[]");
-    data.forEach(x=>{
-      const k=x.storeId||normalizeStoreId(x.store)||"store";
-      if(!rows[k]) rows[k]={store:x.store, clicks:0, affiliateClicks:0};
-      rows[k].clicks++;
-      if(x.affiliateEnabled) rows[k].affiliateClicks++;
-    });
-  }catch(e){}
-  return rows;
-}
-function getProductBestPrice(p){
-  const best=getBestOffer(p);
-  return best ? Number(best.price) : Number(p?.price||0);
-}
-function getStoreProductsPhase3(store){
-  return (window.products||[]).filter(p=>getOffers(p).some(o=>normalizeStoreId(o.store)===normalizeStoreId(store)));
-}
-function openOfferComparison(p){
-  const offers=getOffers(p);
-  if(!offers.length) return;
-  const rows=offers.slice().sort((a,b)=>Number(a.price)-Number(b.price)).map((o,i)=>{
-    const best=i===0;
-    const url=getAffiliateUrl(p,o);
-    return `<div class="d3-offer-row ${best?'d3-best-offer':''}">
-      <div class="d3-offer-store"><span class="d3-store-icon">${getStoreIcon(o.store)}</span><strong>${escapeDealio(getStoreLabel(o.store))}</strong>${best?'<span class="d3-best-badge">BEST PRICE</span>':''}</div>
-      <div class="d3-offer-price">${formatDealioPrice(o.price)}</div>
-      <div class="d3-offer-meta">${o.inStock===false?'Out of stock':'In stock'}${getOfferDiscount(p,o)?` · ${getOfferDiscount(p,o)}% off`:''}</div>
-      <a class="d3-offer-btn" href="${escapeDealio(url)}" target="_blank" rel="noopener noreferrer" onclick="trackDealClickPhase3(window.__dealioOfferProduct, window.__dealioOfferList[${o.offerIndex||0}]);">View Deal ↗</a>
-    </div>`;
-  }).join("");
-  window.__dealioOfferProduct=p;
-  window.__dealioOfferList=offers;
-  const existing=document.getElementById("dealioOfferModal");
-  if(existing) existing.remove();
-  const modal=document.createElement("div");
-  modal.id="dealioOfferModal";
-  modal.className="d3-modal-backdrop";
-  modal.innerHTML=`<div class="d3-offer-modal" role="dialog" aria-modal="true">
-    <button class="d3-close" onclick="document.getElementById('dealioOfferModal')?.remove()">×</button>
-    <div class="d3-modal-kicker">COMPARE STORES</div>
-    <h2>${escapeDealio(p.name||"Product")}</h2>
-    <p class="d3-modal-sub">Choose the best available offer before you buy.</p>
-    <div class="d3-offer-list">${rows}</div>
-  </div>`;
-  modal.addEventListener("click",e=>{if(e.target===modal) modal.remove()});
-  document.body.appendChild(modal);
-}
-function renderStoreDirectory(){
-  const host=document.getElementById("dealioStoreDirectory");
-  if(!host || !Array.isArray(window.products)) return;
-  const stores={};
-  window.products.forEach(p=>getOffers(p).forEach(o=>{
-    const k=normalizeStoreId(o.store);
-    if(!stores[k]) stores[k]={name:o.store,count:0};
-    stores[k].count++;
-  }));
-  const entries=Object.values(stores);
-  host.innerHTML=entries.map(s=>`<button class="d3-store-card" onclick="setStoreFilterPhase3('${escapeDealio(s.name)}')">
-    <span>${getStoreIcon(s.name)}</span><b>${escapeDealio(getStoreLabel(s.name))}</b><small>${s.count} offer${s.count===1?'':'s'}</small>
-  </button>`).join("");
-}
-function setStoreFilterPhase3(store){
-  const select=document.getElementById("storeFilter");
-  if(select){
-    const opt=[...select.options].find(o=>normalizeStoreId(o.value)===normalizeStoreId(store));
-    if(opt){select.value=opt.value; select.dispatchEvent(new Event("change",{bubbles:true})); return;}
-  }
-  if(typeof window.renderShop==="function"){ try{window.renderShop();}catch(e){} }
-}
-window.affiliatePartners=affiliatePartners;
-window.getOffers=getOffers;
-window.getBestOffer=getBestOffer;
-window.getAffiliateUrl=getAffiliateUrl;
-window.getStoreStats=getStoreStats;
-window.openOfferComparison=openOfferComparison;
-window.getStoreProductsPhase3=getStoreProductsPhase3;
-window.renderStoreDirectory=renderStoreDirectory;
-</script>
-
-
-<script>
-document.addEventListener("click", function(e){
-  const a=e.target.closest && e.target.closest('a');
-  if(!a) return;
-  const href=a.getAttribute("href")||"";
-  if(!href || href==="#" || href.startsWith("javascript:")) return;
-  // Existing product links remain intact; phase 3 analytics is additive.
-});
-window.addEventListener("load",()=>setTimeout(()=>{try{renderStoreDirectory()}catch(e){}},250));
-</script>
-
-
-<!--
-DEALIO PHASE 3 DATA CONTRACT
-A multi-store product may use:
-{
-  store: "Meesho",
-  price: 376,
-  url: "...",
-  affiliateUrl: "",
-  offers: [
-    {store:"Meesho", price:376, url:"...", affiliateUrl:"", inStock:true},
-    {store:"Amazon", price:399, url:"...", affiliateUrl:"", inStock:true}
-  ]
-}
-Only real affiliateUrl values supplied by an approved partner should be used for commission tracking.
--->
-
-
-
-<script>
-/* =========================================================
-   DEALIO PREMIUM PHASE 4 — PERSONALIZATION + DEAL ENGINE
-   Local prototype: no server-side price tracking or push/email
-   notifications are claimed here.
-========================================================= */
-(function(){
-  'use strict';
-
-  const KEYS={
-    viewed:'dealioRecentlyViewed',
-    searches:'dealioSearchHistory',
-    alerts:'dealioPriceAlerts',
-    snapshots:'dealioPriceSnapshots'
-  };
-
-  function catalog(){return Array.isArray(window.products)?window.products:[];}
-  function safeJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch(e){return fallback;}}
-  function saveJSON(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true;}catch(e){return false;}}
-  function productById(id){return catalog().find(p=>Number(p.id)===Number(id));}
-  function cleanText(v){return String(v||'').toLowerCase().replace(/[^a-z0-9₹]+/g,' ').trim();}
-  function money(n){return '₹'+Number(n||0).toLocaleString('en-IN');}
-
-  function getRecentlyViewed(){
-    const raw=safeJSON(KEYS.viewed,[]);
-    return Array.isArray(raw)?raw.map(Number).filter(Boolean):[];
-  }
-  function saveRecentlyViewed(ids){saveJSON(KEYS.viewed,ids.map(Number).filter(Boolean).slice(0,12));}
-
-  function recordRecentlyViewed(id){
-    const list=getRecentlyViewed().filter(x=>x!==Number(id));
-    list.unshift(Number(id));
-    saveRecentlyViewed(list);
-    renderPhase4();
-  }
-
-  function getSearchHistory(){
-    const raw=safeJSON(KEYS.searches,[]);
-    return Array.isArray(raw)?raw.filter(x=>typeof x==='string'&&x.trim()).slice(0,20):[];
-  }
-  function recordSearch(query){
-    const q=String(query||'').trim();
-    if(!q) return;
-    const list=getSearchHistory().filter(x=>x.toLowerCase()!==q.toLowerCase());
-    list.unshift(q);
-    saveJSON(KEYS.searches,list.slice(0,20));
-  }
-
-  function getAlerts(){
-    const raw=safeJSON(KEYS.alerts,{});
-    return raw && typeof raw==='object' && !Array.isArray(raw)?raw:{};
-  }
-  function saveAlerts(data){saveJSON(KEYS.alerts,data);}
-
-  function getSnapshots(){
-    const raw=safeJSON(KEYS.snapshots,{});
-    return raw && typeof raw==='object' && !Array.isArray(raw)?raw:{};
-  }
-  function saveSnapshots(data){saveJSON(KEYS.snapshots,data);}
-
-  function snapshotCurrentPrices(){
-    const data=getSnapshots();
-    const now=new Date().toISOString();
-    catalog().forEach(p=>{
-      const id=String(p.id);
-      const price=Number(p.price||0);
-      if(!price) return;
-      const history=Array.isArray(data[id])?data[id]:[];
-      const last=history[history.length-1];
-      // Keep a short local history. A drop is meaningful only after a prior snapshot exists.
-      if(!last || Number(last.price)!==price){
-        history.push({price,timestamp:now});
-      }else if(last){
-        last.timestamp=now;
-      }
-      data[id]=history.slice(-8);
-    });
-    saveSnapshots(data);
-  }
-
-  function getLatestDrop(p){
-    const data=getSnapshots();
-    const history=data[String(p.id)];
-    if(!Array.isArray(history)||history.length<2) return null;
-    const prev=history[history.length-2];
-    const current=history[history.length-1];
-    if(Number(current.price)<Number(prev.price)){
-      const amount=Number(prev.price)-Number(current.price);
-      const pct=prev.price?Math.round((amount/Number(prev.price))*100):0;
-      return {from:Number(prev.price),to:Number(current.price),amount,pct,timestamp:current.timestamp};
-    }
-    return null;
-  }
-
-  function getActivePriceDrop(p){
-    const data=getSnapshots();
-    const history=data[String(p.id)];
-    if(!Array.isArray(history)||history.length<2) return null;
-    const current=Number(p.price||0);
-    let highest=current;
-    for(const row of history.slice(0,-1)) highest=Math.max(highest,Number(row.price||0));
-    if(highest>current){
-      return {from:highest,to:current,amount:highest-current,pct:highest?Math.round(((highest-current)/highest)*100):0};
-    }
-    return null;
-  }
-
-  function getAlert(id){return getAlerts()[String(id)]||null;}
-
-  function setPriceAlert(id,target){
-    const p=productById(id);
-    if(!p) return;
-    const n=Number(target);
-    if(!Number.isFinite(n)||n<=0){showToast('Enter a valid target price');return;}
-    const alerts=getAlerts();
-    alerts[String(id)]={productId:p.id,targetPrice:Math.round(n),createdAt:new Date().toISOString(),currentPrice:Number(p.price||0)};
-    saveAlerts(alerts);
-    closePriceAlertModal();
-    renderPhase4();
-    showToast(`Price alert set at ${money(n)} 🔔`);
-  }
-
-  function removePriceAlert(id){
-    const alerts=getAlerts();
-    delete alerts[String(id)];
-    saveAlerts(alerts);
-    renderPhase4();
-    showToast('Price alert removed');
-  }
-
-  function openPriceAlertModal(id){
-    const p=productById(id);
-    if(!p) return;
-    let modal=document.getElementById('phase4AlertModal');
-    if(!modal){
-      modal=document.createElement('div');
-      modal.id='phase4AlertModal';
-      modal.className='phase4-alert-modal';
-      document.body.appendChild(modal);
-      modal.addEventListener('click',e=>{if(e.target===modal)closePriceAlertModal();});
-    }
-    const existing=getAlert(id);
-    const suggested=Math.max(1,Math.floor(Number(p.price||0)*0.9));
-    modal.innerHTML=`<div class="phase4-alert-box" role="dialog" aria-modal="true">
-      <button class="phase4-alert-close" onclick="closePriceAlertModal()">✕</button>
-      <h3>🔔 Set a Price Alert</h3>
-      <p>Dealio will check the price stored in this browser. This prototype does not send push or email notifications.</p>
-      <div class="phase4-alert-current">Current price<b>${money(p.price)}</b></div>
-      <label for="phase4TargetPrice">Alert me when price reaches</label>
-      <input id="phase4TargetPrice" type="number" min="1" step="1" value="${existing?existing.targetPrice:suggested}" inputmode="numeric">
-      <div id="phase4AlertStatus" class="phase4-alert-status"></div>
-      <div class="phase4-alert-actions">
-        <button class="phase4-cancel-alert" onclick="closePriceAlertModal()">Cancel</button>
-        <button class="phase4-save-alert" onclick="savePriceAlertFromModal(${p.id})">Save Alert 🔔</button>
-      </div>
-      ${existing?`<button style="width:100%;margin-top:8px;border:0;background:#fee2e2;color:#dc2626;border-radius:9px;padding:10px;font-weight:900;cursor:pointer" onclick="removePriceAlert(${p.id});closePriceAlertModal()">Remove Existing Alert</button>`:''}
-    </div>`;
-    modal.classList.add('show');
-    document.body.classList.add('no-scroll');
-    setTimeout(()=>document.getElementById('phase4TargetPrice')?.focus(),30);
-  }
-
-  function closePriceAlertModal(){
-    const modal=document.getElementById('phase4AlertModal');
-    if(modal) modal.classList.remove('show');
-    if(!document.getElementById('productModal')?.classList.contains('show') && !document.querySelector('.account-submodal.show')) document.body.classList.remove('no-scroll');
-  }
-
-  function savePriceAlertFromModal(id){
-    const input=document.getElementById('phase4TargetPrice');
-    setPriceAlert(id,input?.value);
-  }
-
-  function productSimilarityScore(p){
-    const viewed=getRecentlyViewed().map(productById).filter(Boolean);
-    const searches=getSearchHistory();
-    const wishlist=safeJSON('dealioWishlist',[]);
-    let score=getDealScoreSafe(p)*0.45;
-
-    const categoryWeight={};
-    viewed.forEach((v,i)=>{categoryWeight[v.category]=(categoryWeight[v.category]||0)+(12-i);});
-    wishlist.map(productById).filter(Boolean).forEach(v=>{categoryWeight[v.category]=(categoryWeight[v.category]||0)+8;});
-    score+=(categoryWeight[p.category]||0)*2.1;
-
-    const text=cleanText(p.name+' '+p.category);
-    searches.forEach(q=>{
-      const tokens=cleanText(q).split(' ').filter(t=>t.length>2);
-      tokens.forEach(t=>{if(text.includes(t)) score+=7;});
-    });
-
-    const drop=getActivePriceDrop(p);
-    if(drop) score+=Math.min(20,drop.pct*2.5);
-    if(Number(p.rating)>=4.5) score+=5;
-    if(Number(p.discount)>=30) score+=5;
-    return score;
-  }
-
-  function getDealScoreSafe(p){
-    try{return typeof window.getDealScore==='function'?Number(window.getDealScore(p)):50;}catch(e){return 50;}
-  }
-
-  function getRecommended(){
-    return catalog().map(p=>({p,score:productSimilarityScore(p)})).sort((a,b)=>b.score-a.score).map(x=>x.p).slice(0,8);
-  }
-
-  function getBestDeals(){
-    return catalog().map(p=>{
-      const drop=getActivePriceDrop(p);
-      let score=getDealScoreSafe(p);
-      score+=Math.min(18,Number(p.discount||0)*0.25);
-      if(drop) score+=Math.min(25,drop.pct*2);
-      return {p,score,drop};
-    }).sort((a,b)=>b.score-a.score).map(x=>x.p).slice(0,8);
-  }
-
-  function phase4Card(p,mode){
-    const alert=getAlert(p.id);
-    const drop=getActivePriceDrop(p);
-    const score=getDealScoreSafe(p);
-    const store=p.store||'Marketplace';
-    const alertText=alert?'🔔 Alert set':'🔔 Price Alert';
-    return `<article class="phase4-card">
-      <div class="phase4-card-img" onclick="openProduct(${p.id})"><img src="${p.image}" alt="${escapeHTML(p.name)}" loading="lazy"></div>
-      <h3>${escapeHTML(p.name)}</h3>
-      <div class="phase4-price">${money(p.price)}</div>
-      <div class="phase4-meta"><span class="phase4-badge">⚡ ${score}/99</span><span class="phase4-store">🏪 ${escapeHTML(store)}</span></div>
-      ${drop?`<div class="phase4-drop">📉 ${drop.pct}% lower · saved ${money(drop.amount)}</div>`:''}
-      <div class="phase4-card-actions">
-        <button class="phase4-open" onclick="openProduct(${p.id})">View Product</button>
-        <button class="phase4-alert ${alert?'active':''}" onclick="openPriceAlertModal(${p.id})">${alertText}</button>
-      </div>
-    </article>`;
-  }
-
-  function renderPhase4(){
-    const products=catalog();
-    if(!products.length) return;
-
-    const recBox=document.getElementById('recommendedProducts');
-    const bestBox=document.getElementById('bestDealsProducts');
-    const recentBox=document.getElementById('recentlyViewedProducts');
-    const alertsBox=document.getElementById('priceAlertsProducts');
-    if(!recBox||!bestBox||!recentBox||!alertsBox) return;
-
-    const history=getRecentlyViewed();
-    const searches=getSearchHistory();
-    const hasPersonalData=history.length||searches.length||safeJSON('dealioWishlist',[]).length;
-    const recs=getRecommended();
-    recBox.innerHTML=recs.length?recs.map(p=>phase4Card(p,'recommended')).join(''):`<div class="phase4-empty"><strong>Start exploring to personalize Dealio</strong>View a few products and your recommendations will adapt locally.</div>`;
-    const title=document.getElementById('phase4PersonalTitle');
-    const hint=document.getElementById('phase4PersonalHint');
-    if(title) title.textContent=hasPersonalData?'Recommended for You':'Popular picks to get you started';
-    if(hint) hint.textContent=hasPersonalData?'Based on your local activity':'Personalization starts after your first interactions';
-
-    const best=getBestDeals();
-    bestBox.innerHTML=best.map(p=>phase4Card(p,'best')).join('');
-
-    const recent=history.map(productById).filter(Boolean).slice(0,8);
-    recentBox.innerHTML=recent.length?recent.map(p=>phase4Card(p,'recent')).join(''):`<div class="phase4-empty"><strong>Nothing here yet 👀</strong>Open any Dealio product and it will appear in Recently Viewed.</div>`;
-
-    const alerts=Object.values(getAlerts()).map(a=>({a,p:productById(a.productId)})).filter(x=>x.p);
-    const summary=document.getElementById('priceAlertSummary');
-    if(summary) summary.textContent=alerts.length?`${alerts.length} alert${alerts.length===1?'':'s'} saved locally`:'No alerts set';
-    alertsBox.innerHTML=alerts.length?alerts.map(({a,p})=>{
-      const reached=Number(p.price)<=Number(a.targetPrice);
-      const drop=getActivePriceDrop(p);
-      return `<article class="phase4-card">
-        <div class="phase4-card-img" onclick="openProduct(${p.id})"><img src="${p.image}" alt="${escapeHTML(p.name)}" loading="lazy"></div>
-        <h3>${escapeHTML(p.name)}</h3>
-        <div class="phase4-price">${money(p.price)}</div>
-        <div class="phase4-meta"><span class="phase4-badge">${reached?'🎯 Target reached':'🔔 Watching'}</span><span class="phase4-store">Target ${money(a.targetPrice)}</span></div>
-        ${reached?'<div class="phase4-drop">🎉 Your target price has been reached.</div>':drop?`<div class="phase4-drop">📉 ${drop.pct}% below a previous local snapshot.</div>`:'<div class="phase4-drop">⏳ Waiting for a lower price snapshot.</div>'}
-        <div class="phase4-card-actions">
-          <button class="phase4-open" onclick="openProduct(${p.id})">View Product</button>
-          <button class="phase4-alert active" onclick="removePriceAlert(${p.id})">Remove Alert</button>
-        </div>
-      </article>`;
-    }).join(''):`<div class="phase4-empty"><strong>🔔 No price alerts yet</strong>Open a product and choose “Price Alert” to watch a target price. Alerts are stored locally in this browser.</div>`;
-  }
-
-  function captureAndRender(){
-    snapshotCurrentPrices();
-    renderPhase4();
-  }
-
-  // Wrap the existing product opener so every product view contributes to personalization.
-  function patchOpenProduct(){
-    const original=window.openProduct;
-    if(typeof original!=='function' || original.__phase4Wrapped) return;
-    function wrappedOpenProduct(id){
-      recordRecentlyViewed(id);
-      const result=original(id);
-      ensureModalAlertButton(id);
-      return result;
-    }
-    wrappedOpenProduct.__phase4Wrapped=true;
-    window.openProduct=wrappedOpenProduct;
-  }
-
-  function ensureModalAlertButton(id){
-    const actions=document.querySelector('#productModal .modal-actions');
-    if(!actions) return;
-    let btn=document.getElementById('phase4ModalAlertBtn');
-    if(!btn){
-      btn=document.createElement('button');
-      btn.id='phase4ModalAlertBtn';
-      btn.className='phase4-alert active';
-      btn.style.gridColumn='1 / -1';
-      actions.appendChild(btn);
-    }
-    const alert=getAlert(id);
-    btn.textContent=alert?'🔔 Edit Price Alert':'🔔 Set Price Alert';
-    btn.onclick=()=>openPriceAlertModal(id);
-  }
-
-  // Remember Enter-key searches too; the existing module listener still performs the real search.
-  function patchSearchEnter(){
-    const input=document.getElementById('headerSearch');
-    if(!input || input.__phase4EnterPatched) return;
-    input.__phase4EnterPatched=true;
-    input.addEventListener('keydown',function(e){
-      if(e.key==='Enter'){
-        const q=this.value?.trim();
-        if(q) recordSearch(q);
-        setTimeout(renderPhase4,0);
-      }
-    });
-  }
-
-  // Wrap search so useful search intent is remembered without changing the existing search behavior.
-  function patchRunSearch(){
-    const original=window.runSearch;
-    if(typeof original!=='function' || original.__phase4Wrapped) return;
-    function wrappedRunSearch(){
-      const input=document.getElementById('headerSearch');
-      const q=input?.value?.trim();
-      if(q) recordSearch(q);
-      const result=original();
-      setTimeout(renderPhase4,0);
-      return result;
-    }
-    wrappedRunSearch.__phase4Wrapped=true;
-    window.runSearch=wrappedRunSearch;
-  }
-
-  window.openPriceAlertModal=openPriceAlertModal;
-  window.closePriceAlertModal=closePriceAlertModal;
-  window.savePriceAlertFromModal=savePriceAlertFromModal;
-  window.setPriceAlert=setPriceAlert;
-  window.removePriceAlert=removePriceAlert;
-  window.renderPhase4=renderPhase4;
-  window.getRecentlyViewed=getRecentlyViewed;
-  window.getSearchHistory=getSearchHistory;
-  window.getPriceAlerts=getAlerts;
-  window.getPriceSnapshots=getSnapshots;
-
-  function bootPhase4(){
-    // Phase 3's additive script may load after this script in future edits, so retry wrapping briefly.
-    patchOpenProduct();
-    patchRunSearch();
-    patchSearchEnter();
-    captureAndRender();
-    let tries=0;
-    const timer=setInterval(()=>{
-      patchOpenProduct();
-      patchRunSearch();
-      patchSearchEnter();
-      tries++;
-      if(tries>10) clearInterval(timer);
-    },250);
-  }
-
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(bootPhase4,50));
-  else setTimeout(bootPhase4,50);
-})();
-</script>
-
-
-<section class="p56-section" id="phase56Section">
-  <div class="p56-head"><div><h2>⚖️ Compare Smarter</h2><p>Phase 5 — compare products and available store offers before you buy.</p></div><div class="p56-actions"><button class="p56-btn" onclick="openSmartCompare()">Smart Compare</button><button class="p56-btn alt" onclick="openCompare()">Compare Selected</button></div></div>
-  <div class="p56-compare-panel"><div><h3>Find the better value</h3><p>Dealio now checks price, discount, rating, Deal Score and available store offers to surface a clearer best-value choice.</p><div class="p56-actions" style="margin-top:12px"><button class="p56-btn" onclick="openBestValueCompare()">Show Best Value</button></div></div><div class="p56-mini-grid"><div class="p56-mini"><b>🏷️ Best Price</b><span>Lowest available offer</span></div><div class="p56-mini"><b>⚡ Deal Score</b><span>Value signal from Dealio</span></div><div class="p56-mini"><b>🏪 Stores</b><span>Offer-by-offer view</span></div></div></div>
-  <div id="p56CompareResults"></div>
-</section>
-<button class="p56-ai-fab" id="p56AiFab" onclick="toggleDealioAssistant()">✨ Shop with Dealio</button>
-<div class="p56-ai-panel" id="p56AiPanel"><div class="p56-ai-head"><strong>✨ Dealio Smart Shopping</strong><button class="p56-ai-close" onclick="toggleDealioAssistant(false)">×</button></div><div class="p56-ai-body"><div class="p56-ai-input"><input id="p56AiInput" placeholder="Try: best fashion under ₹500" autocomplete="off"><button onclick="askDealioAssistant()">Ask</button></div><div class="p56-chips"><button class="p56-chip" onclick="dealioAskQuick('best deals')">Best deals</button><button class="p56-chip" onclick="dealioAskQuick('fashion under ₹500')">Fashion under ₹500</button><button class="p56-chip" onclick="dealioAskQuick('top rated electronics')">Top electronics</button><button class="p56-chip" onclick="dealioAskQuick('cheap home decor')">Budget home</button></div><div id="p56AiAnswer" class="p56-ai-answer">Tell me what you want, your budget, or what matters most. I’ll use Dealio’s current catalog to suggest matches.</div><div id="p56AiProducts" class="p56-ai-products"></div></div></div>
-
-<script>
-/* =========================================================
-   DEALIO PHASE 5 + 6 — ADVANCED COMPARISON + SMART SHOPPING
-   Local catalog intelligence; no external AI/API claim.
-========================================================= */
-(function(){'use strict';
-function cat(){return Array.isArray(window.products)?window.products:[]}
-function esc(v){return typeof escapeHTML==='function'?escapeHTML(v):String(v||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function money(v){return '₹'+Number(v||0).toLocaleString('en-IN')}
-function offers(p){try{return typeof getOffers==='function'?getOffers(p):[{store:p.store||'Store',price:p.price,url:p.url,inStock:true}]}catch(e){return []}}
-function bestOffer(p){const a=offers(p).filter(o=>o.inStock!==false&&Number(o.price)>0).sort((x,y)=>Number(x.price)-Number(y.price));return a[0]||null}
-function score(p){try{return Number(typeof getDealScore==='function'?getDealScore(p):0)}catch(e){return 0}}
-function valueScore(p){const o=bestOffer(p), price=Number(o?.price||p.price||0), rating=Number(p.rating||0), disc=Number(p.discount||0);return Math.round((score(p)*.55)+(rating*7)+(disc*.35)+(price?Math.max(0,25-Math.min(25,price/80)):0))}
-function openSmartCompare(){const p=cat().slice().sort((a,b)=>valueScore(b)-valueScore(a))[0];if(p) renderCompareInsight(p,'Best overall value right now')}
-function openBestValueCompare(){const list=cat().slice().sort((a,b)=>valueScore(b)-valueScore(a)).slice(0,3);renderCompareInsight(list[0],'Top value picks');const host=document.getElementById('p56CompareResults');if(host)host.innerHTML=list.map(p=>insightCard(p)).join('')}
-function insightCard(p){const os=offers(p).slice().sort((a,b)=>Number(a.price)-Number(b.price)).slice(0,3);const bo=os[0];return '<div class="p56-result"><div class="p56-result-head"><h4>'+esc(p.name)+'</h4><span>⚡ '+score(p)+'/99</span></div><div style="margin-top:5px;color:var(--muted);font-size:12px">Best offer: <b>'+money(bo?.price||p.price)+'</b> · '+esc(bo?.store||p.store||'Store')+' · '+Number(p.rating||0).toFixed(1)+'★</div><div class="p56-offers">'+os.map((o,i)=>'<div class="p56-offer '+(i===0?'best':'')+'"><b>'+esc(o.store||'Store')+'</b><div>'+money(o.price)+'</div><small>'+(o.inStock===false?'Out of stock':'In stock')+(o.discount?' · '+o.discount+'% off':'')+'</small></div>').join('')+'</div><div class="p56-actions" style="margin-top:9px"><button class="p56-btn" onclick="openProduct('+p.id+')">View Product</button><button class="p56-btn alt" onclick="openOfferComparison(window.products.find(x=>x.id==='+p.id+'))">Compare Stores</button></div></div>'}
-function renderCompareInsight(p,title){const host=document.getElementById('p56CompareResults');if(host)host.innerHTML='<div style="margin-top:12px"><strong>'+esc(title)+'</strong>'+insightCard(p)+'</div>'}
-function patchProductModal(){const op=window.openProduct;if(typeof op!=='function'||op.__p56)return;function wrapped(id){const r=op(id);setTimeout(()=>addModalButtons(id),20);return r}wrapped.__p56=true;window.openProduct=wrapped}
-function addModalButtons(id){const actions=document.querySelector('#productModal .modal-actions');if(!actions)return;let b=document.getElementById('p56StoreCompareBtn');if(!b){b=document.createElement('button');b.id='p56StoreCompareBtn';b.className='p56-btn';b.style.gridColumn='1 / -1';actions.appendChild(b)}b.textContent='🏪 Compare Store Offers';b.onclick=()=>{const p=cat().find(x=>Number(x.id)===Number(id));if(p)openOfferComparison(p)}}
-function queryProducts(q){const text=String(q||'').toLowerCase();let list=cat().slice();let parsed=null;try{parsed=parseSmartQuery(text)}catch(e){}
-if(parsed){list=list.filter(p=>{if(parsed.maxPrice!==null&&Number(p.price)>parsed.maxPrice)return false;if(parsed.minPrice!==null&&Number(p.price)<parsed.minPrice)return false;if(parsed.minDiscount!==null&&Number(p.discount)<parsed.minDiscount)return false;if(parsed.minRating!==null&&Number(p.rating)<parsed.minRating)return false;if(parsed.category&&p.category!==parsed.category)return false;return true})}
-const catWords={fashion:['fashion','shirt','jeans','bag','clothing'],electronics:['electronics','phone','mobile','earbud','headphone','watch'],beauty:['beauty','makeup','jewellery','jewelry','skin'],home:['home','decor','storage','organizer'],accessories:['accessories','watch','jewelry']};
-let matched=list.filter(p=>{const s=(p.name+' '+p.category+' '+(p.store||'')).toLowerCase();return !text||text.split(/\s+/).some(t=>t.length>2&&s.includes(t))});
-if(/best|top|deal|value|recommended|cheap|budget/i.test(text))matched.sort((a,b)=>valueScore(b)-valueScore(a));else matched.sort((a,b)=>valueScore(b)-valueScore(a));
-return matched.slice(0,6)}
-function answer(q){const list=queryProducts(q);const low=String(q).toLowerCase();let msg='I found '+list.length+' useful match'+(list.length===1?'':'es')+' from the current Dealio catalog.';if(/best|top|value/i.test(low)&&list[0])msg='My top pick is '+list[0].name+' at '+money(bestOffer(list[0])?.price||list[0].price)+'. I prioritized overall value, rating and deal signals.';else if(/under|below|budget|cheap/i.test(low))msg='Here are the strongest matches within your requested budget/intent.';else if(/gift/i.test(low))msg='For a gift-style search, I ranked the catalog using rating, deal quality and product relevance.';return {msg,list}}
-function renderAI(q){const a=answer(q),host=document.getElementById('p56AiAnswer'),box=document.getElementById('p56AiProducts');if(host)host.textContent=a.msg;if(box)box.innerHTML=a.list.map(p=>'<div class="p56-ai-product"><img src="'+p.image+'" alt="'+esc(p.name)+'"><div><b>'+esc(p.name)+'</b><small>'+money(bestOffer(p)?.price||p.price)+' · '+Number(p.rating||0).toFixed(1)+'★ · '+Number(p.discount||0)+'% off</small></div><button onclick="openProduct('+p.id+')">View</button></div>').join('')||'<div style="color:var(--muted);font-size:12px">No close match found. Try a broader search like “fashion under ₹500”.</div>'}
-window.toggleDealioAssistant=function(force){const p=document.getElementById('p56AiPanel');if(!p)return;p.classList.toggle('show',force===undefined?!p.classList.contains('show'):!!force);if(p.classList.contains('show'))setTimeout(()=>document.getElementById('p56AiInput')?.focus(),30)};
-window.askDealioAssistant=function(){const i=document.getElementById('p56AiInput');const q=i?.value?.trim();if(q)renderAI(q)};
-window.dealioAskQuick=function(q){const i=document.getElementById('p56AiInput');if(i)i.value=q;window.toggleDealioAssistant(true);renderAI(q)};
-window.openSmartCompare=openSmartCompare;window.openBestValueCompare=openBestValueCompare;
-function boot(){const s=document.getElementById('phase56Section');if(!s){}
-patchProductModal();let n=0;const t=setInterval(()=>{patchProductModal();if(++n>12)clearInterval(t)},250);
-const input=document.getElementById('p56AiInput');if(input&&!input.__p56){input.__p56=true;input.addEventListener('keydown',e=>{if(e.key==='Enter')window.askDealioAssistant()})}}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,80));else setTimeout(boot,80);
-})();
-</script>
-<script>
-/* ================= DEALIO FINAL SAFE BOOT =================
-   Refresh the core catalog after every phase has loaded.
-   This does not replace any existing functionality.
-============================================================ */
-(function(){
-  function refreshDealio(){
-    try{
-      if(typeof renderStoreOptions==="function") renderStoreOptions();
-      if(typeof renderHome==="function") renderHome();
-      if(typeof renderShop==="function") renderShop();
-      if(typeof updateCounts==="function") updateCounts();
-    }catch(e){
-      console.warn("Dealio safe boot:", e);
-    }
-  }
-  if(document.readyState==="loading"){
-    document.addEventListener("DOMContentLoaded", function(){ setTimeout(refreshDealio, 100); });
-  }else{
-    setTimeout(refreshDealio, 100);
-  }
-})();
-</script></body>
+</body>
 </html>
